@@ -38,6 +38,7 @@
             this.lblExit = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnNewLicense = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnlSideBar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,6 +48,7 @@
             // pnlSideBar
             // 
             this.pnlSideBar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnlSideBar.Controls.Add(this.btnNewLicense);
             this.pnlSideBar.Controls.Add(this.pnlLogo);
             this.pnlSideBar.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlSideBar.Location = new System.Drawing.Point(1050, 0);
@@ -124,6 +126,43 @@
             this.bunifuElipse1.ElipseRadius = 30;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // btnNewLicense
+            // 
+            this.btnNewLicense.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNewLicense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNewLicense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNewLicense.BorderRadius = 0;
+            this.btnNewLicense.ButtonText = "رخصة جديدة";
+            this.btnNewLicense.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewLicense.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNewLicense.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNewLicense.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnNewLicense.Iconimage")));
+            this.btnNewLicense.Iconimage_right = null;
+            this.btnNewLicense.Iconimage_right_Selected = null;
+            this.btnNewLicense.Iconimage_Selected = null;
+            this.btnNewLicense.IconMarginLeft = 0;
+            this.btnNewLicense.IconMarginRight = 0;
+            this.btnNewLicense.IconRightVisible = true;
+            this.btnNewLicense.IconRightZoom = 0D;
+            this.btnNewLicense.IconVisible = true;
+            this.btnNewLicense.IconZoom = 90D;
+            this.btnNewLicense.IsTab = false;
+            this.btnNewLicense.Location = new System.Drawing.Point(0, 129);
+            this.btnNewLicense.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnNewLicense.Name = "btnNewLicense";
+            this.btnNewLicense.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNewLicense.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnNewLicense.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnNewLicense.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnNewLicense.selected = false;
+            this.btnNewLicense.Size = new System.Drawing.Size(230, 48);
+            this.btnNewLicense.TabIndex = 1;
+            this.btnNewLicense.Text = "رخصة جديدة";
+            this.btnNewLicense.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNewLicense.Textcolor = System.Drawing.Color.White;
+            this.btnNewLicense.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewLicense.Click += new System.EventHandler(this.btnNewLicense_Click);
+            // 
             // FRMMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -155,5 +194,6 @@
         private System.Windows.Forms.Label lblMinimize;
         private System.Windows.Forms.Panel pnlContainer;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnNewLicense;
     }
 }

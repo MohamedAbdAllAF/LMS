@@ -96,8 +96,12 @@ namespace LMS.Views
             lblMinimize.BackColor = Color.FromArgb(100, 149, 237);
         }
 
+
         #endregion
 
-
+        private void btnNewLicense_Click(object sender, EventArgs e)
+        {
+            LoadForm(new FRMNewLicense());
+        }
     }
 }
