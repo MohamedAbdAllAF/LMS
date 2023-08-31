@@ -1,6 +1,6 @@
 ﻿namespace LMS
 {
-    partial class main
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
