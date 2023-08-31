@@ -108,7 +108,7 @@
             this.btnLogin.Size = new System.Drawing.Size(297, 34);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.TabStop = false;
-            this.btnLogin.Text = "Sign In";
+            this.btnLogin.Text = "LogIn";
             this.btnLogin.UseVisualStyleBackColor = false;
             // 
             // txtPassword
@@ -193,9 +193,9 @@
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label2.Location = new System.Drawing.Point(16, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 30);
+            this.label2.Size = new System.Drawing.Size(77, 30);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Sign In";
+            this.label2.Text = "LogIn";
             // 
             // bunifuElipse1
             // 
