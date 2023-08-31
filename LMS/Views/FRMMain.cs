@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace LMS.Views
+{
+    public partial class FRMMain : Form
+    {
+        public FRMMain()
+        {
+            InitializeComponent();
+        }
+
+        #region Make The Form Movable Events
+        bool drag = false;
+        Point StartPoint = new Point(0,0);
+        private void pnlHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            StartPoint = new Point(e.X, e.Y);
+        }
+
+        private void pnlHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(drag)
+            {
+                Point Current =  PointToScreen(e.Location);
+                this.Location = new Point(Current.X-StartPoint.X,Current.Y-StartPoint.Y);
+            }
+        }
+
+        private void pnlHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+        #endregion
+
+        #region Exit Label Events
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lblExit_MouseEnter(object sender, EventArgs e)
+        {
+            lblExit.BackColor = Color.Red;
+        }
+
+        private void lblExit_MouseLeave(object sender, EventArgs e)
+        {
+            lblExit.BackColor = Color.FromArgb(100, 149, 237);
+        }
+
+
+        #endregion
+
+        #region Minimize Label Events
+
+        private void lblMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void lblMinimize_MouseEnter(object sender, EventArgs e)
+        {
+            lblMinimize.BackColor = Color.FromArgb(200, 200, 200);
+        }
+
+        private void lblMinimize_MouseLeave(object sender, EventArgs e)
+        {
+            lblMinimize.BackColor = Color.FromArgb(100, 149, 237);
+        }
+
+        #endregion
+
+
+    }
+}

@@ -1,4 +1,5 @@
-﻿using SignUpDemo;
+﻿using LMS.Views;
+using SignUpDemo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace LMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FRMLogin());
+            Application.Run(new FRMMain());
         }
     }
 }
