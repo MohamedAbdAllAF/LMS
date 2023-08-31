@@ -1,6 +1,6 @@
 ﻿namespace LMS
 {
-    partial class Form1
+    partial class testLogin
     {
         /// <summary>
         /// Required designer variable.

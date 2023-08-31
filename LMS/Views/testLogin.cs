@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace LMS
 {
-    public partial class Form1 : Form
+    public partial class testLogin : Form
     {
         LMSContext context = new LMSContext();
-        public Form1()
+        public testLogin()
         {
             InitializeComponent();
         }
