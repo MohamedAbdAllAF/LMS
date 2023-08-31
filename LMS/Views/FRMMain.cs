@@ -17,6 +17,24 @@ namespace LMS.Views
             InitializeComponent();
         }
 
+        #region Form Loader Controller
+
+        private Form activeForm = null;
+        private void LoadForm(Form childForm)
+        {
+            if (activeForm != null) activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlContainer.Controls.Add(childForm);
+            pnlContainer.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        #endregion
+
         #region Make The Form Movable Events
         bool drag = false;
         Point StartPoint = new Point(0,0);

@@ -100,6 +100,12 @@
     <Compile Include="Views\FRMMain.Designer.cs">
       <DependentUpon>FRMMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FRMNewLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FRMNewLicense.Designer.cs">
+      <DependentUpon>FRMNewLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\testLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FRMMain.resx">
       <DependentUpon>FRMMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FRMNewLicense.resx">
+      <DependentUpon>FRMNewLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\testLogin.resx">
       <DependentUpon>testLogin.cs</DependentUpon>

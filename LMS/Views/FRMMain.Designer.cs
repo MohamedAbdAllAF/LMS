@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMMain));
             this.pnlSideBar = new System.Windows.Forms.Panel();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -35,6 +36,8 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
+            this.pnlContainer = new System.Windows.Forms.Panel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlSideBar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,11 +111,25 @@
             this.lblExit.MouseEnter += new System.EventHandler(this.lblExit_MouseEnter);
             this.lblExit.MouseLeave += new System.EventHandler(this.lblExit_MouseLeave);
             // 
+            // pnlContainer
+            // 
+            this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContainer.Location = new System.Drawing.Point(0, 40);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.Size = new System.Drawing.Size(1050, 810);
+            this.pnlContainer.TabIndex = 2;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 30;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // FRMMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 850);
+            this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.pnlSideBar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,5 +153,7 @@
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label lblMinimize;
+        private System.Windows.Forms.Panel pnlContainer;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

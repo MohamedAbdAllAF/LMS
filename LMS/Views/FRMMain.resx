@@ -124,7 +124,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAB9AAAAjKCAYAAADOPZVtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAA/7JJREFUeF7s/XuoJcW5MP6XFxQRkYwkSCQgEgmSgIggEhAkmPCG/AxB2CcIeTfv
+        DwAACw8BkvkDpQAA/7JJREFUeF7s/XuoJcW5MP6XFxQRkYwkSCQgEgmSgIggEhAkmPCG/AxB2CcIeTfv
         6rUdkIDkGxGDIDOBkGMgB5ET5EgQQUROBgJyJOSEAf8QNEEQUcbMTPfaDpEhGCUi4/06v6d7bXX2Xo9m
         LnvdP3986LWfmdlT3auquqqrq6r8/27+/wAAAAAAAABg6aVBAAAAAAAAAFg2aRAAAAAAAAAAlk0aBAAA
         AAAAAIBlkwYBAAAAAAAAYNmkQQAAAAAAAABYNmkQAAAAAAAAAJZNGgQAAAAAAACAZZMGAQAAAAAAAGDZ
@@ -3539,5 +3539,17 @@
   </metadata>
   <metadata name="lblExit.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="lblMinimize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblExit.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>
