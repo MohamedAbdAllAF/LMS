@@ -11,7 +11,7 @@
                 "dbo.AdminLogs",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Long(nullable: false, identity: true),
                         Time = c.DateTime(nullable: false),
                         AdminId = c.Int(nullable: false),
                         TableName = c.String(),
@@ -56,7 +56,7 @@
                         LocationId = c.Int(nullable: false),
                         PlotNumber = c.String(),
                         Work = c.String(),
-                        Fees = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Fees = c.Decimal(precision: 18, scale: 2),
                         LicenseNumber = c.String(),
                         ValidityStatId = c.Int(),
                         EntryDate = c.DateTime(),
@@ -69,8 +69,8 @@
                         LastUpdate = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Users", t => t.OwnerID, cascadeDelete: false)
                 .ForeignKey("dbo.Users", t => t.AgentID, cascadeDelete: false)
+                .ForeignKey("dbo.Users", t => t.OwnerID, cascadeDelete: false)
                 .ForeignKey("dbo.Locations", t => t.LocationId, cascadeDelete: true)
                 .ForeignKey("dbo.ValidityStatments", t => t.ValidityStatId)
                 .Index(t => t.OwnerID)

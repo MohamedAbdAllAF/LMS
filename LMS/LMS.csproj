@@ -54,17 +54,24 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.1.3\lib\net461\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,9 +83,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202308301650429_ser.cs" />
-    <Compile Include="Migrations\202308301650429_ser.designer.cs">
-      <DependentUpon>202308301650429_ser.cs</DependentUpon>
+    <Compile Include="Controllers\AdminLogController.cs" />
+    <Compile Include="Controllers\ExceptionHandler.cs" />
+    <Compile Include="Controllers\LicenseController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ValidityStatmentController.cs" />
+    <Compile Include="Migrations\202309020205321_ser.cs" />
+    <Compile Include="Migrations\202309020205321_ser.designer.cs">
+      <DependentUpon>202309020205321_ser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -90,6 +103,12 @@
     <Compile Include="Models\SuperAdmin.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\ValidityStatment.cs" />
+    <Compile Include="Views\FRMDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FRMDashboard.Designer.cs">
+      <DependentUpon>FRMDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FRMLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,8 +135,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202308301650429_ser.resx">
-      <DependentUpon>202308301650429_ser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202309020205321_ser.resx">
+      <DependentUpon>202309020205321_ser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,6 +147,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\FRMDashboard.resx">
+      <DependentUpon>FRMDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FRMLogin.resx">
       <DependentUpon>FRMLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +163,7 @@
       <DependentUpon>testLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\LMS.Models.Location.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

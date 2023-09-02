@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace LMS.Views
 {
     public partial class FRMMain : Form
     {
-        public FRMMain()
+        public int AdminId;
+        public FRMMain(int adminId)
         {
             InitializeComponent();
+            AdminId = adminId;
         }
 
         #region Form Loader Controller
@@ -22,7 +25,11 @@ namespace LMS.Views
         private Form activeForm = null;
         private void LoadForm(Form childForm)
         {
-            if (activeForm != null) activeForm.Close();
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                activeForm.Dispose();
+            }
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -63,7 +70,8 @@ namespace LMS.Views
 
         private void lblExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if(MessageBox.Show("هل تريد الخروج","تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void lblExit_MouseEnter(object sender, EventArgs e)
@@ -101,7 +109,12 @@ namespace LMS.Views
 
         private void btnNewLicense_Click(object sender, EventArgs e)
         {
-            LoadForm(new FRMNewLicense());
+            LoadForm(new FRMNewLicense(AdminId));
+        }
+
+        private void pctDashboard_Click(object sender, EventArgs e)
+        {
+            LoadForm(new FRMDashboard());
         }
     }
 }

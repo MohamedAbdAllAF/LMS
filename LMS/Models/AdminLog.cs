@@ -9,7 +9,7 @@ namespace LMS.Models
 {
     internal class AdminLog
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         public DateTime Time { get; set; }
 

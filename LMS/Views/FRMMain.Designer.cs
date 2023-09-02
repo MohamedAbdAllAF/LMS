@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMMain));
             this.pnlSideBar = new System.Windows.Forms.Panel();
+            this.btnNewLicense = new MaterialSkin.Controls.MaterialButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctDashboard = new System.Windows.Forms.PictureBox();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btnNewLicense = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnlSideBar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctDashboard)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,24 +56,46 @@
             this.pnlSideBar.Size = new System.Drawing.Size(230, 850);
             this.pnlSideBar.TabIndex = 0;
             // 
+            // btnNewLicense
+            // 
+            this.btnNewLicense.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNewLicense.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewLicense.Depth = 0;
+            this.btnNewLicense.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNewLicense.DrawShadows = true;
+            this.btnNewLicense.HighEmphasis = true;
+            this.btnNewLicense.Icon = null;
+            this.btnNewLicense.Location = new System.Drawing.Point(0, 120);
+            this.btnNewLicense.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnNewLicense.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNewLicense.Name = "btnNewLicense";
+            this.btnNewLicense.Size = new System.Drawing.Size(230, 36);
+            this.btnNewLicense.TabIndex = 1;
+            this.btnNewLicense.Text = "رخصة جديدة";
+            this.btnNewLicense.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.btnNewLicense.UseAccentColor = false;
+            this.btnNewLicense.UseVisualStyleBackColor = true;
+            this.btnNewLicense.Click += new System.EventHandler(this.btnNewLicense_Click);
+            // 
             // pnlLogo
             // 
-            this.pnlLogo.Controls.Add(this.pictureBox1);
+            this.pnlLogo.Controls.Add(this.pctDashboard);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(230, 120);
             this.pnlLogo.TabIndex = 0;
             // 
-            // pictureBox1
+            // pctDashboard
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(65, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 120);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pctDashboard.Image = ((System.Drawing.Image)(resources.GetObject("pctDashboard.Image")));
+            this.pctDashboard.Location = new System.Drawing.Point(65, 0);
+            this.pctDashboard.Name = "pctDashboard";
+            this.pctDashboard.Size = new System.Drawing.Size(100, 120);
+            this.pctDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctDashboard.TabIndex = 0;
+            this.pctDashboard.TabStop = false;
+            this.pctDashboard.Click += new System.EventHandler(this.pctDashboard_Click);
             // 
             // pnlHeader
             // 
@@ -126,43 +148,6 @@
             this.bunifuElipse1.ElipseRadius = 30;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // btnNewLicense
-            // 
-            this.btnNewLicense.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnNewLicense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnNewLicense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNewLicense.BorderRadius = 0;
-            this.btnNewLicense.ButtonText = "رخصة جديدة";
-            this.btnNewLicense.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNewLicense.DisabledColor = System.Drawing.Color.Gray;
-            this.btnNewLicense.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnNewLicense.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnNewLicense.Iconimage")));
-            this.btnNewLicense.Iconimage_right = null;
-            this.btnNewLicense.Iconimage_right_Selected = null;
-            this.btnNewLicense.Iconimage_Selected = null;
-            this.btnNewLicense.IconMarginLeft = 0;
-            this.btnNewLicense.IconMarginRight = 0;
-            this.btnNewLicense.IconRightVisible = true;
-            this.btnNewLicense.IconRightZoom = 0D;
-            this.btnNewLicense.IconVisible = true;
-            this.btnNewLicense.IconZoom = 90D;
-            this.btnNewLicense.IsTab = false;
-            this.btnNewLicense.Location = new System.Drawing.Point(0, 129);
-            this.btnNewLicense.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnNewLicense.Name = "btnNewLicense";
-            this.btnNewLicense.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnNewLicense.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnNewLicense.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnNewLicense.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnNewLicense.selected = false;
-            this.btnNewLicense.Size = new System.Drawing.Size(230, 48);
-            this.btnNewLicense.TabIndex = 1;
-            this.btnNewLicense.Text = "رخصة جديدة";
-            this.btnNewLicense.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNewLicense.Textcolor = System.Drawing.Color.White;
-            this.btnNewLicense.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewLicense.Click += new System.EventHandler(this.btnNewLicense_Click);
-            // 
             // FRMMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -177,8 +162,9 @@
             this.Name = "FRMMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnlSideBar.ResumeLayout(false);
+            this.pnlSideBar.PerformLayout();
             this.pnlLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctDashboard)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -188,12 +174,12 @@
 
         private System.Windows.Forms.Panel pnlSideBar;
         private System.Windows.Forms.Panel pnlLogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctDashboard;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label lblMinimize;
         private System.Windows.Forms.Panel pnlContainer;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private Bunifu.Framework.UI.BunifuFlatButton btnNewLicense;
+        private MaterialSkin.Controls.MaterialButton btnNewLicense;
     }
 }

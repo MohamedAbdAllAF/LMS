@@ -26,7 +26,7 @@ namespace LMS.Models
 
         public string Work { get; set; }
 
-        public decimal Fees { get; set; }
+        public decimal? Fees { get; set; }
 
         public string LicenseNumber { get; set; }
 
