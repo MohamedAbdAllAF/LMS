@@ -35,7 +35,7 @@ namespace LMS.Views
             #endregion
         }
 
-        private void btnSvae_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             List<string> errorMessages = new List<string>();
             User Owner=null,Agent=null;
@@ -56,7 +56,7 @@ namespace LMS.Views
                 }
             }else
             {
-                errorMessages.Add("أكمل بيانات المالك");
+                errorMessages.Add("أدخل بيانات المالك");
             }
 
             if (txtAgentName.Text != string.Empty && txtAgentNationalId.Text != string.Empty)
@@ -71,7 +71,12 @@ namespace LMS.Views
                 }
             }else
             {
-                errorMessages.Add("أكمل بيانات الوكيل");
+                errorMessages.Add("أدخل بيانات الوكيل");
+            }
+
+            if(int.TryParse(txtFees.Text,out _))
+            {
+                errorMessages.Add("قيمة الاتعاب غير صحيحة");
             }
 
             validityStat = new ValidityStatment {
@@ -94,8 +99,23 @@ namespace LMS.Views
                 ReceiveDate = txtLReceiveDate.Text != string.Empty ? picLReceiveDate.Value : (DateTime?)null,
                 Notes = txtNotes.Text != string.Empty ? txtNotes.Text : null,
             };
-            if (licensecont.AddLicense(AdminId, Owner, Agent, validityStat, location, license))
-                MessageBox.Show("تم الإضافة بنجاح");
+            if(errorMessages.Count > 0)
+            {
+                string message = null;
+                foreach (var error in errorMessages)
+                {
+                    message += error+"\n";
+                }
+                MessageBox.Show(message);
+            }
+            else
+            {
+                if(MessageBox.Show("هل تريد الحفظ ؟","تنبيه",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                if (licensecont.AddLicense(AdminId, Owner, Agent, validityStat, location, license))
+                    MessageBox.Show("تم الإضافة بنجاح");
+                }
+            }
         }
         #region Date picker Buttons Events
         private void btnVEntryDate_Click(object sender, EventArgs e)

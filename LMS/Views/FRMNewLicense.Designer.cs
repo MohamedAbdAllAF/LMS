@@ -119,7 +119,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSvae = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
             this.pnlScrollerContainer.SuspendLayout();
             this.pnlMainInfoContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -183,7 +183,7 @@
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuSeparator1.LineThickness = 943;
+            this.bunifuSeparator1.LineThickness = 1741;
             this.bunifuSeparator1.Location = new System.Drawing.Point(0, 335);
             this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
@@ -466,7 +466,7 @@
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuSeparator2.LineThickness = 1741;
+            this.bunifuSeparator2.LineThickness = 3214;
             this.bunifuSeparator2.Location = new System.Drawing.Point(0, 290);
             this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(11);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
@@ -867,7 +867,7 @@
             this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuSeparator3.LineThickness = 3214;
+            this.bunifuSeparator3.LineThickness = 5934;
             this.bunifuSeparator3.Location = new System.Drawing.Point(0, 568);
             this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(11);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
@@ -1383,31 +1383,31 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnSvae);
+            this.panel1.Controls.Add(this.btnSave);
             this.panel1.Location = new System.Drawing.Point(3, 1230);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1025, 100);
             this.panel1.TabIndex = 6;
             // 
-            // btnSvae
+            // btnSave
             // 
-            this.btnSvae.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnSvae.color = System.Drawing.Color.CornflowerBlue;
-            this.btnSvae.colorActive = System.Drawing.Color.LightSkyBlue;
-            this.btnSvae.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSvae.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnSvae.ForeColor = System.Drawing.Color.White;
-            this.btnSvae.Image = ((System.Drawing.Image)(resources.GetObject("btnSvae.Image")));
-            this.btnSvae.ImagePosition = 15;
-            this.btnSvae.ImageZoom = 20;
-            this.btnSvae.LabelPosition = 35;
-            this.btnSvae.LabelText = "حفظ";
-            this.btnSvae.Location = new System.Drawing.Point(19, 6);
-            this.btnSvae.Margin = new System.Windows.Forms.Padding(6);
-            this.btnSvae.Name = "btnSvae";
-            this.btnSvae.Size = new System.Drawing.Size(152, 82);
-            this.btnSvae.TabIndex = 0;
-            this.btnSvae.Click += new System.EventHandler(this.btnSvae_Click);
+            this.btnSave.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSave.color = System.Drawing.Color.CornflowerBlue;
+            this.btnSave.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImagePosition = 15;
+            this.btnSave.ImageZoom = 20;
+            this.btnSave.LabelPosition = 35;
+            this.btnSave.LabelText = "حفظ";
+            this.btnSave.Location = new System.Drawing.Point(19, 6);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(152, 82);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FRMNewLicense
             // 
@@ -1561,7 +1561,7 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txtLicenseNumber;
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuTileButton btnSvae;
+        private Bunifu.Framework.UI.BunifuTileButton btnSave;
         private System.Windows.Forms.GroupBox groupBox18;
         private MaterialSkin.Controls.MaterialMultiLineTextBox txtNotes;
     }

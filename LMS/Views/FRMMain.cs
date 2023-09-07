@@ -116,5 +116,10 @@ namespace LMS.Views
         {
             LoadForm(new FRMDashboard());
         }
+
+        private void btnLicenseSearch_Click(object sender, EventArgs e)
+        {
+            LoadForm(new FRMDisplayLicenses());
+        }
     }
 }

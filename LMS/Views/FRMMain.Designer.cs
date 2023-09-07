@@ -39,6 +39,7 @@
             this.lblExit = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnLicenseSearch = new MaterialSkin.Controls.MaterialButton();
             this.pnlSideBar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctDashboard)).BeginInit();
@@ -48,6 +49,7 @@
             // pnlSideBar
             // 
             this.pnlSideBar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnlSideBar.Controls.Add(this.btnLicenseSearch);
             this.pnlSideBar.Controls.Add(this.btnNewLicense);
             this.pnlSideBar.Controls.Add(this.pnlLogo);
             this.pnlSideBar.Dock = System.Windows.Forms.DockStyle.Right;
@@ -148,6 +150,27 @@
             this.bunifuElipse1.ElipseRadius = 30;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // btnLicenseSearch
+            // 
+            this.btnLicenseSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLicenseSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLicenseSearch.Depth = 0;
+            this.btnLicenseSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLicenseSearch.DrawShadows = true;
+            this.btnLicenseSearch.HighEmphasis = true;
+            this.btnLicenseSearch.Icon = null;
+            this.btnLicenseSearch.Location = new System.Drawing.Point(0, 156);
+            this.btnLicenseSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLicenseSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLicenseSearch.Name = "btnLicenseSearch";
+            this.btnLicenseSearch.Size = new System.Drawing.Size(230, 36);
+            this.btnLicenseSearch.TabIndex = 2;
+            this.btnLicenseSearch.Text = "البحث عن رخصة";
+            this.btnLicenseSearch.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.btnLicenseSearch.UseAccentColor = false;
+            this.btnLicenseSearch.UseVisualStyleBackColor = true;
+            this.btnLicenseSearch.Click += new System.EventHandler(this.btnLicenseSearch_Click);
+            // 
             // FRMMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -181,5 +204,6 @@
         private System.Windows.Forms.Panel pnlContainer;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private MaterialSkin.Controls.MaterialButton btnNewLicense;
+        private MaterialSkin.Controls.MaterialButton btnLicenseSearch;
     }
 }
