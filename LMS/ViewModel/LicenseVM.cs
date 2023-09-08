@@ -27,6 +27,7 @@ namespace LMS.ViewModel
         public DateTime? VInitialSupplyDate { get; set; }
         public DateTime? VValidatySupplyDate { get; set; }
         public DateTime? VReceiveDate { get; set; }
+        public DateTime? LastUptate { get; set; }
         public DateTime CreatedOn { get; set; }
     }
 }

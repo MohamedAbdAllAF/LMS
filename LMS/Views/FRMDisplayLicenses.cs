@@ -146,7 +146,13 @@ namespace LMS.Views
 
         private void btndetails_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dgvDisplay.CurrentRow.Cells[0].Value.ToString());
+            if (dgvDisplay.Rows.Count > 0)
+            {
+                string id = dgvDisplay.CurrentRow.Cells[0].Value.ToString();
+                FRMMain frm = (FRMMain)Application.OpenForms["FRMMain"];
+                frm.LoadForm(new FRMNewLicense(1, "Edit", Convert.ToInt32(id)));
+            }
+            else MessageBox.Show("اختر الرخصة المراد تعديلها");
         }
     }
 }

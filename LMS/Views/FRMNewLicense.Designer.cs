@@ -120,6 +120,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
+            this.lblCreatedOn = new System.Windows.Forms.Label();
+            this.lblLastUpdate = new System.Windows.Forms.Label();
             this.pnlScrollerContainer.SuspendLayout();
             this.pnlMainInfoContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -170,6 +172,8 @@
             // 
             // pnlMainInfoContainer
             // 
+            this.pnlMainInfoContainer.Controls.Add(this.lblLastUpdate);
+            this.pnlMainInfoContainer.Controls.Add(this.lblCreatedOn);
             this.pnlMainInfoContainer.Controls.Add(this.bunifuSeparator1);
             this.pnlMainInfoContainer.Controls.Add(this.groupBox1);
             this.pnlMainInfoContainer.Controls.Add(this.lblTitle);
@@ -183,11 +187,11 @@
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuSeparator1.LineThickness = 1741;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 335);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuSeparator1.LineThickness = 10955;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 334);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(1025, 5);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(1025, 6);
             this.bunifuSeparator1.TabIndex = 4;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -466,7 +470,7 @@
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuSeparator2.LineThickness = 3214;
+            this.bunifuSeparator2.LineThickness = 20225;
             this.bunifuSeparator2.Location = new System.Drawing.Point(0, 290);
             this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(11);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
@@ -783,7 +787,7 @@
             this.picVEntryDate.Name = "picVEntryDate";
             this.picVEntryDate.Size = new System.Drawing.Size(276, 37);
             this.picVEntryDate.TabIndex = 4;
-            this.picVEntryDate.Value = new System.DateTime(2003, 9, 1, 1, 11, 0, 0);
+            this.picVEntryDate.Value = new System.DateTime(2023, 9, 7, 0, 0, 0, 0);
             // 
             // txtVEntryDate
             // 
@@ -867,7 +871,7 @@
             this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuSeparator3.LineThickness = 5934;
+            this.bunifuSeparator3.LineThickness = 37338;
             this.bunifuSeparator3.Location = new System.Drawing.Point(0, 568);
             this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(11);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
@@ -1409,6 +1413,32 @@
             this.btnSave.TabIndex = 0;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // lblCreatedOn
+            // 
+            this.lblCreatedOn.AutoSize = true;
+            this.lblCreatedOn.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCreatedOn.Enabled = false;
+            this.lblCreatedOn.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblCreatedOn.Location = new System.Drawing.Point(740, 22);
+            this.lblCreatedOn.Name = "lblCreatedOn";
+            this.lblCreatedOn.Size = new System.Drawing.Size(184, 24);
+            this.lblCreatedOn.TabIndex = 5;
+            this.lblCreatedOn.Text = "تاريخ الأنشاء : 5364556غ";
+            this.lblCreatedOn.Visible = false;
+            // 
+            // lblLastUpdate
+            // 
+            this.lblLastUpdate.AutoSize = true;
+            this.lblLastUpdate.BackColor = System.Drawing.SystemColors.Control;
+            this.lblLastUpdate.Enabled = false;
+            this.lblLastUpdate.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblLastUpdate.Location = new System.Drawing.Point(121, 22);
+            this.lblLastUpdate.Name = "lblLastUpdate";
+            this.lblLastUpdate.Size = new System.Drawing.Size(184, 24);
+            this.lblLastUpdate.TabIndex = 6;
+            this.lblLastUpdate.Text = "تاريخ الأنشاء : 5364556غ";
+            this.lblLastUpdate.Visible = false;
+            // 
             // FRMNewLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -1423,6 +1453,7 @@
             this.Load += new System.EventHandler(this.FRMNewLicense_Load);
             this.pnlScrollerContainer.ResumeLayout(false);
             this.pnlMainInfoContainer.ResumeLayout(false);
+            this.pnlMainInfoContainer.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
@@ -1491,7 +1522,6 @@
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtOwnerNationalId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pnlMainInfoContainer;
         private System.Windows.Forms.Panel pnlValidityStatment;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1564,5 +1594,8 @@
         private Bunifu.Framework.UI.BunifuTileButton btnSave;
         private System.Windows.Forms.GroupBox groupBox18;
         private MaterialSkin.Controls.MaterialMultiLineTextBox txtNotes;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblCreatedOn;
+        private System.Windows.Forms.Label lblLastUpdate;
     }
 }

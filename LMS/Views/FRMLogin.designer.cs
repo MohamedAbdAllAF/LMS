@@ -78,7 +78,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(343, 44);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Developed With :\r\nMohamed AbdAllA Fahem";
+            this.label1.Text = "Developed By :\r\nMohamed AbdAllA Fahem";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelRight
@@ -103,7 +103,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(26, 343);
+            this.btnLogin.Location = new System.Drawing.Point(26, 370);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(297, 34);
             this.btnLogin.TabIndex = 2;
@@ -123,7 +123,7 @@
             this.txtPassword.LineIdleColor = System.Drawing.Color.CornflowerBlue;
             this.txtPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.txtPassword.LineThickness = 3;
-            this.txtPassword.Location = new System.Drawing.Point(26, 254);
+            this.txtPassword.Location = new System.Drawing.Point(26, 281);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(297, 34);
@@ -137,7 +137,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(22, 237);
+            this.label4.Location = new System.Drawing.Point(22, 264);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 21);
             this.label4.TabIndex = 0;
@@ -155,7 +155,7 @@
             this.txtUserName.LineIdleColor = System.Drawing.Color.CornflowerBlue;
             this.txtUserName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.txtUserName.LineThickness = 3;
-            this.txtUserName.Location = new System.Drawing.Point(26, 183);
+            this.txtUserName.Location = new System.Drawing.Point(26, 210);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(297, 34);
@@ -168,7 +168,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label3.Location = new System.Drawing.Point(22, 166);
+            this.label3.Location = new System.Drawing.Point(22, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 21);
             this.label3.TabIndex = 0;
@@ -191,7 +191,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(16, 112);
+            this.label2.Location = new System.Drawing.Point(16, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 30);
             this.label2.TabIndex = 0;

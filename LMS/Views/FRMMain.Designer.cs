@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMMain));
             this.pnlSideBar = new System.Windows.Forms.Panel();
+            this.btnLicenseSearch = new MaterialSkin.Controls.MaterialButton();
             this.btnNewLicense = new MaterialSkin.Controls.MaterialButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pctDashboard = new System.Windows.Forms.PictureBox();
@@ -39,7 +40,6 @@
             this.lblExit = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btnLicenseSearch = new MaterialSkin.Controls.MaterialButton();
             this.pnlSideBar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctDashboard)).BeginInit();
@@ -57,6 +57,27 @@
             this.pnlSideBar.Name = "pnlSideBar";
             this.pnlSideBar.Size = new System.Drawing.Size(230, 850);
             this.pnlSideBar.TabIndex = 0;
+            // 
+            // btnLicenseSearch
+            // 
+            this.btnLicenseSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLicenseSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLicenseSearch.Depth = 0;
+            this.btnLicenseSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLicenseSearch.DrawShadows = true;
+            this.btnLicenseSearch.HighEmphasis = true;
+            this.btnLicenseSearch.Icon = null;
+            this.btnLicenseSearch.Location = new System.Drawing.Point(0, 156);
+            this.btnLicenseSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLicenseSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLicenseSearch.Name = "btnLicenseSearch";
+            this.btnLicenseSearch.Size = new System.Drawing.Size(230, 36);
+            this.btnLicenseSearch.TabIndex = 2;
+            this.btnLicenseSearch.Text = "البحث عن رخصة";
+            this.btnLicenseSearch.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.btnLicenseSearch.UseAccentColor = false;
+            this.btnLicenseSearch.UseVisualStyleBackColor = true;
+            this.btnLicenseSearch.Click += new System.EventHandler(this.btnLicenseSearch_Click);
             // 
             // btnNewLicense
             // 
@@ -150,27 +171,6 @@
             this.bunifuElipse1.ElipseRadius = 30;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // btnLicenseSearch
-            // 
-            this.btnLicenseSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLicenseSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLicenseSearch.Depth = 0;
-            this.btnLicenseSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLicenseSearch.DrawShadows = true;
-            this.btnLicenseSearch.HighEmphasis = true;
-            this.btnLicenseSearch.Icon = null;
-            this.btnLicenseSearch.Location = new System.Drawing.Point(0, 156);
-            this.btnLicenseSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnLicenseSearch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnLicenseSearch.Name = "btnLicenseSearch";
-            this.btnLicenseSearch.Size = new System.Drawing.Size(230, 36);
-            this.btnLicenseSearch.TabIndex = 2;
-            this.btnLicenseSearch.Text = "البحث عن رخصة";
-            this.btnLicenseSearch.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.btnLicenseSearch.UseAccentColor = false;
-            this.btnLicenseSearch.UseVisualStyleBackColor = true;
-            this.btnLicenseSearch.Click += new System.EventHandler(this.btnLicenseSearch_Click);
-            // 
             // FRMMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -181,6 +181,7 @@
             this.Controls.Add(this.pnlSideBar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FRMMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

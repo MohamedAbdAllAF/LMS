@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMDisplayLicenses));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanelMain = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -60,15 +60,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlDataContainer = new System.Windows.Forms.Panel();
             this.dgvDisplay = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btndetails = new System.Windows.Forms.Button();
-            this.plotNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agentNationalIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ownerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ownerNationalIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ownerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agentNationalIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plotNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.searchVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pnlOperations = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDetails = new Bunifu.Framework.UI.BunifuTileButton();
             this.flowLayoutPanelMain.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -78,6 +80,7 @@
             this.pnlDataContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).BeginInit();
+            this.pnlOperations.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanelMain
@@ -85,10 +88,11 @@
             this.flowLayoutPanelMain.AutoScroll = true;
             this.flowLayoutPanelMain.Controls.Add(this.pnlHeader);
             this.flowLayoutPanelMain.Controls.Add(this.pnlDataContainer);
-            this.flowLayoutPanelMain.Controls.Add(this.btndetails);
+            this.flowLayoutPanelMain.Controls.Add(this.pnlOperations);
+            this.flowLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelMain.Name = "flowLayoutPanelMain";
-            this.flowLayoutPanelMain.Size = new System.Drawing.Size(1050, 732);
+            this.flowLayoutPanelMain.Size = new System.Drawing.Size(1050, 810);
             this.flowLayoutPanelMain.TabIndex = 0;
             // 
             // pnlHeader
@@ -428,20 +432,20 @@
             // 
             this.dgvDisplay.AllowUserToAddRows = false;
             this.dgvDisplay.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDisplay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDisplay.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDisplay.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ownerNationalIdDataGridViewTextBoxColumn,
@@ -450,14 +454,14 @@
             this.agentNameDataGridViewTextBoxColumn,
             this.locationDataGridViewTextBoxColumn,
             this.plotNumberDataGridViewTextBoxColumn});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDisplay.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDisplay.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDisplay.DoubleBuffered = true;
             this.dgvDisplay.EnableHeadersVisualStyles = false;
@@ -467,18 +471,54 @@
             this.dgvDisplay.Name = "dgvDisplay";
             this.dgvDisplay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvDisplay.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDisplay.RowTemplate.Height = 30;
             this.dgvDisplay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDisplay.Size = new System.Drawing.Size(1025, 440);
             this.dgvDisplay.TabIndex = 1;
+            // 
+            // ownerNationalIdDataGridViewTextBoxColumn
+            // 
+            this.ownerNationalIdDataGridViewTextBoxColumn.DataPropertyName = "OwnerNationalId";
+            this.ownerNationalIdDataGridViewTextBoxColumn.HeaderText = "الرقم القومي للمالك";
+            this.ownerNationalIdDataGridViewTextBoxColumn.Name = "ownerNationalIdDataGridViewTextBoxColumn";
+            // 
+            // ownerNameDataGridViewTextBoxColumn
+            // 
+            this.ownerNameDataGridViewTextBoxColumn.DataPropertyName = "OwnerName";
+            this.ownerNameDataGridViewTextBoxColumn.HeaderText = "اسم المالك";
+            this.ownerNameDataGridViewTextBoxColumn.Name = "ownerNameDataGridViewTextBoxColumn";
+            // 
+            // agentNationalIdDataGridViewTextBoxColumn
+            // 
+            this.agentNationalIdDataGridViewTextBoxColumn.DataPropertyName = "AgentNationalId";
+            this.agentNationalIdDataGridViewTextBoxColumn.HeaderText = "الرقم القومي للوكيل";
+            this.agentNationalIdDataGridViewTextBoxColumn.Name = "agentNationalIdDataGridViewTextBoxColumn";
+            // 
+            // agentNameDataGridViewTextBoxColumn
+            // 
+            this.agentNameDataGridViewTextBoxColumn.DataPropertyName = "AgentName";
+            this.agentNameDataGridViewTextBoxColumn.HeaderText = "اسم الوكيل";
+            this.agentNameDataGridViewTextBoxColumn.Name = "agentNameDataGridViewTextBoxColumn";
+            // 
+            // locationDataGridViewTextBoxColumn
+            // 
+            this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
+            this.locationDataGridViewTextBoxColumn.HeaderText = "الموقع";
+            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
+            // 
+            // plotNumberDataGridViewTextBoxColumn
+            // 
+            this.plotNumberDataGridViewTextBoxColumn.DataPropertyName = "PlotNumber";
+            this.plotNumberDataGridViewTextBoxColumn.HeaderText = "رقم القطعة";
+            this.plotNumberDataGridViewTextBoxColumn.Name = "plotNumberDataGridViewTextBoxColumn";
             // 
             // panel3
             // 
@@ -489,55 +529,48 @@
             this.panel3.Size = new System.Drawing.Size(1025, 5);
             this.panel3.TabIndex = 0;
             // 
-            // btndetails
-            // 
-            this.btndetails.Location = new System.Drawing.Point(3, 671);
-            this.btndetails.Name = "btndetails";
-            this.btndetails.Size = new System.Drawing.Size(75, 36);
-            this.btndetails.TabIndex = 2;
-            this.btndetails.Text = "button1";
-            this.btndetails.UseVisualStyleBackColor = true;
-            this.btndetails.Click += new System.EventHandler(this.btndetails_Click);
-            // 
-            // plotNumberDataGridViewTextBoxColumn
-            // 
-            this.plotNumberDataGridViewTextBoxColumn.DataPropertyName = "PlotNumber";
-            this.plotNumberDataGridViewTextBoxColumn.HeaderText = "رقم القطعة";
-            this.plotNumberDataGridViewTextBoxColumn.Name = "plotNumberDataGridViewTextBoxColumn";
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "الموقع";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            // 
-            // agentNameDataGridViewTextBoxColumn
-            // 
-            this.agentNameDataGridViewTextBoxColumn.DataPropertyName = "AgentName";
-            this.agentNameDataGridViewTextBoxColumn.HeaderText = "اسم الوكيل";
-            this.agentNameDataGridViewTextBoxColumn.Name = "agentNameDataGridViewTextBoxColumn";
-            // 
-            // agentNationalIdDataGridViewTextBoxColumn
-            // 
-            this.agentNationalIdDataGridViewTextBoxColumn.DataPropertyName = "AgentNationalId";
-            this.agentNationalIdDataGridViewTextBoxColumn.HeaderText = "الرقم القومي للوكيل";
-            this.agentNationalIdDataGridViewTextBoxColumn.Name = "agentNationalIdDataGridViewTextBoxColumn";
-            // 
-            // ownerNameDataGridViewTextBoxColumn
-            // 
-            this.ownerNameDataGridViewTextBoxColumn.DataPropertyName = "OwnerName";
-            this.ownerNameDataGridViewTextBoxColumn.HeaderText = "اسم المالك";
-            this.ownerNameDataGridViewTextBoxColumn.Name = "ownerNameDataGridViewTextBoxColumn";
-            // 
-            // ownerNationalIdDataGridViewTextBoxColumn
-            // 
-            this.ownerNationalIdDataGridViewTextBoxColumn.DataPropertyName = "OwnerNationalId";
-            this.ownerNationalIdDataGridViewTextBoxColumn.HeaderText = "الرقم القومي للمالك";
-            this.ownerNationalIdDataGridViewTextBoxColumn.Name = "ownerNationalIdDataGridViewTextBoxColumn";
-            // 
             // searchVMBindingSource1
             // 
             this.searchVMBindingSource1.DataSource = typeof(LMS.ViewModel.SearchVM);
+            // 
+            // pnlOperations
+            // 
+            this.pnlOperations.Controls.Add(this.btnDetails);
+            this.pnlOperations.Controls.Add(this.panel2);
+            this.pnlOperations.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlOperations.Location = new System.Drawing.Point(3, 671);
+            this.pnlOperations.Name = "pnlOperations";
+            this.pnlOperations.Size = new System.Drawing.Size(1025, 127);
+            this.pnlOperations.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 122);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1025, 5);
+            this.panel2.TabIndex = 3;
+            // 
+            // btnDetails
+            // 
+            this.btnDetails.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDetails.color = System.Drawing.Color.CornflowerBlue;
+            this.btnDetails.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnDetails.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDetails.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnDetails.ForeColor = System.Drawing.Color.White;
+            this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
+            this.btnDetails.ImagePosition = 10;
+            this.btnDetails.ImageZoom = 25;
+            this.btnDetails.LabelPosition = 35;
+            this.btnDetails.LabelText = "عرض و تعديل";
+            this.btnDetails.Location = new System.Drawing.Point(862, 22);
+            this.btnDetails.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(152, 82);
+            this.btnDetails.TabIndex = 7;
+            this.btnDetails.Click += new System.EventHandler(this.btndetails_Click);
             // 
             // FRMDisplayLicenses
             // 
@@ -566,6 +599,7 @@
             this.pnlDataContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).EndInit();
+            this.pnlOperations.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -607,7 +641,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn agentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn plotNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btndetails;
         private System.Windows.Forms.BindingSource searchVMBindingSource1;
+        private System.Windows.Forms.Panel pnlOperations;
+        private Bunifu.Framework.UI.BunifuTileButton btnDetails;
+        private System.Windows.Forms.Panel panel2;
     }
 }

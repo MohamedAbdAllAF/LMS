@@ -23,7 +23,7 @@ namespace LMS.Views
         #region Form Loader Controller
 
         private Form activeForm = null;
-        private void LoadForm(Form childForm)
+        public void LoadForm(Form childForm)
         {
             if (activeForm != null)
             {

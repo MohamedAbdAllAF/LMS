@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -395,6 +396,259 @@ namespace LMS.Controllers
                 result = plots.Where(p=>p.Location.Contains(location)).ToList();
             }
             return result;
+        }
+
+        public LicenseVM GetLicenseVM(int licenseId)
+        {
+            LicenseVM result = new LicenseVM();
+            var license = context.Licenses.FirstOrDefault(l=>l.Id == licenseId);
+            if(license != null)
+            {
+                var owner = context.Users.FirstOrDefault(u => u.Id == license.OwnerID);
+                var agent = context.Users.FirstOrDefault(u => u.Id == license.AgentID);
+                var location = context.Locations.FirstOrDefault(l => l.Id == license.LocationId);
+                var validaty = context.validityStatments.FirstOrDefault(v => v.Id == license.ValidityStatId);
+
+                result = new LicenseVM
+                {
+                    OwnarNationalId = owner.NationalId,
+                    OwnarName = owner.Name,
+                    AgentNationalId = agent.NationalId,
+                    AgentName = agent.Name,
+                    Location = location.Name,
+                    PlotNumber = license.PlotNumber,
+                    Work = license.Work,
+                    Fees = license.Fees,
+                    LicenseNumber = license.LicenseNumber,
+                    Notes = license.Notes,
+                    LEntryDate = license.EntryDate,
+                    LExaminationFeeDate = license.ExaminationFeeDate,
+                    LFeesPaymentDate = license.FeesPaymentDate,
+                    LSignatureDate = license.SignatureDate,
+                    LReceiveDate = license.ReceiveDate,
+                    VEntryDate = validaty.EntryDate,
+                    VInitialSupplyDate = validaty.InitialSupplyDate,
+                    VValidatySupplyDate = validaty.ValidatySupplyDate,
+                    VReceiveDate = validaty.ReceiveDate,
+                    LastUptate = license.LastUpdate,
+                    CreatedOn = license.CreatedOn
+                };
+            }
+            return result;
+        }
+
+        public int UpdateLicense(int adminId,int id,LicenseVM newlicense)
+        {
+            try
+            {
+                var oldlicence = context.Licenses.FirstOrDefault(l => l.Id == id);
+                var oldOwner = context.Users.FirstOrDefault(l => l.Id == oldlicence.OwnerID);
+                var oldAgent = context.Users.FirstOrDefault(u => u.Id == oldlicence.AgentID);
+                var oldLocation = context.Locations.FirstOrDefault(l => l.Id == oldlicence.LocationId);
+                var oldvalidity = context.validityStatments.FirstOrDefault(v => v.Id == oldlicence.ValidityStatId);
+
+                if (oldOwner.NationalId != newlicense.OwnarNationalId)
+                {
+                    int ownerId = userControl.AddNewUser(adminId, new User
+                    {
+                        NationalId = newlicense.OwnarNationalId,
+                        Name = newlicense.OwnarName
+                    });
+                    oldlicence.OwnerID = ownerId;
+                    Log.AddLog(adminId, "Licenses", "N/A", oldlicence.Id,
+                        $"قام بتغيير بيانات المالك من {oldOwner.Id} الي {ownerId}");
+                }
+                else if (oldOwner.NationalId == newlicense.OwnarNationalId)
+                {
+                    if (oldOwner.Name != newlicense.OwnarName)
+                    {
+                        int x = userControl.UpdateUser(adminId, new User
+                        {
+                            Name = newlicense.OwnarName,
+                            NationalId = newlicense.OwnarNationalId
+                        });
+                    }
+                }
+
+                if (oldAgent.NationalId != newlicense.AgentNationalId)
+                {
+                    int agentId = userControl.AddNewUser(adminId, new User
+                    {
+                        NationalId = newlicense.AgentNationalId,
+                        Name = newlicense.AgentName
+                    });
+                    oldlicence.AgentID = agentId;
+                    Log.AddLog(adminId, "Licenses", "N/A", oldlicence.Id,
+                        $"قام بتغيير بيانات الوكيل من {oldAgent.Id} الي {agentId}");
+                }
+                else if (oldAgent.NationalId == newlicense.AgentNationalId)
+                {
+                    if (oldAgent.Name != newlicense.AgentName)
+                    {
+                        int x = userControl.UpdateUser(adminId, new User
+                        {
+                            Name = newlicense.AgentName,
+                            NationalId = newlicense.AgentNationalId
+                        });
+                    }
+                }
+
+                if (oldLocation.Name != newlicense.Location)
+                {
+                    int locationId = locationControl.AddNewLocation(adminId, newlicense.Location);
+                    oldlicence.LocationId = locationId;
+                    Log.AddLog(adminId, "Licenses", "N/A", oldlicence.Id,
+                        $"قام بتغيير بيانات الموقع من {oldLocation.Id} الي {locationId}");
+                }
+
+                ValidityControl.UpdateValidityStatment(adminId, new ValidityStatment
+                {
+                    Id = (int)oldlicence.ValidityStatId,
+                    EntryDate = newlicense.VEntryDate,
+                    InitialSupplyDate = newlicense.VInitialSupplyDate,
+                    ValidatySupplyDate = newlicense.VValidatySupplyDate,
+                    ReceiveDate = newlicense.VReceiveDate
+                });
+                Log.AddLog(adminId, "Licenses", "N/A", oldlicence.Id,
+                        "قام بتغيير بيانات بيان الصلاحية ");
+
+                if (newlicense.PlotNumber != null && oldlicence.PlotNumber == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "PlotNumber", oldlicence.Id,
+                        "قام بإضافة رقم القطعة ");
+                    oldlicence.PlotNumber = newlicense.PlotNumber;
+                }
+                else if (newlicense.PlotNumber != null && oldlicence.PlotNumber != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "PlotNumber", oldlicence.Id,
+                        $"قام بتغيير رقم القطعة من {oldlicence.PlotNumber} الي {newlicense.PlotNumber}");
+                    oldlicence.PlotNumber = newlicense.PlotNumber;
+                }
+
+                if (newlicense.Work != null && oldlicence.Work == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "Work", oldlicence.Id,
+                        "قام بإضافة رقم الاعمال ");
+                    oldlicence.Work = newlicense.Work;
+                }
+                else if (newlicense.Work != null && oldlicence.Work != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "Work", oldlicence.Id,
+                        $"قام بتغيير الاعمال من {oldlicence.Work} الي {newlicense.Work}");
+                    oldlicence.Work = newlicense.Work;
+                }
+
+                if (newlicense.Fees != null && oldlicence.Fees == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "Fees", oldlicence.Id,
+                        "قام بإضافة قيمة الاتعاب ");
+                    oldlicence.Fees = newlicense.Fees;
+                }
+                else if (newlicense.Fees != null && oldlicence.Fees != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "Fees", oldlicence.Id,
+                        $"قام بتغيير قيمة الاتعاب من {oldlicence.Fees} الي {newlicense.Fees}");
+                    oldlicence.Fees = newlicense.Fees;
+                }
+
+                if (newlicense.LicenseNumber != null && oldlicence.LicenseNumber == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "LicenseNumber", oldlicence.Id,
+                        "قام بإضافة رقم الرخصة ");
+                    oldlicence.LicenseNumber = newlicense.LicenseNumber;
+                }
+                else if (newlicense.LicenseNumber != null && oldlicence.LicenseNumber != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "LicenseNumber", oldlicence.Id,
+                        $"قام بتغيير رقم الرخصة من {oldlicence.LicenseNumber} الي {newlicense.LicenseNumber}");
+                    oldlicence.LicenseNumber = newlicense.LicenseNumber;
+                }
+
+                if (newlicense.Notes != null && oldlicence.Notes == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "Notes", oldlicence.Id,
+                        "قام بإضافة ملاحظات ");
+                    oldlicence.Notes = newlicense.Notes;
+                }
+                else if (newlicense.Notes != null && oldlicence.Notes != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "Notes", oldlicence.Id,
+                        $"قام بتغيير الملاحظات من {oldlicence.Notes} الي {newlicense.Notes}");
+                    oldlicence.Notes = newlicense.Notes;
+                }
+
+                if (newlicense.LEntryDate != null && oldlicence.EntryDate == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "EntryDate", oldlicence.Id,
+                        "قام بإضافة تاريخ الدخول ");
+                    oldlicence.EntryDate = newlicense.LEntryDate;
+                }
+                else if (newlicense.LEntryDate != null && oldlicence.EntryDate != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "EntryDate", oldlicence.Id,
+                        $"قام بتغيير  تاريخ الدخول من {oldlicence.EntryDate} الي {newlicense.LEntryDate}");
+                    oldlicence.EntryDate = newlicense.LEntryDate;
+                }
+
+                if (newlicense.LExaminationFeeDate != null && oldlicence.ExaminationFeeDate == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "ExaminationFeeDate", oldlicence.Id,
+                        "قام بإضافة تاريخ رسم الفحص ");
+                    oldlicence.ExaminationFeeDate = newlicense.LExaminationFeeDate;
+                }
+                else if (newlicense.LExaminationFeeDate != null && oldlicence.ExaminationFeeDate != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "ExaminationFeeDate", oldlicence.Id,
+                        $"قام بتغيير  تاريخ رسم الفحص من {oldlicence.ExaminationFeeDate} الي {newlicense.LExaminationFeeDate}");
+                    oldlicence.ExaminationFeeDate = newlicense.LExaminationFeeDate;
+                }
+
+                if (newlicense.LFeesPaymentDate != null && oldlicence.FeesPaymentDate == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "FeesPaymentDate", oldlicence.Id,
+                        "قام بإضافة تاريخ دفع الرسوم ");
+                    oldlicence.FeesPaymentDate = newlicense.LFeesPaymentDate;
+                }
+                else if (newlicense.LFeesPaymentDate != null && oldlicence.FeesPaymentDate != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "FeesPaymentDate", oldlicence.Id,
+                        $"قام بتغيير  تاريخ دفع الرسوم من {oldlicence.FeesPaymentDate} الي {newlicense.LFeesPaymentDate}");
+                    oldlicence.FeesPaymentDate = newlicense.LFeesPaymentDate;
+                }
+
+                if (newlicense.LSignatureDate != null && oldlicence.SignatureDate == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "SignatureDate", oldlicence.Id,
+                        "قام بإضافة تاريخ التوقيع ");
+                    oldlicence.SignatureDate = newlicense.LSignatureDate;
+                }
+                else if (newlicense.LSignatureDate != null && oldlicence.SignatureDate != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "SignatureDate", oldlicence.Id,
+                        $"قام بتغيير  تاريخ التوقيع من {oldlicence.SignatureDate} الي {newlicense.LSignatureDate}");
+                    oldlicence.SignatureDate = newlicense.LSignatureDate;
+                }
+
+                if (newlicense.LReceiveDate != null && oldlicence.ReceiveDate == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "ReceiveDate", oldlicence.Id,
+                        "قام بإضافة تاريخ التوقيع ");
+                    oldlicence.ReceiveDate = newlicense.LReceiveDate;
+                }
+                else if (newlicense.LReceiveDate != null && oldlicence.ReceiveDate != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "ReceiveDate", oldlicence.Id,
+                        $"قام بتغيير  تاريخ التوقيع من {oldlicence.ReceiveDate} الي {newlicense.LReceiveDate}");
+                    oldlicence.ReceiveDate = newlicense.LReceiveDate;
+                }
+                oldlicence.LastUpdate = newlicense.LastUptate;
+                context.SaveChanges();
+                return 1;
+            }catch (Exception ex)
+            {
+                errHandle.AddExeption(ex, "LicenseController", "UpdateLicense",DateTime.Now);
+                return -1;
+            }
         }
     }
 }

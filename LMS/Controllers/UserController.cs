@@ -53,5 +53,20 @@ namespace LMS.Controllers
         {
             return context.Users.Any(user=>user.NationalId == nationalId);
         }
+        public int UpdateUser(int adminId, User user)
+        {
+            var oldUser = context.Users.FirstOrDefault(u => u.NationalId == user.NationalId);
+            string name = oldUser.Name;
+            oldUser.Name = user.Name;
+            int result = context.SaveChanges();
+            if (result > 0)
+            {
+                LogControl.
+                    AddLog(adminId, "Users", "Name", oldUser.Id,
+                    $"قام بتغيير اسم المستخدم من {name} الي {user.Name}");
+                return result;
+            }
+            return -1;
+        }
     }
 }
