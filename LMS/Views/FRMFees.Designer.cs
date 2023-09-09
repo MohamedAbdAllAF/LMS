@@ -35,30 +35,31 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMFees));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAddFee = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnDelete = new Bunifu.Framework.UI.BunifuTileButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDisplay = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.btnVInitialSupplyDate = new Bunifu.Framework.UI.BunifuImageButton();
-            this.picVInitialSupplyDate = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.txtVInitialSupplyDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtFeeAmount = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.btnFeeDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.picFeeDate = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.txtFeeDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblRemaining = new System.Windows.Forms.Label();
+            this.lblFees = new System.Windows.Forms.Label();
+            this.lblPaid = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVInitialSupplyDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFeeDate)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -73,18 +74,72 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.groupBox8);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblRemaining);
+            this.panel1.Controls.Add(this.lblFees);
+            this.panel1.Controls.Add(this.lblPaid);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1025, 659);
+            this.panel1.Size = new System.Drawing.Size(1025, 500);
             this.panel1.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnAddFee);
+            this.groupBox2.Controls.Add(this.btnDelete);
+            this.groupBox2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox2.Location = new System.Drawing.Point(6, 345);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox2.Size = new System.Drawing.Size(490, 141);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "عمليات";
+            // 
+            // btnAddFee
+            // 
+            this.btnAddFee.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddFee.color = System.Drawing.Color.CornflowerBlue;
+            this.btnAddFee.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnAddFee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFee.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnAddFee.ForeColor = System.Drawing.Color.White;
+            this.btnAddFee.Image = global::LMS.Properties.Resources.icons8_add_40;
+            this.btnAddFee.ImagePosition = 10;
+            this.btnAddFee.ImageZoom = 25;
+            this.btnAddFee.LabelPosition = 35;
+            this.btnAddFee.LabelText = "إضافة مبلغ";
+            this.btnAddFee.Location = new System.Drawing.Point(291, 29);
+            this.btnAddFee.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddFee.Name = "btnAddFee";
+            this.btnAddFee.Size = new System.Drawing.Size(152, 82);
+            this.btnAddFee.TabIndex = 9;
+            this.btnAddFee.Click += new System.EventHandler(this.btnAddFee_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.color = System.Drawing.Color.Red;
+            this.btnDelete.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = global::LMS.Properties.Resources.icons8_close_40;
+            this.btnDelete.ImagePosition = 10;
+            this.btnDelete.ImageZoom = 25;
+            this.btnDelete.LabelPosition = 35;
+            this.btnDelete.LabelText = "حذف مبلغ";
+            this.btnDelete.Location = new System.Drawing.Point(47, 29);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(152, 82);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // groupBox1
             // 
@@ -94,7 +149,7 @@
             this.groupBox1.Location = new System.Drawing.Point(502, 181);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(517, 360);
+            this.groupBox1.Size = new System.Drawing.Size(517, 305);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "سجل الدفع";
@@ -118,10 +173,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,16 +200,16 @@
             this.dgvDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDisplay.RowTemplate.Height = 30;
             this.dgvDisplay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDisplay.Size = new System.Drawing.Size(511, 332);
+            this.dgvDisplay.Size = new System.Drawing.Size(511, 277);
             this.dgvDisplay.TabIndex = 2;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.label7);
-            this.groupBox8.Controls.Add(this.bunifuMetroTextbox1);
-            this.groupBox8.Controls.Add(this.btnVInitialSupplyDate);
-            this.groupBox8.Controls.Add(this.picVInitialSupplyDate);
-            this.groupBox8.Controls.Add(this.txtVInitialSupplyDate);
+            this.groupBox8.Controls.Add(this.txtFeeAmount);
+            this.groupBox8.Controls.Add(this.btnFeeDate);
+            this.groupBox8.Controls.Add(this.picFeeDate);
+            this.groupBox8.Controls.Add(this.txtFeeDate);
             this.groupBox8.Controls.Add(this.label5);
             this.groupBox8.Controls.Add(this.label6);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,70 +232,70 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "قيمة المبلغ";
             // 
-            // bunifuMetroTextbox1
+            // txtFeeAmount
             // 
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.Red;
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.Red;
-            this.bunifuMetroTextbox1.BorderThickness = 2;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox1.Enabled = false;
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(106, 111);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(275, 35);
-            this.bunifuMetroTextbox1.TabIndex = 6;
-            this.bunifuMetroTextbox1.TabStop = false;
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFeeAmount.BorderColorFocused = System.Drawing.Color.Red;
+            this.txtFeeAmount.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
+            this.txtFeeAmount.BorderColorMouseHover = System.Drawing.Color.Red;
+            this.txtFeeAmount.BorderThickness = 2;
+            this.txtFeeAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFeeAmount.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtFeeAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtFeeAmount.isPassword = false;
+            this.txtFeeAmount.Location = new System.Drawing.Point(106, 111);
+            this.txtFeeAmount.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFeeAmount.Name = "txtFeeAmount";
+            this.txtFeeAmount.Size = new System.Drawing.Size(275, 35);
+            this.txtFeeAmount.TabIndex = 6;
+            this.txtFeeAmount.TabStop = false;
+            this.txtFeeAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // btnVInitialSupplyDate
+            // btnFeeDate
             // 
-            this.btnVInitialSupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnVInitialSupplyDate.Image = ((System.Drawing.Image)(resources.GetObject("btnVInitialSupplyDate.Image")));
-            this.btnVInitialSupplyDate.ImageActive = null;
-            this.btnVInitialSupplyDate.Location = new System.Drawing.Point(9, 26);
-            this.btnVInitialSupplyDate.Name = "btnVInitialSupplyDate";
-            this.btnVInitialSupplyDate.Size = new System.Drawing.Size(90, 75);
-            this.btnVInitialSupplyDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnVInitialSupplyDate.TabIndex = 5;
-            this.btnVInitialSupplyDate.TabStop = false;
-            this.btnVInitialSupplyDate.Zoom = 5;
+            this.btnFeeDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnFeeDate.Image = ((System.Drawing.Image)(resources.GetObject("btnFeeDate.Image")));
+            this.btnFeeDate.ImageActive = null;
+            this.btnFeeDate.Location = new System.Drawing.Point(9, 26);
+            this.btnFeeDate.Name = "btnFeeDate";
+            this.btnFeeDate.Size = new System.Drawing.Size(90, 75);
+            this.btnFeeDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnFeeDate.TabIndex = 5;
+            this.btnFeeDate.TabStop = false;
+            this.btnFeeDate.Zoom = 5;
+            this.btnFeeDate.Click += new System.EventHandler(this.btnFeeDate_Click);
             // 
-            // picVInitialSupplyDate
+            // picFeeDate
             // 
-            this.picVInitialSupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.picVInitialSupplyDate.BorderRadius = 30;
-            this.picVInitialSupplyDate.ForeColor = System.Drawing.Color.White;
-            this.picVInitialSupplyDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.picVInitialSupplyDate.FormatCustom = null;
-            this.picVInitialSupplyDate.Location = new System.Drawing.Point(106, 24);
-            this.picVInitialSupplyDate.Margin = new System.Windows.Forms.Padding(2);
-            this.picVInitialSupplyDate.Name = "picVInitialSupplyDate";
-            this.picVInitialSupplyDate.Size = new System.Drawing.Size(275, 36);
-            this.picVInitialSupplyDate.TabIndex = 4;
-            this.picVInitialSupplyDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
+            this.picFeeDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.picFeeDate.BorderRadius = 30;
+            this.picFeeDate.ForeColor = System.Drawing.Color.White;
+            this.picFeeDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.picFeeDate.FormatCustom = null;
+            this.picFeeDate.Location = new System.Drawing.Point(106, 24);
+            this.picFeeDate.Margin = new System.Windows.Forms.Padding(2);
+            this.picFeeDate.Name = "picFeeDate";
+            this.picFeeDate.Size = new System.Drawing.Size(275, 36);
+            this.picFeeDate.TabIndex = 4;
+            this.picFeeDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
-            // txtVInitialSupplyDate
+            // txtFeeDate
             // 
-            this.txtVInitialSupplyDate.BorderColorFocused = System.Drawing.Color.Red;
-            this.txtVInitialSupplyDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
-            this.txtVInitialSupplyDate.BorderColorMouseHover = System.Drawing.Color.Red;
-            this.txtVInitialSupplyDate.BorderThickness = 2;
-            this.txtVInitialSupplyDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtVInitialSupplyDate.Enabled = false;
-            this.txtVInitialSupplyDate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtVInitialSupplyDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtVInitialSupplyDate.isPassword = false;
-            this.txtVInitialSupplyDate.Location = new System.Drawing.Point(106, 68);
-            this.txtVInitialSupplyDate.Margin = new System.Windows.Forms.Padding(4);
-            this.txtVInitialSupplyDate.Name = "txtVInitialSupplyDate";
-            this.txtVInitialSupplyDate.Size = new System.Drawing.Size(275, 35);
-            this.txtVInitialSupplyDate.TabIndex = 3;
-            this.txtVInitialSupplyDate.TabStop = false;
-            this.txtVInitialSupplyDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFeeDate.BorderColorFocused = System.Drawing.Color.Red;
+            this.txtFeeDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
+            this.txtFeeDate.BorderColorMouseHover = System.Drawing.Color.Red;
+            this.txtFeeDate.BorderThickness = 2;
+            this.txtFeeDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFeeDate.Enabled = false;
+            this.txtFeeDate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtFeeDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtFeeDate.isPassword = false;
+            this.txtFeeDate.Location = new System.Drawing.Point(106, 68);
+            this.txtFeeDate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFeeDate.Name = "txtFeeDate";
+            this.txtFeeDate.Size = new System.Drawing.Size(275, 35);
+            this.txtFeeDate.TabIndex = 3;
+            this.txtFeeDate.TabStop = false;
+            this.txtFeeDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label5
             // 
@@ -266,44 +317,44 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "أختيار التاريخ";
             // 
-            // label4
+            // lblRemaining
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(48, 500);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 29);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "المتبقي :";
+            this.lblRemaining.AutoSize = true;
+            this.lblRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemaining.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblRemaining.Location = new System.Drawing.Point(148, 73);
+            this.lblRemaining.Name = "lblRemaining";
+            this.lblRemaining.Size = new System.Drawing.Size(85, 29);
+            this.lblRemaining.TabIndex = 6;
+            this.lblRemaining.Text = "المتبقي :";
             // 
-            // label3
+            // lblFees
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label3.Location = new System.Drawing.Point(680, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 29);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "قيمة الأتعاب :";
+            this.lblFees.AutoSize = true;
+            this.lblFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFees.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblFees.Location = new System.Drawing.Point(747, 73);
+            this.lblFees.Name = "lblFees";
+            this.lblFees.Size = new System.Drawing.Size(130, 29);
+            this.lblFees.TabIndex = 5;
+            this.lblFees.Text = "قيمة الأتعاب :";
             // 
-            // label2
+            // lblPaid
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(21, 383);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 29);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "الواصل :";
+            this.lblPaid.AutoSize = true;
+            this.lblPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaid.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblPaid.Location = new System.Drawing.Point(445, 73);
+            this.lblPaid.Name = "lblPaid";
+            this.lblPaid.Size = new System.Drawing.Size(90, 29);
+            this.lblPaid.TabIndex = 4;
+            this.lblPaid.Text = "الواصل :";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 654);
+            this.panel2.Location = new System.Drawing.Point(0, 495);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1025, 5);
             this.panel2.TabIndex = 3;
@@ -318,22 +369,6 @@
             this.label1.Size = new System.Drawing.Size(124, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "إدارة الأتعاب";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.Visible = false;
             // 
             // FRMFees
             // 
@@ -350,11 +385,12 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVInitialSupplyDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFeeDate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,21 +401,21 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRemaining;
+        private System.Windows.Forms.Label lblFees;
+        private System.Windows.Forms.Label lblPaid;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
-        private Bunifu.Framework.UI.BunifuImageButton btnVInitialSupplyDate;
-        private Bunifu.Framework.UI.BunifuDatepicker picVInitialSupplyDate;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtVInitialSupplyDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtFeeAmount;
+        private Bunifu.Framework.UI.BunifuImageButton btnFeeDate;
+        private Bunifu.Framework.UI.BunifuDatepicker picFeeDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtFeeDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvDisplay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private Bunifu.Framework.UI.BunifuTileButton btnAddFee;
+        private Bunifu.Framework.UI.BunifuTileButton btnDelete;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

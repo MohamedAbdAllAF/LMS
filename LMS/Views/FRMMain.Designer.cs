@@ -111,7 +111,7 @@
             // 
             // pctDashboard
             // 
-            this.pctDashboard.Image = ((System.Drawing.Image)(resources.GetObject("pctDashboard.Image")));
+            this.pctDashboard.Image = global::LMS.Properties.Resources.lms_high_resolution_logo_color_on_transparent_background;
             this.pctDashboard.Location = new System.Drawing.Point(65, 0);
             this.pctDashboard.Name = "pctDashboard";
             this.pctDashboard.Size = new System.Drawing.Size(100, 120);

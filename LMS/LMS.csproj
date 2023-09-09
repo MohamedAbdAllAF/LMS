@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AdminLogController.cs" />
     <Compile Include="Controllers\ExceptionHandler.cs" />
+    <Compile Include="Controllers\FeesController.cs" />
     <Compile Include="Controllers\LicenseController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\FRMDashboard.resx">
       <DependentUpon>FRMDashboard.cs</DependentUpon>
@@ -226,6 +228,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LMSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\lms-high-resolution-logo-color-on-transparent-background.png" />
+    <None Include="Resources\icons8-search-40.png" />
+    <None Include="Resources\icons8-money-40.png" />
+    <None Include="Resources\icons8-edit-40.png" />
+    <None Include="Resources\icons8-add-40.png" />
+    <None Include="Resources\icons8-close-40.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

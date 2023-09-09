@@ -189,6 +189,7 @@ namespace LMS.Views
                     message += error+"\n";
                 }
                 MessageBox.Show(message);
+                errorMessages.Clear();
             }
             else
             {

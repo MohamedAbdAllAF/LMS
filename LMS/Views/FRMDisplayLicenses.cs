@@ -154,5 +154,16 @@ namespace LMS.Views
             }
             else MessageBox.Show("اختر الرخصة المراد تعديلها");
         }
+
+        private void btnFees_Click(object sender, EventArgs e)
+        {
+            if (dgvDisplay.Rows.Count > 0)
+            {
+                string id = dgvDisplay.CurrentRow.Cells[0].Value.ToString();
+                FRMMain frm = (FRMMain)Application.OpenForms["FRMMain"];
+                frm.LoadForm(new FRMFees(1, Convert.ToInt32(id)));
+            }
+            else MessageBox.Show("اختر الرخصة أولاً");
+        }
     }
 }

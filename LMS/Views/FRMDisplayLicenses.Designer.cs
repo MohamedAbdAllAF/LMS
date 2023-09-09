@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMDisplayLicenses));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,7 +36,6 @@
             this.flowLayoutPanelMain = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new Bunifu.Framework.UI.BunifuTileButton();
             this.rbtnLocation = new System.Windows.Forms.RadioButton();
             this.grpLocation = new System.Windows.Forms.GroupBox();
             this.txtLocation = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -67,10 +65,12 @@
             this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plotNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.searchVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pnlOperations = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSearch = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnFees = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDetails = new Bunifu.Framework.UI.BunifuTileButton();
+            this.searchVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanelMain.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -79,8 +79,8 @@
             this.grpAgent.SuspendLayout();
             this.pnlDataContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).BeginInit();
             this.pnlOperations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanelMain
@@ -123,26 +123,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "طريقة البحث";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnSearch.color = System.Drawing.Color.CornflowerBlue;
-            this.btnSearch.colorActive = System.Drawing.Color.LightSkyBlue;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImagePosition = 15;
-            this.btnSearch.ImageZoom = 20;
-            this.btnSearch.LabelPosition = 35;
-            this.btnSearch.LabelText = "بحث";
-            this.btnSearch.Location = new System.Drawing.Point(7, 40);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(152, 82);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // rbtnLocation
             // 
@@ -529,12 +509,9 @@
             this.panel3.Size = new System.Drawing.Size(1025, 5);
             this.panel3.TabIndex = 0;
             // 
-            // searchVMBindingSource1
-            // 
-            this.searchVMBindingSource1.DataSource = typeof(LMS.ViewModel.SearchVM);
-            // 
             // pnlOperations
             // 
+            this.pnlOperations.Controls.Add(this.btnFees);
             this.pnlOperations.Controls.Add(this.btnDetails);
             this.pnlOperations.Controls.Add(this.panel2);
             this.pnlOperations.Dock = System.Windows.Forms.DockStyle.Top;
@@ -552,6 +529,46 @@
             this.panel2.Size = new System.Drawing.Size(1025, 5);
             this.panel2.TabIndex = 3;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSearch.color = System.Drawing.Color.CornflowerBlue;
+            this.btnSearch.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::LMS.Properties.Resources.icons8_search_40;
+            this.btnSearch.ImagePosition = 15;
+            this.btnSearch.ImageZoom = 20;
+            this.btnSearch.LabelPosition = 35;
+            this.btnSearch.LabelText = "بحث";
+            this.btnSearch.Location = new System.Drawing.Point(7, 40);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(152, 82);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnFees
+            // 
+            this.btnFees.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnFees.color = System.Drawing.Color.CornflowerBlue;
+            this.btnFees.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnFees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFees.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnFees.ForeColor = System.Drawing.Color.White;
+            this.btnFees.Image = global::LMS.Properties.Resources.icons8_money_40;
+            this.btnFees.ImagePosition = 10;
+            this.btnFees.ImageZoom = 25;
+            this.btnFees.LabelPosition = 35;
+            this.btnFees.LabelText = "الأتعاب";
+            this.btnFees.Location = new System.Drawing.Point(679, 22);
+            this.btnFees.Margin = new System.Windows.Forms.Padding(6);
+            this.btnFees.Name = "btnFees";
+            this.btnFees.Size = new System.Drawing.Size(152, 82);
+            this.btnFees.TabIndex = 8;
+            this.btnFees.Click += new System.EventHandler(this.btnFees_Click);
+            // 
             // btnDetails
             // 
             this.btnDetails.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -560,7 +577,7 @@
             this.btnDetails.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetails.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnDetails.ForeColor = System.Drawing.Color.White;
-            this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
+            this.btnDetails.Image = global::LMS.Properties.Resources.icons8_edit_40;
             this.btnDetails.ImagePosition = 10;
             this.btnDetails.ImageZoom = 25;
             this.btnDetails.LabelPosition = 35;
@@ -571,6 +588,10 @@
             this.btnDetails.Size = new System.Drawing.Size(152, 82);
             this.btnDetails.TabIndex = 7;
             this.btnDetails.Click += new System.EventHandler(this.btndetails_Click);
+            // 
+            // searchVMBindingSource1
+            // 
+            this.searchVMBindingSource1.DataSource = typeof(LMS.ViewModel.SearchVM);
             // 
             // FRMDisplayLicenses
             // 
@@ -598,8 +619,8 @@
             this.grpAgent.PerformLayout();
             this.pnlDataContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).EndInit();
             this.pnlOperations.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -645,5 +666,6 @@
         private System.Windows.Forms.Panel pnlOperations;
         private Bunifu.Framework.UI.BunifuTileButton btnDetails;
         private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuTileButton btnFees;
     }
 }
