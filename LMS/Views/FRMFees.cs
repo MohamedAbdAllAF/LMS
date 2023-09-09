@@ -69,10 +69,10 @@ namespace LMS.Views
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("هل تريد الحذف", "تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                == DialogResult.Yes)
+            if (dgvDisplay.Rows.Count > 0)
             {
-                if (dgvDisplay.Rows.Count > 0)
+                if (MessageBox.Show("هل تريد الحذف", "تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    == DialogResult.Yes)
                 {
                     string id = dgvDisplay.CurrentRow.Cells[0].Value.ToString();
                     if (feesController.DeleteFee(Convert.ToInt32(id)))
@@ -81,8 +81,8 @@ namespace LMS.Views
                         MessageBox.Show("لم يتم الحذف");
                     LoadData();
                 }
-                else MessageBox.Show("اختر الرخصة أولاً");
             }
+            else MessageBox.Show("اختر الرخصة أولاً");
         }
 
         public void LoadData()
