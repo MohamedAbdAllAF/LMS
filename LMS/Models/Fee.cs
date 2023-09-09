@@ -16,6 +16,8 @@ namespace LMS.Models
 
         public decimal Amount { get; set; }
 
+        public DateTime CreatedOn { get; set; }
+
         public virtual license licenses { get; set; }
     }
 }

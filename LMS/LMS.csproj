@@ -93,6 +93,10 @@
     <Compile Include="Migrations\202309020205321_ser.designer.cs">
       <DependentUpon>202309020205321_ser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309090312311_addTimeOnFees.cs" />
+    <Compile Include="Migrations\202309090312311_addTimeOnFees.designer.cs">
+      <DependentUpon>202309090312311_addTimeOnFees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Fee.cs" />
@@ -103,6 +107,7 @@
     <Compile Include="Models\SuperAdmin.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\ValidityStatment.cs" />
+    <Compile Include="ViewModel\FeesVM.cs" />
     <Compile Include="ViewModel\LicenseVM.cs" />
     <Compile Include="ViewModel\SearchVM.cs" />
     <Compile Include="Views\FRMDashboard.cs">
@@ -116,6 +121,12 @@
     </Compile>
     <Compile Include="Views\FRMDisplayLicenses.Designer.cs">
       <DependentUpon>FRMDisplayLicenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FRMFees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FRMFees.Designer.cs">
+      <DependentUpon>FRMFees.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FRMLogin.cs">
       <SubType>Form</SubType>
@@ -146,6 +157,9 @@
     <EmbeddedResource Include="Migrations\202309020205321_ser.resx">
       <DependentUpon>202309020205321_ser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309090312311_addTimeOnFees.resx">
+      <DependentUpon>202309090312311_addTimeOnFees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -160,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FRMDisplayLicenses.resx">
       <DependentUpon>FRMDisplayLicenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FRMFees.resx">
+      <DependentUpon>FRMFees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FRMLogin.resx">
       <DependentUpon>FRMLogin.cs</DependentUpon>

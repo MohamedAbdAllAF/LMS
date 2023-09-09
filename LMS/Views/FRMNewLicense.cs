@@ -24,6 +24,7 @@ namespace LMS.Views
         public FRMNewLicense(int adminId)
         {
             InitializeComponent();
+            InitializeDatePicker();
             AdminId = adminId;
         }
 
@@ -33,11 +34,13 @@ namespace LMS.Views
             AdminId = adminId;
             status = _status;
             licenseId = _licenseId;
+            InitializeDatePicker();
             if (status == "Edit")
             {
                 lblTitle.Text = "تعديل رخصة";
                 lblCreatedOn.Visible = true;
                 lblLastUpdate.Visible = true;
+                LoadData();
             }
         }
 
@@ -108,6 +111,19 @@ namespace LMS.Views
             #endregion
         }
 
+        public void InitializeDatePicker()
+        {
+            picVEntryDate.Value = DateTime.Now;
+            picVInitialSupplyDate.Value = DateTime.Now;
+            picVValidatySupplyDate.Value = DateTime.Now;
+            picVReceiveDate.Value = DateTime.Now;
+            picLEntryDate.Value = DateTime.Now;
+            picLExaminationFeeDate.Value = DateTime.Now;
+            picLFeesPaymentDate.Value = DateTime.Now;
+            picLSignatureDate.Value = DateTime.Now;
+            picVEntryDate.Value = DateTime.Now;
+        }
+
         private void FRMNewLicense_Load(object sender, EventArgs e)
         {
             #region txtLocation AutoComplete
@@ -118,7 +134,6 @@ namespace LMS.Views
             }
             txtLocation.AutoCompleteCustomSource = ac;
             #endregion
-            LoadData();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
