@@ -94,7 +94,7 @@ namespace LMS.Controllers
             List<LicenseVM> result = new List<LicenseVM>();
 
             var licenses = context.Licenses.Where(
-                l => l.CreatedOn > new DateTime(2023,9,6)).ToList();
+                l => l.CreatedOn > new DateTime(2023,9,3) && l.CreatedOn <= new DateTime(2023,9,6,23,59,59)).ToList();
 
             foreach (var license in licenses)
             {

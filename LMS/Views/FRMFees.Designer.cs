@@ -36,14 +36,11 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnAddFee = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnDelete = new Bunifu.Framework.UI.BunifuTileButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDisplay = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtFeeAmount = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.btnFeeDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picFeeDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtFeeDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,6 +50,10 @@
             this.lblPaid = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAddFee = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnDelete = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnFeeDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -60,12 +61,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFeeDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -85,7 +88,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1025, 500);
+            this.panel1.Size = new System.Drawing.Size(1025, 433);
             this.panel1.TabIndex = 0;
             // 
             // groupBox2
@@ -93,7 +96,7 @@
             this.groupBox2.Controls.Add(this.btnAddFee);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox2.Location = new System.Drawing.Point(6, 345);
+            this.groupBox2.Location = new System.Drawing.Point(6, 281);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox2.Size = new System.Drawing.Size(490, 141);
@@ -101,52 +104,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "عمليات";
             // 
-            // btnAddFee
-            // 
-            this.btnAddFee.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnAddFee.color = System.Drawing.Color.CornflowerBlue;
-            this.btnAddFee.colorActive = System.Drawing.Color.LightSkyBlue;
-            this.btnAddFee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFee.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnAddFee.ForeColor = System.Drawing.Color.White;
-            this.btnAddFee.Image = global::LMS.Properties.Resources.icons8_add_40;
-            this.btnAddFee.ImagePosition = 10;
-            this.btnAddFee.ImageZoom = 25;
-            this.btnAddFee.LabelPosition = 35;
-            this.btnAddFee.LabelText = "إضافة مبلغ";
-            this.btnAddFee.Location = new System.Drawing.Point(291, 29);
-            this.btnAddFee.Margin = new System.Windows.Forms.Padding(6);
-            this.btnAddFee.Name = "btnAddFee";
-            this.btnAddFee.Size = new System.Drawing.Size(152, 82);
-            this.btnAddFee.TabIndex = 9;
-            this.btnAddFee.Click += new System.EventHandler(this.btnAddFee_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
-            this.btnDelete.color = System.Drawing.Color.Red;
-            this.btnDelete.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = global::LMS.Properties.Resources.icons8_close_40;
-            this.btnDelete.ImagePosition = 10;
-            this.btnDelete.ImageZoom = 25;
-            this.btnDelete.LabelPosition = 35;
-            this.btnDelete.LabelText = "حذف مبلغ";
-            this.btnDelete.Location = new System.Drawing.Point(47, 29);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(152, 82);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvDisplay);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox1.Location = new System.Drawing.Point(502, 181);
+            this.groupBox1.Location = new System.Drawing.Point(502, 117);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox1.Size = new System.Drawing.Size(517, 305);
@@ -214,7 +177,7 @@
             this.groupBox8.Controls.Add(this.label6);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox8.Location = new System.Drawing.Point(6, 181);
+            this.groupBox8.Location = new System.Drawing.Point(9, 117);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox8.Size = new System.Drawing.Size(490, 158);
@@ -249,20 +212,6 @@
             this.txtFeeAmount.TabIndex = 6;
             this.txtFeeAmount.TabStop = false;
             this.txtFeeAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // btnFeeDate
-            // 
-            this.btnFeeDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnFeeDate.Image = ((System.Drawing.Image)(resources.GetObject("btnFeeDate.Image")));
-            this.btnFeeDate.ImageActive = null;
-            this.btnFeeDate.Location = new System.Drawing.Point(9, 26);
-            this.btnFeeDate.Name = "btnFeeDate";
-            this.btnFeeDate.Size = new System.Drawing.Size(90, 75);
-            this.btnFeeDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnFeeDate.TabIndex = 5;
-            this.btnFeeDate.TabStop = false;
-            this.btnFeeDate.Zoom = 5;
-            this.btnFeeDate.Click += new System.EventHandler(this.btnFeeDate_Click);
             // 
             // picFeeDate
             // 
@@ -354,7 +303,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 495);
+            this.panel2.Location = new System.Drawing.Point(0, 428);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1025, 5);
             this.panel2.TabIndex = 3;
@@ -369,6 +318,70 @@
             this.label1.Size = new System.Drawing.Size(124, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "إدارة الأتعاب";
+            // 
+            // btnAddFee
+            // 
+            this.btnAddFee.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddFee.color = System.Drawing.Color.CornflowerBlue;
+            this.btnAddFee.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnAddFee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFee.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnAddFee.ForeColor = System.Drawing.Color.White;
+            this.btnAddFee.Image = global::LMS.Properties.Resources.icons8_add_40;
+            this.btnAddFee.ImagePosition = 10;
+            this.btnAddFee.ImageZoom = 25;
+            this.btnAddFee.LabelPosition = 35;
+            this.btnAddFee.LabelText = "إضافة مبلغ";
+            this.btnAddFee.Location = new System.Drawing.Point(291, 29);
+            this.btnAddFee.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddFee.Name = "btnAddFee";
+            this.btnAddFee.Size = new System.Drawing.Size(152, 82);
+            this.btnAddFee.TabIndex = 9;
+            this.btnAddFee.Click += new System.EventHandler(this.btnAddFee_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.color = System.Drawing.Color.Red;
+            this.btnDelete.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = global::LMS.Properties.Resources.icons8_close_40;
+            this.btnDelete.ImagePosition = 10;
+            this.btnDelete.ImageZoom = 25;
+            this.btnDelete.LabelPosition = 35;
+            this.btnDelete.LabelText = "حذف مبلغ";
+            this.btnDelete.Location = new System.Drawing.Point(47, 29);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(152, 82);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnFeeDate
+            // 
+            this.btnFeeDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnFeeDate.Image = ((System.Drawing.Image)(resources.GetObject("btnFeeDate.Image")));
+            this.btnFeeDate.ImageActive = null;
+            this.btnFeeDate.Location = new System.Drawing.Point(9, 26);
+            this.btnFeeDate.Name = "btnFeeDate";
+            this.btnFeeDate.Size = new System.Drawing.Size(90, 75);
+            this.btnFeeDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnFeeDate.TabIndex = 5;
+            this.btnFeeDate.TabStop = false;
+            this.btnFeeDate.Zoom = 5;
+            this.btnFeeDate.Click += new System.EventHandler(this.btnFeeDate_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LMS.Properties.Resources.slyAlaElnaby;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 442);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1025, 267);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // FRMFees
             // 
@@ -391,6 +404,7 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFeeDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -417,5 +431,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnAddFee;
         private Bunifu.Framework.UI.BunifuTileButton btnDelete;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

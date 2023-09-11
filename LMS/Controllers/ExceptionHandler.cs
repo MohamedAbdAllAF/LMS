@@ -20,7 +20,7 @@ namespace LMS.Controllers
                 string Message = DateTime.Now + " => 'Class: " + className + " Method: "+ functionName + "' Erorr: \"" + expt.Message + "\"\n";
                 File.AppendAllText(filePath, Message);
             }
-            catch (Exception ex) { }
+            catch (Exception) { }
         }
     }
 }
