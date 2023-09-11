@@ -1,10 +1,12 @@
-﻿using LMS.Models;
+﻿using Bunifu.Framework;
+using LMS.Models;
 using LMS.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -73,6 +75,61 @@ namespace LMS.Controllers
                 errHandle.AddExeption(ex, "LicenseController", "AddLicense", DateTime.Now);
                 return false;
             }
+        }
+
+        public DateTime? DateFormat(DateTime? _date)
+        {
+            if (_date == null)
+                return null;
+            else
+            {
+                DateTime newDate = (DateTime)_date;
+                newDate = new DateTime(newDate.Year, newDate.Month, newDate.Day);
+                return newDate;
+            }
+        }
+
+        public List<LicenseVM> GetAllLicensesForReports()
+        {
+            List<LicenseVM> result = new List<LicenseVM>();
+
+            var licenses = context.Licenses.Where(
+                l => l.CreatedOn > new DateTime(2023,9,6)).ToList();
+
+            foreach (var license in licenses)
+            {
+                LicenseVM licenseVM;
+                var owner = context.Users.FirstOrDefault(u => u.Id == license.OwnerID);
+                var agent = context.Users.FirstOrDefault(u => u.Id == license.AgentID);
+                var location = context.Locations.FirstOrDefault(l => l.Id == license.LocationId);
+                var validationStat = context.validityStatments.FirstOrDefault(v => v.Id == license.ValidityStatId);
+
+                licenseVM = new LicenseVM
+                {
+                    OwnarName = owner.Name,
+                    OwnarNationalId = owner.NationalId,
+                    AgentName = agent.Name,
+                    AgentNationalId = agent.NationalId,
+                    Location = location.Name,
+                    PlotNumber = license.PlotNumber,
+                    Work = license.Work,
+                    Fees = license.Fees,
+                    LicenseNumber = license.LicenseNumber,
+                    Notes = license.Notes,
+                    VEntryDate = DateFormat(validationStat.EntryDate),
+                    //VInitialSupplyDate = DateFormat((DateTime)validationStat.InitialSupplyDate),
+                    //VReceiveDate = DateFormat((DateTime)validationStat.ReceiveDate),
+                    //VValidatySupplyDate = DateFormat((DateTime)validationStat.ValidatySupplyDate),
+                    LEntryDate = DateFormat(license.EntryDate),
+                    LExaminationFeeDate = DateFormat(license.ExaminationFeeDate),
+                    //LFeesPaymentDate = DateFormat((DateTime)license.FeesPaymentDate),
+                    //LReceiveDate = DateFormat((DateTime)license.ReceiveDate),
+                    //LSignatureDate = DateFormat((DateTime)license.SignatureDate),
+                    //CreatedOn = (DateTime)DateFormat((DateTime)license.CreatedOn)
+                };
+                result.Add(licenseVM);
+            }
+            return result;
         }
 
         public LicenseVM DisplayLicense(int licenseId)
