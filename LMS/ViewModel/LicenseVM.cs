@@ -20,6 +20,8 @@ namespace LMS.ViewModel
         public string Notes { get; set; }
         public DateTime? LEntryDate { get; set; }
         public DateTime? LExaminationFeeDate { get; set; }
+        public DateTime? LInitialSupplyDate { get; set; }
+        public DateTime? LFinalPaymentDate { get; set; }
         public DateTime? LFeesPaymentDate { get; set; }
         public DateTime? LSignatureDate { get; set; }
         public DateTime? LReceiveDate { get; set; }

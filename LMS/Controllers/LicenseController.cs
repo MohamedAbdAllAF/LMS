@@ -57,6 +57,10 @@ namespace LMS.Controllers
                     Log.AddLog(adminId, "licenses", "LicenseNumber", recId, "قام بإضافة رقم الرخصة");
                 if (license.EntryDate != null)
                     Log.AddLog(adminId, "licenses", "EntryDate", recId, "قام بإضافة تاريخ الدخول للرخصة");
+                if (license.InitialSupplyDate != null)
+                    Log.AddLog(adminId, "licenses", "InitialSupplyDate", recId, "قام بإضافة تاريخ الدفع الأولي");
+                if (license.FinalPaymentDate != null)
+                    Log.AddLog(adminId, "licenses", "FinalPaymentDate", recId, "قام بإضافة تاريخ الدفع النهائي");
                 if (license.ExaminationFeeDate != null)
                     Log.AddLog(adminId, "licenses", "ExaminationFeeDate", recId, "قام بإضافة تاريخ رسم الفحص للرخصة");
                 if (license.FeesPaymentDate != null)
@@ -93,8 +97,7 @@ namespace LMS.Controllers
         {
             List<LicenseVM> result = new List<LicenseVM>();
 
-            var licenses = context.Licenses.Where(
-                l => l.CreatedOn > new DateTime(2023,9,3) && l.CreatedOn <= new DateTime(2023,9,6,23,59,59)).ToList();
+            var licenses = context.Licenses.ToList();
 
             foreach (var license in licenses)
             {
@@ -117,11 +120,57 @@ namespace LMS.Controllers
                     LicenseNumber = license.LicenseNumber,
                     Notes = license.Notes,
                     VEntryDate = DateFormat(validationStat.EntryDate),
-                    //VInitialSupplyDate = DateFormat((DateTime)validationStat.InitialSupplyDate),
+                    VInitialSupplyDate = DateFormat(validationStat.InitialSupplyDate),
+                    VValidatySupplyDate = DateFormat(validationStat.ValidatySupplyDate),
                     //VReceiveDate = DateFormat((DateTime)validationStat.ReceiveDate),
-                    //VValidatySupplyDate = DateFormat((DateTime)validationStat.ValidatySupplyDate),
                     LEntryDate = DateFormat(license.EntryDate),
+                    LInitialSupplyDate =DateFormat(license.InitialSupplyDate),
                     LExaminationFeeDate = DateFormat(license.ExaminationFeeDate),
+                    LFinalPaymentDate = DateFormat(license.FinalPaymentDate),
+                    //LFeesPaymentDate = DateFormat((DateTime)license.FeesPaymentDate),
+                    //LReceiveDate = DateFormat((DateTime)license.ReceiveDate),
+                    //LSignatureDate = DateFormat((DateTime)license.SignatureDate),
+                    //CreatedOn = (DateTime)DateFormat((DateTime)license.CreatedOn)
+                };
+                result.Add(licenseVM);
+            }
+            return result;
+        }
+
+        public List<LicenseVM> GetAllLicensesInRange(DateTime From,DateTime To)
+        {
+            List<LicenseVM> result = new List<LicenseVM>();
+
+            var licenses = context.Licenses.Where(l => l.CreatedOn >= From && l.CreatedOn <= To).ToList();
+
+            foreach (var license in licenses)
+            {
+                LicenseVM licenseVM;
+                var owner = context.Users.FirstOrDefault(u => u.Id == license.OwnerID);
+                var agent = context.Users.FirstOrDefault(u => u.Id == license.AgentID);
+                var location = context.Locations.FirstOrDefault(l => l.Id == license.LocationId);
+                var validationStat = context.validityStatments.FirstOrDefault(v => v.Id == license.ValidityStatId);
+
+                licenseVM = new LicenseVM
+                {
+                    OwnarName = owner.Name,
+                    OwnarNationalId = owner.NationalId,
+                    AgentName = agent.Name,
+                    AgentNationalId = agent.NationalId,
+                    Location = location.Name,
+                    PlotNumber = license.PlotNumber,
+                    Work = license.Work,
+                    Fees = license.Fees,
+                    LicenseNumber = license.LicenseNumber,
+                    Notes = license.Notes,
+                    VEntryDate = DateFormat(validationStat.EntryDate),
+                    VInitialSupplyDate = DateFormat(validationStat.InitialSupplyDate),
+                    VValidatySupplyDate = DateFormat(validationStat.ValidatySupplyDate),
+                    //VReceiveDate = DateFormat((DateTime)validationStat.ReceiveDate),
+                    LEntryDate = DateFormat(license.EntryDate),
+                    LInitialSupplyDate = DateFormat(license.InitialSupplyDate),
+                    LExaminationFeeDate = DateFormat(license.ExaminationFeeDate),
+                    LFinalPaymentDate = DateFormat(license.FinalPaymentDate),
                     //LFeesPaymentDate = DateFormat((DateTime)license.FeesPaymentDate),
                     //LReceiveDate = DateFormat((DateTime)license.ReceiveDate),
                     //LSignatureDate = DateFormat((DateTime)license.SignatureDate),
@@ -159,6 +208,8 @@ namespace LMS.Controllers
                 VReceiveDate = validationStat.ReceiveDate,
                 VValidatySupplyDate = validationStat.ValidatySupplyDate,
                 LEntryDate = license.EntryDate,
+                LInitialSupplyDate = license.InitialSupplyDate,
+                LFinalPaymentDate = license.FinalPaymentDate,
                 LExaminationFeeDate = license.ExaminationFeeDate,
                 LFeesPaymentDate = license.FeesPaymentDate,
                 LReceiveDate = license.ReceiveDate,
@@ -479,6 +530,8 @@ namespace LMS.Controllers
                     LicenseNumber = license.LicenseNumber,
                     Notes = license.Notes,
                     LEntryDate = license.EntryDate,
+                    LInitialSupplyDate = license.InitialSupplyDate,
+                    LFinalPaymentDate = license.FinalPaymentDate,
                     LExaminationFeeDate = license.ExaminationFeeDate,
                     LFeesPaymentDate = license.FeesPaymentDate,
                     LSignatureDate = license.SignatureDate,
@@ -645,6 +698,32 @@ namespace LMS.Controllers
                     Log.AddLog(adminId, "Licenses", "EntryDate", oldlicence.Id,
                         $"قام بتغيير  تاريخ الدخول من {oldlicence.EntryDate} الي {newlicense.LEntryDate}");
                     oldlicence.EntryDate = newlicense.LEntryDate;
+                }
+
+                if (newlicense.LInitialSupplyDate != null && oldlicence.InitialSupplyDate == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "InitialSupplyDate", oldlicence.Id,
+                        "قام بإضافة تاريخ دفع أولي ");
+                    oldlicence.InitialSupplyDate = newlicense.LInitialSupplyDate;
+                }
+                else if (newlicense.LInitialSupplyDate != null && oldlicence.InitialSupplyDate != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "InitialSupplyDate", oldlicence.Id,
+                        $"قام بتغيير  تاريخ دفع أولي من {oldlicence.InitialSupplyDate} الي {newlicense.LInitialSupplyDate}");
+                    oldlicence.InitialSupplyDate = newlicense.LInitialSupplyDate;
+                }
+
+                if (newlicense.LFinalPaymentDate != null && oldlicence.FinalPaymentDate == null)
+                {
+                    Log.AddLog(adminId, "Licenses", "InitialSupplyDate", oldlicence.Id,
+                        "قام بإضافة تاريخ دفع أولي ");
+                    oldlicence.FinalPaymentDate = newlicense.LFinalPaymentDate;
+                }
+                else if (newlicense.LFinalPaymentDate != null && oldlicence.FinalPaymentDate != null)
+                {
+                    Log.AddLog(adminId, "Licenses", "FinalPaymentDate", oldlicence.Id,
+                        $"قام بتغيير  تاريخ دفع نهائى من {oldlicence.FinalPaymentDate} الي {newlicense.LFinalPaymentDate}");
+                    oldlicence.FinalPaymentDate = newlicense.LFinalPaymentDate;
                 }
 
                 if (newlicense.LExaminationFeeDate != null && oldlicence.ExaminationFeeDate == null)

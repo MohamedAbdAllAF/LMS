@@ -84,6 +84,11 @@ namespace LMS.Views
                 picLEntryDate.Value = (DateTime)licenseVM.LEntryDate;
                 txtLEntryDate.Text = licenseVM.LEntryDate.ToString();
             }
+            if (licenseVM.LInitialSupplyDate != null)
+            {
+                picLInitialSupplyDate.Value = (DateTime)licenseVM.LInitialSupplyDate;
+                txtLInitialSupplyDate.Text = licenseVM.LInitialSupplyDate.ToString();
+            }
             if (licenseVM.LExaminationFeeDate != null)
             {
                 picLExaminationFeeDate.Value = (DateTime)licenseVM.LExaminationFeeDate;
@@ -93,6 +98,11 @@ namespace LMS.Views
             {
                 picLFeesPaymentDate.Value = (DateTime)licenseVM.LFeesPaymentDate;
                 txtLFeesPaymentDate.Text = licenseVM.LFeesPaymentDate.ToString();
+            }
+            if (licenseVM.LFinalPaymentDate != null)
+            {
+                picLFinalPaymentDate.Value = (DateTime)licenseVM.LFinalPaymentDate;
+                txtLFinalPaymentDate.Text = licenseVM.LFinalPaymentDate.ToString();
             }
             if (licenseVM.LSignatureDate != null)
             {
@@ -118,6 +128,8 @@ namespace LMS.Views
             picVValidatySupplyDate.Value = DateTime.Now;
             picVReceiveDate.Value = DateTime.Now;
             picLEntryDate.Value = DateTime.Now;
+            picLInitialSupplyDate.Value = DateTime.Now;
+            picLFinalPaymentDate.Value = DateTime.Now;
             picLExaminationFeeDate.Value = DateTime.Now;
             picLFeesPaymentDate.Value = DateTime.Now;
             picLSignatureDate.Value = DateTime.Now;
@@ -208,8 +220,10 @@ namespace LMS.Views
                     Fees = txtFees.Text != string.Empty ? Convert.ToDecimal(txtFees.Text) : (decimal?)null,
                     LicenseNumber = txtLicenseNumber.Text != string.Empty ? txtLicenseNumber.Text : null,
                     EntryDate = txtLEntryDate.Text != string.Empty ? picLEntryDate.Value : (DateTime?)null,
+                    InitialSupplyDate=txtVInitialSupplyDate.Text !=string.Empty ? picLInitialSupplyDate.Value : (DateTime?)null,
                     ExaminationFeeDate = txtLExaminationFeeDate.Text != string.Empty ? picLExaminationFeeDate.Value : (DateTime?)null,
                     FeesPaymentDate = txtLFeesPaymentDate.Text != string.Empty ? picLFeesPaymentDate.Value : (DateTime?)null,
+                    FinalPaymentDate = txtLFinalPaymentDate.Text != string.Empty ? picLFinalPaymentDate.Value : (DateTime?)null,
                     SignatureDate = txtLSignatureDate.Text != string.Empty ? picLSignatureDate.Value : (DateTime?)null,
                     ReceiveDate = txtLReceiveDate.Text != string.Empty ? picLReceiveDate.Value : (DateTime?)null,
                     Notes = txtNotes.Text != string.Empty ? txtNotes.Text : null,
@@ -241,8 +255,10 @@ namespace LMS.Views
                             VReceiveDate = txtVReceiveDate.Text != string.Empty ? picVReceiveDate.Value : (DateTime?)null,
                             VValidatySupplyDate = txtVValidatySupplyDate.Text != string.Empty ? picVValidatySupplyDate.Value : (DateTime?)null,
                             LEntryDate = txtLEntryDate.Text != string.Empty ? picLEntryDate.Value : (DateTime?)null,
+                            LInitialSupplyDate = txtVInitialSupplyDate.Text != string.Empty ? picLInitialSupplyDate.Value : (DateTime?)null,
                             LExaminationFeeDate = txtLExaminationFeeDate.Text != string.Empty ? picLExaminationFeeDate.Value : (DateTime?)null,
                             LFeesPaymentDate = txtLFeesPaymentDate.Text != string.Empty ? picLFeesPaymentDate.Value : (DateTime?)null,
+                            LFinalPaymentDate = txtLFinalPaymentDate.Text != string.Empty ? picLFinalPaymentDate.Value : (DateTime?)null,
                             LSignatureDate = txtLSignatureDate.Text != string.Empty ? picLSignatureDate.Value : (DateTime?)null,
                             LReceiveDate = txtLReceiveDate.Text != string.Empty ? picLReceiveDate.Value : (DateTime?)null,
                             Fees = Convert.ToDecimal(txtFees.Text),
@@ -304,7 +320,16 @@ namespace LMS.Views
         {
             txtLReceiveDate.Text = picLReceiveDate.Value.ToString();
         }
-        #endregion
 
+        private void btnLInitialSupplyDate_Click(object sender, EventArgs e)
+        {
+            txtLInitialSupplyDate.Text = picLInitialSupplyDate.Value.ToString();
+        }
+
+        private void btnLFinalPaymentDate_Click(object sender, EventArgs e)
+        {
+            txtLFinalPaymentDate.Text = picLFinalPaymentDate.Value.ToString();
+        }
+        #endregion
     }
 }

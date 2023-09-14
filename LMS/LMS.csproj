@@ -116,6 +116,10 @@
     <Compile Include="Migrations\202309090312311_addTimeOnFees.designer.cs">
       <DependentUpon>202309090312311_addTimeOnFees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309140103125_edit.cs" />
+    <Compile Include="Migrations\202309140103125_edit.designer.cs">
+      <DependentUpon>202309140103125_edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Fee.cs" />
@@ -172,12 +176,6 @@
     <Compile Include="Views\FRMNewLicense.Designer.cs">
       <DependentUpon>FRMNewLicense.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\testLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\testLogin.Designer.cs">
-      <DependentUpon>testLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Migrations\202309020205321_ser.resx">
@@ -185,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309090312311_addTimeOnFees.resx">
       <DependentUpon>202309090312311_addTimeOnFees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309140103125_edit.resx">
+      <DependentUpon>202309140103125_edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -218,9 +219,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FRMNewLicense.resx">
       <DependentUpon>FRMNewLicense.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\testLogin.resx">
-      <DependentUpon>testLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LMS.Models.Location.datasource" />
@@ -260,6 +258,7 @@
       <DependentUpon>LMSDB.mdf</DependentUpon>
     </Content>
     <None Include="Resources\slyAlaElnaby.png" />
+    <None Include="Resources\data-transfer.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />

@@ -1,4 +1,4 @@
-﻿namespace SignUpDemo
+﻿namespace LMS.Views
 {
     partial class FRMLogin
     {
@@ -110,6 +110,7 @@
             this.btnLogin.TabStop = false;
             this.btnLogin.Text = "LogIn";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 
@@ -118,7 +119,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPassword.HintForeColor = System.Drawing.Color.Empty;
             this.txtPassword.HintText = "";
-            this.txtPassword.isPassword = true;
+            this.txtPassword.isPassword = false;
             this.txtPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.txtPassword.LineIdleColor = System.Drawing.Color.CornflowerBlue;
             this.txtPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
@@ -129,8 +130,9 @@
             this.txtPassword.Size = new System.Drawing.Size(297, 34);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.TabStop = false;
-            this.txtPassword.Text = "12345678";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // label4
             // 
@@ -159,7 +161,7 @@
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(297, 34);
-            this.txtUserName.TabIndex = 1;
+            this.txtUserName.TabIndex = 0;
             this.txtUserName.TabStop = false;
             this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -171,7 +173,7 @@
             this.label3.Location = new System.Drawing.Point(22, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 21);
-            this.label3.TabIndex = 0;
+            this.label3.TabIndex = 5;
             this.label3.Text = "User Name:";
             // 
             // label8
@@ -182,7 +184,7 @@
             this.label8.Location = new System.Drawing.Point(309, 2);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(25, 30);
-            this.label8.TabIndex = 0;
+            this.label8.TabIndex = 5;
             this.label8.Text = "x";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
@@ -194,7 +196,7 @@
             this.label2.Location = new System.Drawing.Point(16, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 30);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 1;
             this.label2.Text = "LogIn";
             // 
             // bunifuElipse1
@@ -220,7 +222,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FRMLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "1";
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelRight.ResumeLayout(false);

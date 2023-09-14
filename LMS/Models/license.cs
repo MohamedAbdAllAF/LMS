@@ -37,6 +37,12 @@ namespace LMS.Models
         public DateTime? EntryDate { get; set; }
 
         [DataType(DataType.Date)]
+        public DateTime? InitialSupplyDate { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime? FinalPaymentDate { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime? ExaminationFeeDate { get; set; }
 
         [DataType(DataType.Date)]

@@ -121,5 +121,10 @@ namespace LMS.Views
         {
             LoadForm(new FRMDisplayLicenses());
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            LoadForm(new FRMLicenseReport());
+        }
     }
 }

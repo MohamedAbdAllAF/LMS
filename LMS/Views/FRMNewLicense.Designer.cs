@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMNewLicense));
             this.pnlScrollerContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMainInfoContainer = new System.Windows.Forms.Panel();
+            this.lblLastUpdate = new System.Windows.Forms.Label();
+            this.lblCreatedOn = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -79,10 +81,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pnlLicense = new System.Windows.Forms.Panel();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.txtNotes = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.btnLInitialSupplyDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.picLInitialSupplyDate = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.txtLInitialSupplyDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.txtNotes = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.txtFees = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label25 = new System.Windows.Forms.Label();
@@ -120,8 +128,12 @@
             this.label22 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
-            this.lblCreatedOn = new System.Windows.Forms.Label();
-            this.lblLastUpdate = new System.Windows.Forms.Label();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.btnLFinalPaymentDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.picLFinalPaymentDate = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.txtLFinalPaymentDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.pnlScrollerContainer.SuspendLayout();
             this.pnlMainInfoContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -140,8 +152,10 @@
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVEntryDate)).BeginInit();
             this.pnlLicense.SuspendLayout();
-            this.groupBox18.SuspendLayout();
             this.groupBox11.SuspendLayout();
+            this.groupBox19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLInitialSupplyDate)).BeginInit();
+            this.groupBox18.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLReceiveDate)).BeginInit();
@@ -154,6 +168,8 @@
             this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlScrollerContainer
@@ -182,14 +198,40 @@
             this.pnlMainInfoContainer.Size = new System.Drawing.Size(1025, 340);
             this.pnlMainInfoContainer.TabIndex = 4;
             // 
+            // lblLastUpdate
+            // 
+            this.lblLastUpdate.AutoSize = true;
+            this.lblLastUpdate.BackColor = System.Drawing.SystemColors.Control;
+            this.lblLastUpdate.Enabled = false;
+            this.lblLastUpdate.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblLastUpdate.Location = new System.Drawing.Point(121, 22);
+            this.lblLastUpdate.Name = "lblLastUpdate";
+            this.lblLastUpdate.Size = new System.Drawing.Size(184, 24);
+            this.lblLastUpdate.TabIndex = 6;
+            this.lblLastUpdate.Text = "تاريخ الأنشاء : 5364556غ";
+            this.lblLastUpdate.Visible = false;
+            // 
+            // lblCreatedOn
+            // 
+            this.lblCreatedOn.AutoSize = true;
+            this.lblCreatedOn.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCreatedOn.Enabled = false;
+            this.lblCreatedOn.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblCreatedOn.Location = new System.Drawing.Point(740, 22);
+            this.lblCreatedOn.Name = "lblCreatedOn";
+            this.lblCreatedOn.Size = new System.Drawing.Size(184, 24);
+            this.lblCreatedOn.TabIndex = 5;
+            this.lblCreatedOn.Text = "تاريخ الأنشاء : 5364556غ";
+            this.lblCreatedOn.Visible = false;
+            // 
             // bunifuSeparator1
             // 
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuSeparator1.LineThickness = 10955;
+            this.bunifuSeparator1.LineThickness = 65535;
             this.bunifuSeparator1.Location = new System.Drawing.Point(0, 334);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Size = new System.Drawing.Size(1025, 6);
             this.bunifuSeparator1.TabIndex = 4;
@@ -470,7 +512,7 @@
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuSeparator2.LineThickness = 20225;
+            this.bunifuSeparator2.LineThickness = 65535;
             this.bunifuSeparator2.Location = new System.Drawing.Point(0, 290);
             this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(11);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
@@ -830,20 +872,138 @@
             // 
             // pnlLicense
             // 
-            this.pnlLicense.Controls.Add(this.groupBox18);
             this.pnlLicense.Controls.Add(this.bunifuSeparator3);
             this.pnlLicense.Controls.Add(this.groupBox11);
             this.pnlLicense.Location = new System.Drawing.Point(3, 650);
             this.pnlLicense.Name = "pnlLicense";
-            this.pnlLicense.Size = new System.Drawing.Size(1025, 574);
+            this.pnlLicense.Size = new System.Drawing.Size(1025, 654);
             this.pnlLicense.TabIndex = 6;
+            // 
+            // bunifuSeparator3
+            // 
+            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bunifuSeparator3.LineThickness = 65535;
+            this.bunifuSeparator3.Location = new System.Drawing.Point(0, 648);
+            this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(11);
+            this.bunifuSeparator3.Name = "bunifuSeparator3";
+            this.bunifuSeparator3.Size = new System.Drawing.Size(1025, 6);
+            this.bunifuSeparator3.TabIndex = 5;
+            this.bunifuSeparator3.Transparency = 255;
+            this.bunifuSeparator3.Vertical = false;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox11.Controls.Add(this.groupBox20);
+            this.groupBox11.Controls.Add(this.groupBox19);
+            this.groupBox11.Controls.Add(this.groupBox18);
+            this.groupBox11.Controls.Add(this.groupBox17);
+            this.groupBox11.Controls.Add(this.groupBox16);
+            this.groupBox11.Controls.Add(this.groupBox12);
+            this.groupBox11.Controls.Add(this.groupBox13);
+            this.groupBox11.Controls.Add(this.groupBox14);
+            this.groupBox11.Controls.Add(this.groupBox15);
+            this.groupBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox11.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox11.Location = new System.Drawing.Point(10, 3);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox11.Size = new System.Drawing.Size(1004, 636);
+            this.groupBox11.TabIndex = 4;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "بيانات الرخصة";
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.btnLInitialSupplyDate);
+            this.groupBox19.Controls.Add(this.picLInitialSupplyDate);
+            this.groupBox19.Controls.Add(this.txtLInitialSupplyDate);
+            this.groupBox19.Controls.Add(this.label27);
+            this.groupBox19.Controls.Add(this.label28);
+            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox19.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox19.Location = new System.Drawing.Point(9, 28);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(490, 117);
+            this.groupBox19.TabIndex = 10;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "تاريخ التوريد أولي";
+            // 
+            // btnLInitialSupplyDate
+            // 
+            this.btnLInitialSupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLInitialSupplyDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLInitialSupplyDate.Image")));
+            this.btnLInitialSupplyDate.ImageActive = null;
+            this.btnLInitialSupplyDate.Location = new System.Drawing.Point(9, 26);
+            this.btnLInitialSupplyDate.Name = "btnLInitialSupplyDate";
+            this.btnLInitialSupplyDate.Size = new System.Drawing.Size(90, 75);
+            this.btnLInitialSupplyDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLInitialSupplyDate.TabIndex = 5;
+            this.btnLInitialSupplyDate.TabStop = false;
+            this.btnLInitialSupplyDate.Zoom = 5;
+            this.btnLInitialSupplyDate.Click += new System.EventHandler(this.btnLInitialSupplyDate_Click);
+            // 
+            // picLInitialSupplyDate
+            // 
+            this.picLInitialSupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.picLInitialSupplyDate.BorderRadius = 30;
+            this.picLInitialSupplyDate.ForeColor = System.Drawing.Color.White;
+            this.picLInitialSupplyDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.picLInitialSupplyDate.FormatCustom = null;
+            this.picLInitialSupplyDate.Location = new System.Drawing.Point(106, 24);
+            this.picLInitialSupplyDate.Margin = new System.Windows.Forms.Padding(2);
+            this.picLInitialSupplyDate.Name = "picLInitialSupplyDate";
+            this.picLInitialSupplyDate.Size = new System.Drawing.Size(275, 36);
+            this.picLInitialSupplyDate.TabIndex = 4;
+            this.picLInitialSupplyDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
+            // 
+            // txtLInitialSupplyDate
+            // 
+            this.txtLInitialSupplyDate.BorderColorFocused = System.Drawing.Color.Red;
+            this.txtLInitialSupplyDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
+            this.txtLInitialSupplyDate.BorderColorMouseHover = System.Drawing.Color.Red;
+            this.txtLInitialSupplyDate.BorderThickness = 2;
+            this.txtLInitialSupplyDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLInitialSupplyDate.Enabled = false;
+            this.txtLInitialSupplyDate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtLInitialSupplyDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtLInitialSupplyDate.isPassword = false;
+            this.txtLInitialSupplyDate.Location = new System.Drawing.Point(106, 68);
+            this.txtLInitialSupplyDate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLInitialSupplyDate.Name = "txtLInitialSupplyDate";
+            this.txtLInitialSupplyDate.Size = new System.Drawing.Size(275, 35);
+            this.txtLInitialSupplyDate.TabIndex = 3;
+            this.txtLInitialSupplyDate.TabStop = false;
+            this.txtLInitialSupplyDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(388, 73);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(99, 24);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "التاريخ المختار";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(391, 30);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(93, 24);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "أختيار التاريخ";
             // 
             // groupBox18
             // 
             this.groupBox18.Controls.Add(this.txtNotes);
             this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox18.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox18.Location = new System.Drawing.Point(524, 402);
+            this.groupBox18.Location = new System.Drawing.Point(505, 509);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox18.Size = new System.Drawing.Size(490, 117);
@@ -866,39 +1026,6 @@
             this.txtNotes.TabIndex = 0;
             this.txtNotes.Text = "";
             // 
-            // bunifuSeparator3
-            // 
-            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuSeparator3.LineThickness = 37338;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(0, 568);
-            this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(11);
-            this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Size = new System.Drawing.Size(1025, 6);
-            this.bunifuSeparator3.TabIndex = 5;
-            this.bunifuSeparator3.Transparency = 255;
-            this.bunifuSeparator3.Vertical = false;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox11.Controls.Add(this.groupBox17);
-            this.groupBox11.Controls.Add(this.groupBox16);
-            this.groupBox11.Controls.Add(this.groupBox12);
-            this.groupBox11.Controls.Add(this.groupBox13);
-            this.groupBox11.Controls.Add(this.groupBox14);
-            this.groupBox11.Controls.Add(this.groupBox15);
-            this.groupBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox11.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox11.Location = new System.Drawing.Point(10, 3);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox11.Size = new System.Drawing.Size(1004, 393);
-            this.groupBox11.TabIndex = 4;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "بيانات الرخصة";
-            // 
             // groupBox17
             // 
             this.groupBox17.Controls.Add(this.txtFees);
@@ -907,7 +1034,7 @@
             this.groupBox17.Controls.Add(this.label26);
             this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox17.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox17.Location = new System.Drawing.Point(9, 263);
+            this.groupBox17.Location = new System.Drawing.Point(9, 391);
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.Size = new System.Drawing.Size(490, 117);
             this.groupBox17.TabIndex = 9;
@@ -979,7 +1106,7 @@
             this.groupBox16.Controls.Add(this.label24);
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox16.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox16.Location = new System.Drawing.Point(505, 263);
+            this.groupBox16.Location = new System.Drawing.Point(505, 391);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(490, 117);
             this.groupBox16.TabIndex = 8;
@@ -1062,7 +1189,7 @@
             this.groupBox12.Controls.Add(this.label16);
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox12.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox12.Location = new System.Drawing.Point(9, 145);
+            this.groupBox12.Location = new System.Drawing.Point(9, 274);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(490, 117);
             this.groupBox12.TabIndex = 7;
@@ -1145,7 +1272,7 @@
             this.groupBox13.Controls.Add(this.label18);
             this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox13.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox13.Location = new System.Drawing.Point(505, 145);
+            this.groupBox13.Location = new System.Drawing.Point(9, 151);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(490, 117);
             this.groupBox13.TabIndex = 6;
@@ -1228,7 +1355,7 @@
             this.groupBox14.Controls.Add(this.label20);
             this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox14.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox14.Location = new System.Drawing.Point(9, 28);
+            this.groupBox14.Location = new System.Drawing.Point(505, 151);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(490, 117);
             this.groupBox14.TabIndex = 4;
@@ -1388,7 +1515,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Location = new System.Drawing.Point(3, 1230);
+            this.panel1.Location = new System.Drawing.Point(3, 1310);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1025, 100);
             this.panel1.TabIndex = 6;
@@ -1413,31 +1540,88 @@
             this.btnSave.TabIndex = 0;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // lblCreatedOn
+            // groupBox20
             // 
-            this.lblCreatedOn.AutoSize = true;
-            this.lblCreatedOn.BackColor = System.Drawing.SystemColors.Control;
-            this.lblCreatedOn.Enabled = false;
-            this.lblCreatedOn.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblCreatedOn.Location = new System.Drawing.Point(740, 22);
-            this.lblCreatedOn.Name = "lblCreatedOn";
-            this.lblCreatedOn.Size = new System.Drawing.Size(184, 24);
-            this.lblCreatedOn.TabIndex = 5;
-            this.lblCreatedOn.Text = "تاريخ الأنشاء : 5364556غ";
-            this.lblCreatedOn.Visible = false;
+            this.groupBox20.Controls.Add(this.btnLFinalPaymentDate);
+            this.groupBox20.Controls.Add(this.picLFinalPaymentDate);
+            this.groupBox20.Controls.Add(this.txtLFinalPaymentDate);
+            this.groupBox20.Controls.Add(this.label29);
+            this.groupBox20.Controls.Add(this.label30);
+            this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox20.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox20.Location = new System.Drawing.Point(505, 274);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(490, 117);
+            this.groupBox20.TabIndex = 11;
+            this.groupBox20.TabStop = false;
+            this.groupBox20.Text = "تاريخ دفع نهائى";
             // 
-            // lblLastUpdate
+            // btnLFinalPaymentDate
             // 
-            this.lblLastUpdate.AutoSize = true;
-            this.lblLastUpdate.BackColor = System.Drawing.SystemColors.Control;
-            this.lblLastUpdate.Enabled = false;
-            this.lblLastUpdate.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblLastUpdate.Location = new System.Drawing.Point(121, 22);
-            this.lblLastUpdate.Name = "lblLastUpdate";
-            this.lblLastUpdate.Size = new System.Drawing.Size(184, 24);
-            this.lblLastUpdate.TabIndex = 6;
-            this.lblLastUpdate.Text = "تاريخ الأنشاء : 5364556غ";
-            this.lblLastUpdate.Visible = false;
+            this.btnLFinalPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLFinalPaymentDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLFinalPaymentDate.Image")));
+            this.btnLFinalPaymentDate.ImageActive = null;
+            this.btnLFinalPaymentDate.Location = new System.Drawing.Point(9, 26);
+            this.btnLFinalPaymentDate.Name = "btnLFinalPaymentDate";
+            this.btnLFinalPaymentDate.Size = new System.Drawing.Size(90, 75);
+            this.btnLFinalPaymentDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLFinalPaymentDate.TabIndex = 5;
+            this.btnLFinalPaymentDate.TabStop = false;
+            this.btnLFinalPaymentDate.Zoom = 5;
+            this.btnLFinalPaymentDate.Click += new System.EventHandler(this.btnLFinalPaymentDate_Click);
+            // 
+            // picLFinalPaymentDate
+            // 
+            this.picLFinalPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.picLFinalPaymentDate.BorderRadius = 30;
+            this.picLFinalPaymentDate.ForeColor = System.Drawing.Color.White;
+            this.picLFinalPaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.picLFinalPaymentDate.FormatCustom = null;
+            this.picLFinalPaymentDate.Location = new System.Drawing.Point(106, 24);
+            this.picLFinalPaymentDate.Margin = new System.Windows.Forms.Padding(2);
+            this.picLFinalPaymentDate.Name = "picLFinalPaymentDate";
+            this.picLFinalPaymentDate.Size = new System.Drawing.Size(275, 36);
+            this.picLFinalPaymentDate.TabIndex = 4;
+            this.picLFinalPaymentDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
+            // 
+            // txtLFinalPaymentDate
+            // 
+            this.txtLFinalPaymentDate.BorderColorFocused = System.Drawing.Color.Red;
+            this.txtLFinalPaymentDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
+            this.txtLFinalPaymentDate.BorderColorMouseHover = System.Drawing.Color.Red;
+            this.txtLFinalPaymentDate.BorderThickness = 2;
+            this.txtLFinalPaymentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLFinalPaymentDate.Enabled = false;
+            this.txtLFinalPaymentDate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtLFinalPaymentDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtLFinalPaymentDate.isPassword = false;
+            this.txtLFinalPaymentDate.Location = new System.Drawing.Point(106, 68);
+            this.txtLFinalPaymentDate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLFinalPaymentDate.Name = "txtLFinalPaymentDate";
+            this.txtLFinalPaymentDate.Size = new System.Drawing.Size(275, 35);
+            this.txtLFinalPaymentDate.TabIndex = 3;
+            this.txtLFinalPaymentDate.TabStop = false;
+            this.txtLFinalPaymentDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(388, 73);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(99, 24);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "التاريخ المختار";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(391, 30);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(93, 24);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "أختيار التاريخ";
             // 
             // FRMNewLicense
             // 
@@ -1477,8 +1661,11 @@
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVEntryDate)).EndInit();
             this.pnlLicense.ResumeLayout(false);
-            this.groupBox18.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLInitialSupplyDate)).EndInit();
+            this.groupBox18.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             this.groupBox16.ResumeLayout(false);
@@ -1497,6 +1684,9 @@
             this.groupBox15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1597,5 +1787,17 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblCreatedOn;
         private System.Windows.Forms.Label lblLastUpdate;
+        private System.Windows.Forms.GroupBox groupBox19;
+        private Bunifu.Framework.UI.BunifuImageButton btnLInitialSupplyDate;
+        private Bunifu.Framework.UI.BunifuDatepicker picLInitialSupplyDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtLInitialSupplyDate;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.GroupBox groupBox20;
+        private Bunifu.Framework.UI.BunifuImageButton btnLFinalPaymentDate;
+        private Bunifu.Framework.UI.BunifuDatepicker picLFinalPaymentDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtLFinalPaymentDate;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
     }
 }

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMMain));
             this.pnlSideBar = new System.Windows.Forms.Panel();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.btnLicenseSearch = new MaterialSkin.Controls.MaterialButton();
             this.btnNewLicense = new MaterialSkin.Controls.MaterialButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -49,6 +50,7 @@
             // pnlSideBar
             // 
             this.pnlSideBar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnlSideBar.Controls.Add(this.materialButton1);
             this.pnlSideBar.Controls.Add(this.btnLicenseSearch);
             this.pnlSideBar.Controls.Add(this.btnNewLicense);
             this.pnlSideBar.Controls.Add(this.pnlLogo);
@@ -57,6 +59,28 @@
             this.pnlSideBar.Name = "pnlSideBar";
             this.pnlSideBar.Size = new System.Drawing.Size(230, 850);
             this.pnlSideBar.TabIndex = 0;
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.materialButton1.DrawShadows = true;
+            this.materialButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(0, 192);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.Size = new System.Drawing.Size(230, 36);
+            this.materialButton1.TabIndex = 3;
+            this.materialButton1.Text = "التقارير";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // btnLicenseSearch
             // 
@@ -206,5 +230,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private MaterialSkin.Controls.MaterialButton btnNewLicense;
         private MaterialSkin.Controls.MaterialButton btnLicenseSearch;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

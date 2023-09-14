@@ -18,14 +18,23 @@ namespace LMS.Views
         public FRMLicenseReport()
         {
             InitializeComponent();
+            picFrom.Value = picTo.Value = DateTime.Now;
         }
 
         private void FRMLicenseReport_Load(object sender, EventArgs e)
         {
-            BindingSource binding = new BindingSource();
-            //binding.Add(LicenseController.DisplayLicense(1));
+            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //ReportDataSource source = new ReportDataSource(
+            //    "LicenseDataSet", LicenseController.GetAllLicensesForReports());
+            reportViewer1.LocalReport.DataSources.Clear();
+            DateTime From = new DateTime(picFrom.Value.Year, picFrom.Value.Month, picFrom.Value.Day,0,0,0);
+            DateTime To = new DateTime(picTo.Value.Year, picTo.Value.Month, picTo.Value.Day,23,59,59);
             ReportDataSource source = new ReportDataSource(
-                "LicenseDataSet",LicenseController.GetAllLicensesForReports());
+                "LicenseDataSet", LicenseController.GetAllLicensesInRange(From,To));
             this.reportViewer1.LocalReport.DataSources.Add(source);
             this.reportViewer1.RefreshReport();
         }
