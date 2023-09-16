@@ -51,8 +51,8 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        OwnerID = c.Int(nullable: false),
-                        AgentID = c.Int(nullable: false),
+                        OwnerID = c.Int(nullable: true),
+                        AgentID = c.Int(nullable: true),
                         LocationId = c.Int(nullable: false),
                         PlotNumber = c.String(),
                         Work = c.String(),

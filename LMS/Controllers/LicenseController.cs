@@ -1,5 +1,4 @@
-﻿using Bunifu.Framework;
-using LMS.Models;
+﻿using LMS.Models;
 using LMS.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -785,6 +784,11 @@ namespace LMS.Controllers
                 errHandle.AddExeption(ex, "LicenseController", "UpdateLicense",DateTime.Now);
                 return -1;
             }
+        }
+
+        public List<license> GetAllLicenses()
+        {
+            return context.Licenses.ToList();
         }
     }
 }

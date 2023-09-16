@@ -18,6 +18,7 @@ namespace LMS.Views
         {
             InitializeComponent();
             AdminId = adminId;
+            LoadForm(new FRMDashboard());
         }
 
         #region Form Loader Controller

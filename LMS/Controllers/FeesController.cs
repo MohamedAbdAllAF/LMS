@@ -62,5 +62,16 @@ namespace LMS.Controllers
             }
             return result;
         }
+
+        public decimal MonthlyIncome(DateTime today)
+        {
+            var fees = context.Fees.Where(f=>f.CreatedOn.Month == today.Month).ToList();
+            decimal result = 0;
+            foreach (var fee in fees)
+            {
+                result += fee.Amount;
+            }
+            return result;
+        }
     }
 }
