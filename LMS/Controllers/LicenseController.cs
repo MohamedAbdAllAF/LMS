@@ -595,6 +595,8 @@ namespace LMS.Controllers
 
                 if (oldAgent.NationalId != newlicense.AgentNationalId)
                 {
+                    if (newlicense.AgentNationalId == "")
+                        newlicense.AgentNationalId = NationalIdGenrator();
                     int agentId = userControl.AddNewUser(adminId, new User
                     {
                         NationalId = newlicense.AgentNationalId,
