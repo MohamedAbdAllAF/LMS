@@ -83,6 +83,12 @@
             this.pnlLicense = new System.Windows.Forms.Panel();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.btnLFinalPaymentDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.picLFinalPaymentDate = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.txtLFinalPaymentDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.btnLInitialSupplyDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picLInitialSupplyDate = new Bunifu.Framework.UI.BunifuDatepicker();
@@ -128,12 +134,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
-            this.btnLFinalPaymentDate = new Bunifu.Framework.UI.BunifuImageButton();
-            this.picLFinalPaymentDate = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.txtLFinalPaymentDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.pnlScrollerContainer.SuspendLayout();
             this.pnlMainInfoContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -153,6 +153,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnVEntryDate)).BeginInit();
             this.pnlLicense.SuspendLayout();
             this.groupBox11.SuspendLayout();
+            this.groupBox20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).BeginInit();
             this.groupBox19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLInitialSupplyDate)).BeginInit();
             this.groupBox18.SuspendLayout();
@@ -168,8 +170,6 @@
             this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).BeginInit();
             this.panel1.SuspendLayout();
-            this.groupBox20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlScrollerContainer
@@ -183,7 +183,7 @@
             this.pnlScrollerContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlScrollerContainer.Location = new System.Drawing.Point(0, 0);
             this.pnlScrollerContainer.Name = "pnlScrollerContainer";
-            this.pnlScrollerContainer.Size = new System.Drawing.Size(1050, 810);
+            this.pnlScrollerContainer.Size = new System.Drawing.Size(1050, 710);
             this.pnlScrollerContainer.TabIndex = 0;
             // 
             // pnlMainInfoContainer
@@ -915,6 +915,89 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "بيانات الرخصة";
             // 
+            // groupBox20
+            // 
+            this.groupBox20.Controls.Add(this.btnLFinalPaymentDate);
+            this.groupBox20.Controls.Add(this.picLFinalPaymentDate);
+            this.groupBox20.Controls.Add(this.txtLFinalPaymentDate);
+            this.groupBox20.Controls.Add(this.label29);
+            this.groupBox20.Controls.Add(this.label30);
+            this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox20.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox20.Location = new System.Drawing.Point(505, 274);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(490, 117);
+            this.groupBox20.TabIndex = 11;
+            this.groupBox20.TabStop = false;
+            this.groupBox20.Text = "تاريخ دفع نهائى";
+            // 
+            // btnLFinalPaymentDate
+            // 
+            this.btnLFinalPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLFinalPaymentDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLFinalPaymentDate.Image")));
+            this.btnLFinalPaymentDate.ImageActive = null;
+            this.btnLFinalPaymentDate.Location = new System.Drawing.Point(9, 26);
+            this.btnLFinalPaymentDate.Name = "btnLFinalPaymentDate";
+            this.btnLFinalPaymentDate.Size = new System.Drawing.Size(90, 75);
+            this.btnLFinalPaymentDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLFinalPaymentDate.TabIndex = 5;
+            this.btnLFinalPaymentDate.TabStop = false;
+            this.btnLFinalPaymentDate.Zoom = 5;
+            this.btnLFinalPaymentDate.Click += new System.EventHandler(this.btnLFinalPaymentDate_Click);
+            // 
+            // picLFinalPaymentDate
+            // 
+            this.picLFinalPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.picLFinalPaymentDate.BorderRadius = 30;
+            this.picLFinalPaymentDate.ForeColor = System.Drawing.Color.White;
+            this.picLFinalPaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.picLFinalPaymentDate.FormatCustom = null;
+            this.picLFinalPaymentDate.Location = new System.Drawing.Point(106, 24);
+            this.picLFinalPaymentDate.Margin = new System.Windows.Forms.Padding(2);
+            this.picLFinalPaymentDate.Name = "picLFinalPaymentDate";
+            this.picLFinalPaymentDate.Size = new System.Drawing.Size(275, 36);
+            this.picLFinalPaymentDate.TabIndex = 4;
+            this.picLFinalPaymentDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
+            // 
+            // txtLFinalPaymentDate
+            // 
+            this.txtLFinalPaymentDate.BorderColorFocused = System.Drawing.Color.Red;
+            this.txtLFinalPaymentDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
+            this.txtLFinalPaymentDate.BorderColorMouseHover = System.Drawing.Color.Red;
+            this.txtLFinalPaymentDate.BorderThickness = 2;
+            this.txtLFinalPaymentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLFinalPaymentDate.Enabled = false;
+            this.txtLFinalPaymentDate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtLFinalPaymentDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtLFinalPaymentDate.isPassword = false;
+            this.txtLFinalPaymentDate.Location = new System.Drawing.Point(106, 68);
+            this.txtLFinalPaymentDate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLFinalPaymentDate.Name = "txtLFinalPaymentDate";
+            this.txtLFinalPaymentDate.Size = new System.Drawing.Size(275, 35);
+            this.txtLFinalPaymentDate.TabIndex = 3;
+            this.txtLFinalPaymentDate.TabStop = false;
+            this.txtLFinalPaymentDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(388, 73);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(99, 24);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "التاريخ المختار";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(391, 30);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(93, 24);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "أختيار التاريخ";
+            // 
             // groupBox19
             // 
             this.groupBox19.Controls.Add(this.btnLInitialSupplyDate);
@@ -1540,94 +1623,11 @@
             this.btnSave.TabIndex = 0;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // groupBox20
-            // 
-            this.groupBox20.Controls.Add(this.btnLFinalPaymentDate);
-            this.groupBox20.Controls.Add(this.picLFinalPaymentDate);
-            this.groupBox20.Controls.Add(this.txtLFinalPaymentDate);
-            this.groupBox20.Controls.Add(this.label29);
-            this.groupBox20.Controls.Add(this.label30);
-            this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox20.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox20.Location = new System.Drawing.Point(505, 274);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(490, 117);
-            this.groupBox20.TabIndex = 11;
-            this.groupBox20.TabStop = false;
-            this.groupBox20.Text = "تاريخ دفع نهائى";
-            // 
-            // btnLFinalPaymentDate
-            // 
-            this.btnLFinalPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLFinalPaymentDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLFinalPaymentDate.Image")));
-            this.btnLFinalPaymentDate.ImageActive = null;
-            this.btnLFinalPaymentDate.Location = new System.Drawing.Point(9, 26);
-            this.btnLFinalPaymentDate.Name = "btnLFinalPaymentDate";
-            this.btnLFinalPaymentDate.Size = new System.Drawing.Size(90, 75);
-            this.btnLFinalPaymentDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLFinalPaymentDate.TabIndex = 5;
-            this.btnLFinalPaymentDate.TabStop = false;
-            this.btnLFinalPaymentDate.Zoom = 5;
-            this.btnLFinalPaymentDate.Click += new System.EventHandler(this.btnLFinalPaymentDate_Click);
-            // 
-            // picLFinalPaymentDate
-            // 
-            this.picLFinalPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.picLFinalPaymentDate.BorderRadius = 30;
-            this.picLFinalPaymentDate.ForeColor = System.Drawing.Color.White;
-            this.picLFinalPaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.picLFinalPaymentDate.FormatCustom = null;
-            this.picLFinalPaymentDate.Location = new System.Drawing.Point(106, 24);
-            this.picLFinalPaymentDate.Margin = new System.Windows.Forms.Padding(2);
-            this.picLFinalPaymentDate.Name = "picLFinalPaymentDate";
-            this.picLFinalPaymentDate.Size = new System.Drawing.Size(275, 36);
-            this.picLFinalPaymentDate.TabIndex = 4;
-            this.picLFinalPaymentDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
-            // 
-            // txtLFinalPaymentDate
-            // 
-            this.txtLFinalPaymentDate.BorderColorFocused = System.Drawing.Color.Red;
-            this.txtLFinalPaymentDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
-            this.txtLFinalPaymentDate.BorderColorMouseHover = System.Drawing.Color.Red;
-            this.txtLFinalPaymentDate.BorderThickness = 2;
-            this.txtLFinalPaymentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLFinalPaymentDate.Enabled = false;
-            this.txtLFinalPaymentDate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtLFinalPaymentDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtLFinalPaymentDate.isPassword = false;
-            this.txtLFinalPaymentDate.Location = new System.Drawing.Point(106, 68);
-            this.txtLFinalPaymentDate.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLFinalPaymentDate.Name = "txtLFinalPaymentDate";
-            this.txtLFinalPaymentDate.Size = new System.Drawing.Size(275, 35);
-            this.txtLFinalPaymentDate.TabIndex = 3;
-            this.txtLFinalPaymentDate.TabStop = false;
-            this.txtLFinalPaymentDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(388, 73);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(99, 24);
-            this.label29.TabIndex = 2;
-            this.label29.Text = "التاريخ المختار";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(391, 30);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(93, 24);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "أختيار التاريخ";
-            // 
             // FRMNewLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 810);
+            this.ClientSize = new System.Drawing.Size(1050, 710);
             this.Controls.Add(this.pnlScrollerContainer);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1662,6 +1662,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnVEntryDate)).EndInit();
             this.pnlLicense.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).EndInit();
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLInitialSupplyDate)).EndInit();
@@ -1684,9 +1687,6 @@
             this.groupBox15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.groupBox20.ResumeLayout(false);
-            this.groupBox20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

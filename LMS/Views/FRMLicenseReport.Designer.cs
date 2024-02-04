@@ -31,11 +31,11 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.picFrom = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.picTo = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
+            this.picTo = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.picFrom = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,44 +77,6 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "تاريخ إضافة الرخصة";
             // 
-            // picFrom
-            // 
-            this.picFrom.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.picFrom.BorderRadius = 30;
-            this.picFrom.ForeColor = System.Drawing.Color.White;
-            this.picFrom.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.picFrom.FormatCustom = null;
-            this.picFrom.Location = new System.Drawing.Point(624, 40);
-            this.picFrom.Margin = new System.Windows.Forms.Padding(4);
-            this.picFrom.Name = "picFrom";
-            this.picFrom.Size = new System.Drawing.Size(305, 37);
-            this.picFrom.TabIndex = 4;
-            this.picFrom.Value = new System.DateTime(2023, 9, 7, 0, 0, 0, 0);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(963, 43);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 31);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "من :";
-            // 
-            // picTo
-            // 
-            this.picTo.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.picTo.BorderRadius = 30;
-            this.picTo.ForeColor = System.Drawing.Color.White;
-            this.picTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.picTo.FormatCustom = null;
-            this.picTo.Location = new System.Drawing.Point(194, 40);
-            this.picTo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.picTo.Name = "picTo";
-            this.picTo.Size = new System.Drawing.Size(305, 37);
-            this.picTo.TabIndex = 6;
-            this.picTo.Value = new System.DateTime(2023, 9, 14, 1, 34, 26, 285);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -145,11 +107,49 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // picTo
+            // 
+            this.picTo.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.picTo.BorderRadius = 30;
+            this.picTo.ForeColor = System.Drawing.Color.White;
+            this.picTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.picTo.FormatCustom = null;
+            this.picTo.Location = new System.Drawing.Point(194, 40);
+            this.picTo.Margin = new System.Windows.Forms.Padding(6);
+            this.picTo.Name = "picTo";
+            this.picTo.Size = new System.Drawing.Size(305, 37);
+            this.picTo.TabIndex = 6;
+            this.picTo.Value = new System.DateTime(2023, 9, 14, 1, 34, 26, 285);
+            // 
+            // picFrom
+            // 
+            this.picFrom.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.picFrom.BorderRadius = 30;
+            this.picFrom.ForeColor = System.Drawing.Color.White;
+            this.picFrom.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.picFrom.FormatCustom = null;
+            this.picFrom.Location = new System.Drawing.Point(624, 40);
+            this.picFrom.Margin = new System.Windows.Forms.Padding(4);
+            this.picFrom.Name = "picFrom";
+            this.picFrom.Size = new System.Drawing.Size(305, 37);
+            this.picFrom.TabIndex = 4;
+            this.picFrom.Value = new System.DateTime(2023, 9, 7, 0, 0, 0, 0);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(963, 43);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 31);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "من :";
+            // 
             // FRMLicenseReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 810);
+            this.ClientSize = new System.Drawing.Size(1050, 710);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.reportViewer1);

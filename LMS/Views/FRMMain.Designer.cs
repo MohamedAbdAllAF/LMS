@@ -57,7 +57,7 @@
             this.pnlSideBar.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlSideBar.Location = new System.Drawing.Point(1050, 0);
             this.pnlSideBar.Name = "pnlSideBar";
-            this.pnlSideBar.Size = new System.Drawing.Size(230, 850);
+            this.pnlSideBar.Size = new System.Drawing.Size(230, 750);
             this.pnlSideBar.TabIndex = 0;
             // 
             // materialButton1
@@ -187,7 +187,7 @@
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(0, 40);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1050, 810);
+            this.pnlContainer.Size = new System.Drawing.Size(1050, 710);
             this.pnlContainer.TabIndex = 2;
             // 
             // bunifuElipse1
@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 850);
+            this.ClientSize = new System.Drawing.Size(1280, 750);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.pnlSideBar);

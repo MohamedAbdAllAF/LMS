@@ -36,6 +36,7 @@
             this.flowLayoutPanelMain = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new Bunifu.Framework.UI.BunifuTileButton();
             this.rbtnLocation = new System.Windows.Forms.RadioButton();
             this.grpLocation = new System.Windows.Forms.GroupBox();
             this.txtLocation = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -66,10 +67,9 @@
             this.plotNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlOperations = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSearch = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnFees = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDetails = new Bunifu.Framework.UI.BunifuTileButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.searchVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanelMain.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -92,7 +92,7 @@
             this.flowLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelMain.Name = "flowLayoutPanelMain";
-            this.flowLayoutPanelMain.Size = new System.Drawing.Size(1050, 810);
+            this.flowLayoutPanelMain.Size = new System.Drawing.Size(1050, 710);
             this.flowLayoutPanelMain.TabIndex = 0;
             // 
             // pnlHeader
@@ -123,6 +123,26 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "طريقة البحث";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSearch.color = System.Drawing.Color.CornflowerBlue;
+            this.btnSearch.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::LMS.Properties.Resources.icons8_search_40;
+            this.btnSearch.ImagePosition = 15;
+            this.btnSearch.ImageZoom = 20;
+            this.btnSearch.LabelPosition = 35;
+            this.btnSearch.LabelText = "بحث";
+            this.btnSearch.Location = new System.Drawing.Point(7, 40);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(152, 82);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // rbtnLocation
             // 
@@ -520,35 +540,6 @@
             this.pnlOperations.Size = new System.Drawing.Size(1025, 127);
             this.pnlOperations.TabIndex = 3;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 122);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1025, 5);
-            this.panel2.TabIndex = 3;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnSearch.color = System.Drawing.Color.CornflowerBlue;
-            this.btnSearch.colorActive = System.Drawing.Color.LightSkyBlue;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = global::LMS.Properties.Resources.icons8_search_40;
-            this.btnSearch.ImagePosition = 15;
-            this.btnSearch.ImageZoom = 20;
-            this.btnSearch.LabelPosition = 35;
-            this.btnSearch.LabelText = "بحث";
-            this.btnSearch.Location = new System.Drawing.Point(7, 40);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(152, 82);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // btnFees
             // 
             this.btnFees.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -589,6 +580,15 @@
             this.btnDetails.TabIndex = 7;
             this.btnDetails.Click += new System.EventHandler(this.btndetails_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 122);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1025, 5);
+            this.panel2.TabIndex = 3;
+            // 
             // searchVMBindingSource1
             // 
             this.searchVMBindingSource1.DataSource = typeof(LMS.ViewModel.SearchVM);
@@ -597,7 +597,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 810);
+            this.ClientSize = new System.Drawing.Size(1050, 710);
             this.Controls.Add(this.flowLayoutPanelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
