@@ -38,7 +38,7 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox1.Image = global::LMS.Properties.Resources.slyAlaElnaby;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 305);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 275);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1050, 405);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -73,7 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 710);
+            this.ClientSize = new System.Drawing.Size(1050, 680);
             this.Controls.Add(this.lblMonthlyIncome);
             this.Controls.Add(this.lblLicenseCount);
             this.Controls.Add(this.pictureBox1);

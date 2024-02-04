@@ -183,7 +183,7 @@
             this.pnlScrollerContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlScrollerContainer.Location = new System.Drawing.Point(0, 0);
             this.pnlScrollerContainer.Name = "pnlScrollerContainer";
-            this.pnlScrollerContainer.Size = new System.Drawing.Size(1050, 710);
+            this.pnlScrollerContainer.Size = new System.Drawing.Size(1050, 680);
             this.pnlScrollerContainer.TabIndex = 0;
             // 
             // pnlMainInfoContainer
@@ -1627,7 +1627,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 710);
+            this.ClientSize = new System.Drawing.Size(1050, 680);
             this.Controls.Add(this.pnlScrollerContainer);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

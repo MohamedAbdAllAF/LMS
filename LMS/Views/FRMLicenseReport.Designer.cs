@@ -46,8 +46,9 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1050, 546);
+            this.reportViewer1.Size = new System.Drawing.Size(1050, 516);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
             // lblTitle
             // 
@@ -149,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 710);
+            this.ClientSize = new System.Drawing.Size(1050, 680);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.reportViewer1);
