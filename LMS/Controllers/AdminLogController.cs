@@ -26,8 +26,8 @@ namespace LMS.Controllers
             };
             try
             {
-                context.AdminLogs.Add(log);
-                context.SaveChanges();
+                //context.AdminLogs.Add(log);
+                //context.SaveChanges();
                 return true;
             }
             catch (Exception ex)

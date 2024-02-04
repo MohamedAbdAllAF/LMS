@@ -24,11 +24,25 @@ namespace LMS.Controllers
         ValidityStatmentController ValidityControl =new ValidityStatmentController();
         AdminLogController Log = new AdminLogController();
 
+        public string NationalIdGenrator()
+        {
+            var id = 0;
+            if (context.Users.ToList().Count != 0)
+                id = context.Users.Max(u => u.Id);
+            return id.ToString("D14");
+        }
+
         public bool AddLicense(int adminId, User owner, User agent,
             ValidityStatment validityStatment, string location, license license)
         {
+            if (owner.NationalId == "")
+                owner.NationalId = NationalIdGenrator();
             int ownerId = userControl.AddNewUser(adminId,owner);
-            int agentId = userControl.AddNewUser(adminId,agent);
+            int agentId;
+            if (agent == null)
+                agentId = ownerId;
+            else
+                agentId = userControl.AddNewUser(adminId,agent);
             int locationId = locationControl.AddNewLocation(adminId,location);
             int validityId = ValidityControl.AddNewValidityStatment(adminId,validityStatment);
             license.OwnerID = ownerId;

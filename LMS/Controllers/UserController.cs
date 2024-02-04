@@ -16,7 +16,7 @@ namespace LMS.Controllers
         // Function To Add User And Retreive his ID 
         public int AddNewUser(int adminId,User user)
         {
-            if (IsExist(user.NationalId))
+            if (IsExist(user.Name))
             {
                 try
                 {
@@ -49,9 +49,9 @@ namespace LMS.Controllers
             }
         }
 
-        public bool IsExist(string nationalId)
+        public bool IsExist(string Name)
         {
-            return context.Users.Any(user=>user.NationalId == nationalId);
+            return context.Users.Any(user=>user.Name == Name);
         }
         public int UpdateUser(int adminId, User user)
         {

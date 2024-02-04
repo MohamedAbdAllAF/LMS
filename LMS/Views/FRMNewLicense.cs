@@ -157,9 +157,9 @@ namespace LMS.Views
 
             string location = txtLocation.Text;
 
-            if(txtOwnerName.Text != string.Empty && txtOwnerNationalId.Text != string.Empty)
+            if(txtOwnerName.Text != string.Empty)
             {
-                if(txtOwnerNationalId.Text.Length == 14)
+                if(txtOwnerNationalId.Text.Length == 14 || txtOwnerNationalId.Text ==string.Empty)
                 {
                     Owner = new User { NationalId = txtOwnerNationalId.Text,Name =txtOwnerName.Text };
                 }
@@ -172,9 +172,9 @@ namespace LMS.Views
                 errorMessages.Add("أدخل بيانات المالك");
             }
 
-            if (txtAgentName.Text != string.Empty && txtAgentNationalId.Text != string.Empty)
+            if (txtAgentName.Text != string.Empty )
             {
-                if (txtAgentNationalId.Text.Length == 14)
+                if (txtAgentNationalId.Text.Length == 14 || txtAgentNationalId.Text ==string.Empty)
                 {
                     Agent = new User { NationalId = txtAgentNationalId.Text, Name = txtAgentName.Text };
                 }
@@ -182,15 +182,15 @@ namespace LMS.Views
                 {
                     errorMessages.Add("الرقم القومي للوكيل غير صحيح");
                 }
-            }else
-            {
-                errorMessages.Add("أدخل بيانات الوكيل");
             }
 
-            decimal x;
-            if (!decimal.TryParse(txtFees.Text, out x))
+            if (txtFees.Text != string.Empty)
             {
-                errorMessages.Add("قيمة الاتعاب غير صحيحة");
+                decimal x;
+                if (!decimal.TryParse(txtFees.Text, out x))
+                {
+                    errorMessages.Add("قيمة الاتعاب غير صحيحة");
+                }
             }
 
             if(errorMessages.Count > 0)
@@ -261,7 +261,7 @@ namespace LMS.Views
                             LFinalPaymentDate = txtLFinalPaymentDate.Text != string.Empty ? picLFinalPaymentDate.Value : (DateTime?)null,
                             LSignatureDate = txtLSignatureDate.Text != string.Empty ? picLSignatureDate.Value : (DateTime?)null,
                             LReceiveDate = txtLReceiveDate.Text != string.Empty ? picLReceiveDate.Value : (DateTime?)null,
-                            Fees = Convert.ToDecimal(txtFees.Text),
+                            Fees = txtFees.Text != string.Empty ? Convert.ToDecimal(txtFees.Text) : 0,
                             Notes = txtNotes.Text,
                             LastUptate = DateTime.Now
                         };
