@@ -46,7 +46,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1050, 648);
+            this.reportViewer1.Size = new System.Drawing.Size(1050, 546);
             this.reportViewer1.TabIndex = 0;
             // 
             // lblTitle
