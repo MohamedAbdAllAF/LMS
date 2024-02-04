@@ -134,6 +134,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnDeleteLicense = new Bunifu.Framework.UI.BunifuTileButton();
             this.pnlScrollerContainer.SuspendLayout();
             this.pnlMainInfoContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -1597,6 +1598,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnDeleteLicense);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Location = new System.Drawing.Point(3, 1310);
             this.panel1.Name = "panel1";
@@ -1622,6 +1624,27 @@
             this.btnSave.Size = new System.Drawing.Size(152, 82);
             this.btnSave.TabIndex = 0;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnDeleteLicense
+            // 
+            this.btnDeleteLicense.BackColor = System.Drawing.Color.Red;
+            this.btnDeleteLicense.color = System.Drawing.Color.Red;
+            this.btnDeleteLicense.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDeleteLicense.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteLicense.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnDeleteLicense.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteLicense.Image = global::LMS.Properties.Resources.icons8_close_40;
+            this.btnDeleteLicense.ImagePosition = 10;
+            this.btnDeleteLicense.ImageZoom = 25;
+            this.btnDeleteLicense.LabelPosition = 35;
+            this.btnDeleteLicense.LabelText = "حذف الرخصة";
+            this.btnDeleteLicense.Location = new System.Drawing.Point(183, 6);
+            this.btnDeleteLicense.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDeleteLicense.Name = "btnDeleteLicense";
+            this.btnDeleteLicense.Size = new System.Drawing.Size(152, 82);
+            this.btnDeleteLicense.TabIndex = 11;
+            this.btnDeleteLicense.Visible = false;
+            this.btnDeleteLicense.Click += new System.EventHandler(this.btnDeleteLicense_Click);
             // 
             // FRMNewLicense
             // 
@@ -1799,5 +1822,6 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txtLFinalPaymentDate;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
+        private Bunifu.Framework.UI.BunifuTileButton btnDeleteLicense;
     }
 }

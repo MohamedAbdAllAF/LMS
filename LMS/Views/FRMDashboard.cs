@@ -24,7 +24,7 @@ namespace LMS.Views
         {
             lblLicenseCount.Text = 
                 $"عدد الرخص المسجلة علي النظام \n {licenseController.GetAllLicenses().Count()} رخصة";
-            lblMonthlyIncome.Text = $"دخل الشهر الحالي \n{feesController.MonthlyIncome(DateTime.Now)} جنيه";
+            //lblMonthlyIncome.Text = $"دخل الشهر الحالي \n{feesController.MonthlyIncome(DateTime.Now)} جنيه";
         }
     }
 }

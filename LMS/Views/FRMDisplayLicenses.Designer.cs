@@ -425,7 +425,7 @@
             this.pnlDataContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDataContainer.Location = new System.Drawing.Point(3, 220);
             this.pnlDataContainer.Name = "pnlDataContainer";
-            this.pnlDataContainer.Size = new System.Drawing.Size(1025, 445);
+            this.pnlDataContainer.Size = new System.Drawing.Size(1025, 324);
             this.pnlDataContainer.TabIndex = 1;
             // 
             // dgvDisplay
@@ -481,7 +481,7 @@
             this.dgvDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDisplay.RowTemplate.Height = 30;
             this.dgvDisplay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDisplay.Size = new System.Drawing.Size(1025, 440);
+            this.dgvDisplay.Size = new System.Drawing.Size(1025, 319);
             this.dgvDisplay.TabIndex = 1;
             // 
             // ownerNationalIdDataGridViewTextBoxColumn
@@ -524,7 +524,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Red;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 440);
+            this.panel3.Location = new System.Drawing.Point(0, 319);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1025, 5);
             this.panel3.TabIndex = 0;
@@ -535,7 +535,7 @@
             this.pnlOperations.Controls.Add(this.btnDetails);
             this.pnlOperations.Controls.Add(this.panel2);
             this.pnlOperations.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlOperations.Location = new System.Drawing.Point(3, 671);
+            this.pnlOperations.Location = new System.Drawing.Point(3, 550);
             this.pnlOperations.Name = "pnlOperations";
             this.pnlOperations.Size = new System.Drawing.Size(1025, 127);
             this.pnlOperations.TabIndex = 3;

@@ -49,7 +49,7 @@
             // 
             this.lblLicenseCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLicenseCount.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblLicenseCount.Location = new System.Drawing.Point(606, 158);
+            this.lblLicenseCount.Location = new System.Drawing.Point(609, 78);
             this.lblLicenseCount.Name = "lblLicenseCount";
             this.lblLicenseCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblLicenseCount.Size = new System.Drawing.Size(350, 100);
@@ -68,6 +68,7 @@
             this.lblMonthlyIncome.TabIndex = 2;
             this.lblMonthlyIncome.Text = "bunifuCustomLabel2";
             this.lblMonthlyIncome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonthlyIncome.Visible = false;
             // 
             // FRMDashboard
             // 

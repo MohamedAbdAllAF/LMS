@@ -103,6 +103,26 @@ namespace LMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_minimize_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-minimize-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_minimize_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-minimize-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_money_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-money-40", resourceCulture);
@@ -126,6 +146,16 @@ namespace LMS.Properties {
         internal static System.Drawing.Bitmap lms_high_resolution_logo_color_on_transparent_background {
             get {
                 object obj = ResourceManager.GetObject("lms-high-resolution-logo-color-on-transparent-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimize {
+            get {
+                object obj = ResourceManager.GetObject("minimize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

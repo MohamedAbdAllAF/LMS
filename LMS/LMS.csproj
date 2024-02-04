@@ -143,6 +143,11 @@
     <Compile Include="Models\SuperAdmin.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\ValidityStatment.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ViewModel\FeesVM.cs" />
     <Compile Include="ViewModel\LicenseVM.cs" />
@@ -202,14 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Reports\MLicenseReport.rdlc" />
     <EmbeddedResource Include="Reports\OlicenseReport.rdlc" />
     <EmbeddedResource Include="Views\FRMDashboard.resx">
@@ -217,6 +217,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FRMDisplayLicenses.resx">
       <DependentUpon>FRMDisplayLicenses.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FRMFees.resx">
       <DependentUpon>FRMFees.cs</DependentUpon>
@@ -229,6 +230,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FRMMain.resx">
       <DependentUpon>FRMMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FRMNewLicense.resx">
       <DependentUpon>FRMNewLicense.cs</DependentUpon>
@@ -273,6 +275,9 @@
     </Content>
     <None Include="Resources\slyAlaElnaby.png" />
     <None Include="Resources\data-transfer.png" />
+    <None Include="Resources\icons8-minimize-30.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\icons8-minimize-60.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />

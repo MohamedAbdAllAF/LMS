@@ -17,6 +17,7 @@ namespace LMS.Views
         public FRMLogin()
         {
             InitializeComponent();
+            txtUserName.Text = "User1";
             txtPassword.Text = "Password";
         }
 
@@ -50,17 +51,32 @@ namespace LMS.Views
         {
             if(txtPassword.Text != string.Empty && txtUserName.Text != string.Empty)
             {
-                var admin = context.Admins.FirstOrDefault();
+                //var admin = context.Admins.FirstOrDefault();
 
-                if(admin != null)
+                if(txtPassword.Text =="123456" && txtUserName.Text == "User1")
                 {
                     this.Hide();
-                    var frm = new FRMMain(admin.Id);
+                    var frm = new FRMMain(1);
                     frm.Closed += (s, args) => this.Close();
                     frm.Show();
+                }else
+                {
+                    MessageBox.Show("Error");
                 }
 
             }
+        }
+
+        private void lblExit_MouseEnter(object sender, EventArgs e)
+        {
+            lblExit.BackColor = Color.Red;
+            lblExit.ForeColor = Color.Black;
+        }
+
+        private void lblExit_MouseLeave(object sender, EventArgs e)
+        {
+            lblExit.BackColor = SystemColors.Control;
+            lblExit.ForeColor = Color.FromArgb(238, 26, 74);
         }
     }
 }

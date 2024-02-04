@@ -39,7 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtUserName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblExit = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
@@ -89,7 +89,7 @@
             this.panelRight.Controls.Add(this.label4);
             this.panelRight.Controls.Add(this.txtUserName);
             this.panelRight.Controls.Add(this.label3);
-            this.panelRight.Controls.Add(this.label8);
+            this.panelRight.Controls.Add(this.lblExit);
             this.panelRight.Controls.Add(this.label2);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRight.Location = new System.Drawing.Point(321, 0);
@@ -176,17 +176,18 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "User Name:";
             // 
-            // label8
+            // lblExit
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
-            this.label8.Location = new System.Drawing.Point(309, 2);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 30);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "x";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.lblExit.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.lblExit.Location = new System.Drawing.Point(309, 0);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(35, 35);
+            this.lblExit.TabIndex = 5;
+            this.lblExit.Text = "x";
+            this.lblExit.Click += new System.EventHandler(this.label8_Click);
+            this.lblExit.MouseEnter += new System.EventHandler(this.lblExit_MouseEnter);
+            this.lblExit.MouseLeave += new System.EventHandler(this.lblExit_MouseLeave);
             // 
             // label2
             // 
@@ -243,7 +244,7 @@
         private System.Windows.Forms.Button btnLogin;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblExit;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }

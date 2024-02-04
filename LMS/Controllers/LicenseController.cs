@@ -150,11 +150,27 @@ namespace LMS.Controllers
             return result;
         }
 
-        public List<LicenseVM> GetAllLicensesInRange(DateTime From,DateTime To)
+        public List<LicenseVM> GetAllLicensesInRange(DateTime From,DateTime To,string Choice)
         {
             List<LicenseVM> result = new List<LicenseVM>();
 
-            var licenses = context.Licenses.Where(l => l.CreatedOn >= From && l.CreatedOn <= To).ToList();
+            List<license> licenses = null;
+            if (Choice == "CreatedOn")
+                licenses = context.Licenses.Where(l => l.CreatedOn >= From && l.CreatedOn <= To).ToList();
+            else if (Choice == "LEntryDate")
+                licenses = context.Licenses.Where(l => l.EntryDate >= From && l.EntryDate <= To).ToList();
+            else if (Choice == "LExaminationFeeDate")
+                licenses = context.Licenses.Where(l => l.ExaminationFeeDate >= From && l.ExaminationFeeDate <= To).ToList();
+            else if (Choice == "LFinalPaymentDate")
+                licenses = context.Licenses.Where(l => l.FinalPaymentDate >= From && l.FinalPaymentDate <= To).ToList();
+            else if (Choice == "LInitialSupplyDate")
+                licenses = context.Licenses.Where(l => l.InitialSupplyDate >= From && l.InitialSupplyDate <= To).ToList();
+            else if (Choice == "VEntryDate")
+                licenses = context.Licenses.Where(l => l.ValStat.EntryDate >= From && l.ValStat.EntryDate <= To).ToList();
+            else if (Choice == "VInitialSupplyDate")
+                licenses = context.Licenses.Where(l => l.ValStat.InitialSupplyDate >= From && l.ValStat.InitialSupplyDate <= To).ToList();
+            else if(Choice == "VValidatySupplyDate")
+                licenses = context.Licenses.Where(l => l.ValStat.ValidatySupplyDate >= From && l.ValStat.ValidatySupplyDate <= To).ToList();
 
             foreach (var license in licenses)
             {
@@ -572,6 +588,8 @@ namespace LMS.Controllers
 
                 if (oldOwner.NationalId != newlicense.OwnarNationalId)
                 {
+                    if (newlicense.OwnarNationalId == "")
+                        newlicense.OwnarNationalId = NationalIdGenrator();
                     int ownerId = userControl.AddNewUser(adminId, new User
                     {
                         NationalId = newlicense.OwnarNationalId,
@@ -800,6 +818,27 @@ namespace LMS.Controllers
                 errHandle.AddExeption(ex, "LicenseController", "UpdateLicense",DateTime.Now);
                 return -1;
             }
+        }
+
+        public bool DeleteLicense(int adminId,int License)
+        {
+            var oldlicence = context.Licenses.FirstOrDefault(l => l.Id == License);
+            try
+            {
+                if (oldlicence != null)
+                {
+                    context.Licenses.Remove(oldlicence);
+                    Log.AddLog(adminId, "Licenses", "N/A", oldlicence.Id,"قام بحذف رخصة");
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errHandle.AddExeption(ex, "LicenseController", "DeleteLicense", DateTime.Now);
+                return false;
+            }
+            return false;
         }
 
         public List<license> GetAllLicenses()

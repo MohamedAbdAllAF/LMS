@@ -40,6 +40,7 @@ namespace LMS.Views
                 lblTitle.Text = "تعديل رخصة";
                 lblCreatedOn.Visible = true;
                 lblLastUpdate.Visible = true;
+                btnDeleteLicense.Visible = true;
                 LoadData();
             }
         }
@@ -331,5 +332,18 @@ namespace LMS.Views
             txtLFinalPaymentDate.Text = picLFinalPaymentDate.Value.ToString();
         }
         #endregion
+
+        private void btnDeleteLicense_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("هل تريد الحذف ؟", "تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (licensecont.DeleteLicense(AdminId, licenseId))
+                {
+                    FRMMain frm = (FRMMain)Application.OpenForms["FRMMain"];
+                    MessageBox.Show("تم الحذف بنجاح");
+                    frm.LoadForm(new FRMNewLicense(1));
+                }
+            }
+        }
     }
 }
