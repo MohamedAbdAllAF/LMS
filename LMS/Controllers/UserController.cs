@@ -20,7 +20,7 @@ namespace LMS.Controllers
             {
                 try
                 {
-                    var userId = context.Users.Where(u => u.NationalId == user.NationalId).Select(u => u.Id).FirstOrDefault();
+                    var userId = context.Users.Where(u => u.Name == user.Name).Select(u => u.Id).FirstOrDefault();
                     return Convert.ToInt32(userId);
                 }
                 catch (Exception ex)
