@@ -11,8 +11,8 @@ namespace LMS.Models
     internal class LMSContext :DbContext
     {
         //Accessing The Connection String
-        public LMSContext() : base("LocalDBRelease") { }
-        //public LMSContext() : base("LocalDB") { }
+        //public LMSContext() : base("DBConnection") { }
+        public LMSContext() : base("LocalDB") { }
         //public LMSContext() : base("Testing") { }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<AdminLog> AdminLogs { get; set; }
