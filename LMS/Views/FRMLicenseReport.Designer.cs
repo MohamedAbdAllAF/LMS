@@ -219,7 +219,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(215, 87);
+            this.label1.Location = new System.Drawing.Point(215, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 24);
             this.label1.TabIndex = 8;
@@ -232,10 +232,10 @@
             this.picTo.ForeColor = System.Drawing.Color.White;
             this.picTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.picTo.FormatCustom = null;
-            this.picTo.Location = new System.Drawing.Point(12, 81);
+            this.picTo.Location = new System.Drawing.Point(12, 96);
             this.picTo.Margin = new System.Windows.Forms.Padding(6);
             this.picTo.Name = "picTo";
-            this.picTo.Size = new System.Drawing.Size(194, 37);
+            this.picTo.Size = new System.Drawing.Size(194, 47);
             this.picTo.TabIndex = 6;
             this.picTo.Value = new System.DateTime(2023, 9, 14, 1, 34, 26, 285);
             // 
@@ -249,7 +249,7 @@
             this.picFrom.Location = new System.Drawing.Point(12, 37);
             this.picFrom.Margin = new System.Windows.Forms.Padding(4);
             this.picFrom.Name = "picFrom";
-            this.picFrom.Size = new System.Drawing.Size(194, 37);
+            this.picFrom.Size = new System.Drawing.Size(194, 47);
             this.picFrom.TabIndex = 4;
             this.picFrom.Value = new System.DateTime(2023, 9, 7, 0, 0, 0, 0);
             // 
@@ -257,7 +257,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(216, 42);
+            this.label12.Location = new System.Drawing.Point(216, 48);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 24);
             this.label12.TabIndex = 0;

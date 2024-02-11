@@ -56,6 +56,7 @@
             this.lblLicenseCount.TabIndex = 1;
             this.lblLicenseCount.Text = "bunifuCustomLabel1";
             this.lblLicenseCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLicenseCount.Visible = false;
             // 
             // lblMonthlyIncome
             // 
