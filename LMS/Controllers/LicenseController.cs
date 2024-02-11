@@ -1,4 +1,5 @@
-﻿using LMS.Models;
+﻿using Bunifu.Framework;
+using LMS.Models;
 using LMS.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -124,8 +125,8 @@ namespace LMS.Controllers
                 {
                     OwnarName = owner.Name,
                     OwnarNationalId = owner.NationalId,
-                    AgentName = agent.Name,
-                    AgentNationalId = agent.NationalId,
+                    //AgentName = agent.Name,
+                    //AgentNationalId = agent.NationalId,
                     Location = location.Name,
                     PlotNumber = license.PlotNumber,
                     Work = license.Work,
@@ -145,6 +146,13 @@ namespace LMS.Controllers
                     //LSignatureDate = DateFormat((DateTime)license.SignatureDate),
                     //CreatedOn = (DateTime)DateFormat((DateTime)license.CreatedOn)
                 };
+                if (agent == null)
+                    licenseVM.AgentName = licenseVM.AgentNationalId = "";
+                else
+                {
+                    licenseVM.AgentName = agent.Name;
+                    licenseVM.AgentNationalId = agent.NationalId;
+                }
                 result.Add(licenseVM);
             }
             return result;
@@ -184,8 +192,8 @@ namespace LMS.Controllers
                 {
                     OwnarName = owner.Name,
                     OwnarNationalId = owner.NationalId,
-                    AgentName = agent.Name,
-                    AgentNationalId = agent.NationalId,
+                    //AgentName = agent.Name,
+                    //AgentNationalId = agent.NationalId,
                     Location = location.Name,
                     PlotNumber = license.PlotNumber,
                     Work = license.Work,
@@ -205,6 +213,13 @@ namespace LMS.Controllers
                     //LSignatureDate = DateFormat((DateTime)license.SignatureDate),
                     //CreatedOn = (DateTime)DateFormat((DateTime)license.CreatedOn)
                 };
+                if (agent == null)
+                    licenseVM.AgentName = licenseVM.AgentNationalId = "";
+                else
+                {
+                    licenseVM.AgentName = agent.Name;
+                    licenseVM.AgentNationalId = agent.NationalId;
+                }
                 result.Add(licenseVM);
             }
             return result;
@@ -269,11 +284,18 @@ namespace LMS.Controllers
                                 LicenseId  =license.Id,
                                 OwnerName = user.Name,
                                 OwnerNationalId = user.NationalId,
-                                AgentName = agent.Name,
-                                AgentNationalId = agent.NationalId,
+                                //AgentName = agent.Name,
+                                //AgentNationalId = agent.NationalId,
                                 Location = location.Name,
                                 PlotNumber = license.PlotNumber
                             };
+                            if (agent == null)
+                                item.AgentName = item.AgentNationalId = "";
+                            else
+                            {
+                                item.AgentName = agent.Name;
+                                item.AgentNationalId = agent.NationalId;
+                            }
                             result.Add(item);
                         }
                     }
@@ -303,11 +325,18 @@ namespace LMS.Controllers
                                 LicenseId = license.Id,
                                 OwnerName = user.Name,
                                 OwnerNationalId = user.NationalId,
-                                AgentName = agent.Name,
-                                AgentNationalId = agent.NationalId,
+                                //AgentName = agent.Name,
+                                //AgentNationalId = agent.NationalId,
                                 Location = location.Name,
                                 PlotNumber = license.PlotNumber
                             };
+                            if (agent == null)
+                                item.AgentName = item.AgentNationalId = "";
+                            else
+                            {
+                                item.AgentName = agent.Name;
+                                item.AgentNationalId = agent.NationalId;
+                            }
                             result.Add(item);
                         }
                     }
@@ -339,11 +368,18 @@ namespace LMS.Controllers
                                 LicenseId = license.Id,
                                 OwnerName = user.Name,
                                 OwnerNationalId = user.NationalId,
-                                AgentName = agent.Name,
-                                AgentNationalId = agent.NationalId,
+                                //AgentName = agent.Name,
+                                //AgentNationalId = agent.NationalId,
                                 Location = location.Name,
                                 PlotNumber = license.PlotNumber
                             };
+                            if (agent == null)
+                                item.AgentName = item.AgentNationalId = "";
+                            else
+                            {
+                                item.AgentName = agent.Name;
+                                item.AgentNationalId = agent.NationalId;
+                            }
                             result.Add(item);
                         }
                     }
@@ -477,11 +513,18 @@ namespace LMS.Controllers
                                 LicenseId = license.Id,
                                 OwnerName = owner.Name,
                                 OwnerNationalId = owner.NationalId,
-                                AgentName = agent.Name,
-                                AgentNationalId = agent.NationalId,
+                                //AgentName = agent.Name,
+                                //AgentNationalId = agent.NationalId,
                                 Location = location.Name,
                                 PlotNumber = license.PlotNumber
                             };
+                            if (agent == null)
+                                item.AgentName = item.AgentNationalId = "";
+                            else
+                            {
+                                item.AgentName = agent.Name;
+                                item.AgentNationalId = agent.NationalId;
+                            }
                             result.Add(item);
                         }
                     }
@@ -511,11 +554,18 @@ namespace LMS.Controllers
                                 LicenseId = license.Id,
                                 OwnerName = owner.Name,
                                 OwnerNationalId = owner.NationalId,
-                                AgentName = agent.Name,
-                                AgentNationalId = agent.NationalId,
+                                //AgentName = agent.Name,
+                                //AgentNationalId = agent.NationalId,
                                 Location = location.Name,
                                 PlotNumber = license.PlotNumber
                             };
+                            if (agent == null)
+                                item.AgentName = item.AgentNationalId = "";
+                            else
+                            {
+                                item.AgentName = agent.Name;
+                                item.AgentNationalId = agent.NationalId;
+                            }
                             result.Add(item);
                         }
                     }
@@ -550,8 +600,8 @@ namespace LMS.Controllers
                 {
                     OwnarNationalId = owner.NationalId,
                     OwnarName = owner.Name,
-                    AgentNationalId = agent.NationalId,
-                    AgentName = agent.Name,
+                    //AgentNationalId = agent.NationalId,
+                    //AgentName = agent.Name,
                     Location = location.Name,
                     PlotNumber = license.PlotNumber,
                     Work = license.Work,
@@ -572,6 +622,14 @@ namespace LMS.Controllers
                     LastUptate = license.LastUpdate,
                     CreatedOn = license.CreatedOn
                 };
+                if(agent == null)
+                    result.AgentName = result.AgentNationalId = "";
+                else
+                {
+                    result.AgentName = agent.Name;
+                    result.AgentNationalId = agent.NationalId;
+                }
+
             }
             return result;
         }
@@ -610,8 +668,34 @@ namespace LMS.Controllers
                         });
                     }
                 }
-
-                if (oldAgent.NationalId != newlicense.AgentNationalId)
+                
+                if(oldAgent == null)
+                {
+                    if (newlicense.AgentNationalId == "" && newlicense.AgentName == "")
+                    {
+                        oldlicence.AgentID = null;
+                    }
+                    else if (newlicense.AgentNationalId != string.Empty || newlicense.AgentNationalId != "")
+                    {
+                        if (newlicense.AgentNationalId == "")
+                            newlicense.AgentNationalId = NationalIdGenrator();
+                        int agentId = userControl.AddNewUser(adminId, new User
+                        {
+                            NationalId = newlicense.AgentNationalId,
+                            Name = newlicense.AgentName
+                        });
+                        oldlicence.AgentID = agentId;
+                        Log.AddLog(adminId, "Licenses", "N/A", oldlicence.Id,
+                            $"قام بأضافة بيانات الوكيل الي {agentId}");
+                    }
+                }
+                else if(newlicense.AgentNationalId == "" && newlicense.AgentName == "")
+                {
+                    oldlicence.AgentID = null;
+                    Log.AddLog(adminId, "Licenses", "N/A", oldlicence.Id,
+                        $"قام بحذف بيانات الوكيل من {oldAgent.Id} الي 0");
+                }
+                else if (oldAgent.NationalId != newlicense.AgentNationalId)
                 {
                     if (newlicense.AgentNationalId == "")
                         newlicense.AgentNationalId = NationalIdGenrator();

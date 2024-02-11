@@ -17,7 +17,7 @@ namespace LMS.Models
         public int OwnerID{ get; set; }
 
         [ForeignKey(nameof(Agent))]
-        public int AgentID { get; set; }
+        public int? AgentID { get; set; }
 
         [ForeignKey(nameof(Locat))]
         public int LocationId { get; set; }

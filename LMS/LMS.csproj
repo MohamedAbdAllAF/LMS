@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202309140103125_edit.designer.cs">
       <DependentUpon>202309140103125_edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402110357357_Agent_NULLABLE.cs" />
+    <Compile Include="Migrations\202402110357357_Agent_NULLABLE.designer.cs">
+      <DependentUpon>202402110357357_Agent_NULLABLE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Fee.cs" />
@@ -207,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309140103125_edit.resx">
       <DependentUpon>202309140103125_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402110357357_Agent_NULLABLE.resx">
+      <DependentUpon>202402110357357_Agent_NULLABLE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
