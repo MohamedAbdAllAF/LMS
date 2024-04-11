@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LMS.Views.ResizeHandler;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,9 @@ namespace LMS.Views
     public partial class FRMMain : Form
     {
         public int AdminId;
+        private bool _isNormal = true;
+        private FormResizer _resizer = new FormResizer();
+        Dictionary<Control, Size> originalSizes = new Dictionary<Control, Size>();
         public FRMMain(int adminId)
         {
             InitializeComponent();
@@ -39,6 +43,16 @@ namespace LMS.Views
             pnlContainer.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void FRMMain_Load(object sender, EventArgs e)
+        {
+            originalSizes = _resizer.GetControlSizes(this);
+        }
+
+        private void FRMMain_Resize(object sender, EventArgs e)
+        {
+            //_resizer.ResizeComponents(this, originalSizes);
         }
 
         #endregion
@@ -127,5 +141,30 @@ namespace LMS.Views
         {
             LoadForm(new FRMLicenseReport());
         }
+        #region Maximize Label Events
+        private void lblMaxmize_Click(object sender, EventArgs e)
+        {
+            if (_isNormal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                _isNormal = false;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                _isNormal = true;
+            }
+        }
+
+        private void lblMaxmize_MouseEnter(object sender, EventArgs e)
+        {
+            lblMaxmize.BackColor = Color.FromArgb(200, 200, 200);
+        }
+
+        private void lblMaxmize_MouseLeave(object sender, EventArgs e)
+        {
+            lblMaxmize.BackColor = Color.FromArgb(100, 149, 237);
+        }
+        #endregion
     }
 }

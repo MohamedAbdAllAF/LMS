@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMNewLicense));
-            this.pnlScrollerContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlScrollerContainer = new System.Windows.Forms.Panel();
             this.pnlMainInfoContainer = new System.Windows.Forms.Panel();
             this.lblLastUpdate = new System.Windows.Forms.Label();
             this.lblCreatedOn = new System.Windows.Forms.Label();
@@ -83,6 +83,13 @@
             this.pnlLicense = new System.Windows.Forms.Panel();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.btnAddFile = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnDeleteFile = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnDownloadFile = new Bunifu.Framework.UI.BunifuTileButton();
+            this.lvFilesList = new MaterialSkin.Controls.MaterialListView();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fileName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.btnLFinalPaymentDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picLFinalPaymentDate = new Bunifu.Framework.UI.BunifuDatepicker();
@@ -133,8 +140,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDeleteLicense = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
             this.pnlScrollerContainer.SuspendLayout();
             this.pnlMainInfoContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -154,6 +161,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnVEntryDate)).BeginInit();
             this.pnlLicense.SuspendLayout();
             this.groupBox11.SuspendLayout();
+            this.groupBox21.SuspendLayout();
             this.groupBox20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).BeginInit();
             this.groupBox19.SuspendLayout();
@@ -176,7 +184,6 @@
             // pnlScrollerContainer
             // 
             this.pnlScrollerContainer.AutoScroll = true;
-            this.pnlScrollerContainer.AutoSize = true;
             this.pnlScrollerContainer.Controls.Add(this.pnlMainInfoContainer);
             this.pnlScrollerContainer.Controls.Add(this.pnlValidityStatment);
             this.pnlScrollerContainer.Controls.Add(this.pnlLicense);
@@ -189,15 +196,17 @@
             // 
             // pnlMainInfoContainer
             // 
+            this.pnlMainInfoContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMainInfoContainer.Controls.Add(this.lblLastUpdate);
             this.pnlMainInfoContainer.Controls.Add(this.lblCreatedOn);
             this.pnlMainInfoContainer.Controls.Add(this.bunifuSeparator1);
             this.pnlMainInfoContainer.Controls.Add(this.groupBox1);
             this.pnlMainInfoContainer.Controls.Add(this.lblTitle);
-            this.pnlMainInfoContainer.Location = new System.Drawing.Point(3, 3);
+            this.pnlMainInfoContainer.Location = new System.Drawing.Point(3, 12);
             this.pnlMainInfoContainer.Name = "pnlMainInfoContainer";
-            this.pnlMainInfoContainer.Size = new System.Drawing.Size(1025, 340);
-            this.pnlMainInfoContainer.TabIndex = 4;
+            this.pnlMainInfoContainer.Size = new System.Drawing.Size(1027, 340);
+            this.pnlMainInfoContainer.TabIndex = 7;
             // 
             // lblLastUpdate
             // 
@@ -214,11 +223,12 @@
             // 
             // lblCreatedOn
             // 
+            this.lblCreatedOn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCreatedOn.AutoSize = true;
             this.lblCreatedOn.BackColor = System.Drawing.SystemColors.Control;
             this.lblCreatedOn.Enabled = false;
             this.lblCreatedOn.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblCreatedOn.Location = new System.Drawing.Point(740, 22);
+            this.lblCreatedOn.Location = new System.Drawing.Point(742, 22);
             this.lblCreatedOn.Name = "lblCreatedOn";
             this.lblCreatedOn.Size = new System.Drawing.Size(184, 24);
             this.lblCreatedOn.TabIndex = 5;
@@ -234,13 +244,15 @@
             this.bunifuSeparator1.Location = new System.Drawing.Point(0, 334);
             this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(1025, 6);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(1027, 6);
             this.bunifuSeparator1.TabIndex = 4;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox5);
@@ -251,25 +263,29 @@
             this.groupBox1.Location = new System.Drawing.Point(10, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(1004, 280);
+            this.groupBox1.Size = new System.Drawing.Size(1006, 280);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "البيانات الأساسية";
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.txtWork);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox4.Location = new System.Drawing.Point(9, 145);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(490, 117);
+            this.groupBox4.Size = new System.Drawing.Size(492, 117);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "بيان الأعمال";
             // 
             // txtWork
             // 
+            this.txtWork.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtWork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtWork.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtWork.Depth = 0;
@@ -279,12 +295,14 @@
             this.txtWork.Location = new System.Drawing.Point(9, 25);
             this.txtWork.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtWork.Name = "txtWork";
-            this.txtWork.Size = new System.Drawing.Size(470, 78);
+            this.txtWork.Size = new System.Drawing.Size(472, 78);
             this.txtWork.TabIndex = 0;
             this.txtWork.Text = "";
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.txtLocation);
             this.groupBox5.Controls.Add(this.txtPlotNumber);
             this.groupBox5.Controls.Add(this.label7);
@@ -293,23 +311,27 @@
             this.groupBox5.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox5.Location = new System.Drawing.Point(9, 28);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(490, 117);
+            this.groupBox5.Size = new System.Drawing.Size(492, 117);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "بيانات القطعة";
             // 
             // txtLocation
             // 
+            this.txtLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLocation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtLocation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtLocation.BackColor = System.Drawing.SystemColors.Control;
             this.txtLocation.Location = new System.Drawing.Point(9, 27);
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(386, 29);
+            this.txtLocation.Size = new System.Drawing.Size(388, 29);
             this.txtLocation.TabIndex = 6;
             // 
             // txtPlotNumber
             // 
+            this.txtPlotNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPlotNumber.BorderColorFocused = System.Drawing.Color.Red;
             this.txtPlotNumber.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtPlotNumber.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -321,16 +343,17 @@
             this.txtPlotNumber.Location = new System.Drawing.Point(9, 68);
             this.txtPlotNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlotNumber.Name = "txtPlotNumber";
-            this.txtPlotNumber.Size = new System.Drawing.Size(386, 35);
+            this.txtPlotNumber.Size = new System.Drawing.Size(388, 35);
             this.txtPlotNumber.TabIndex = 3;
             this.txtPlotNumber.TabStop = false;
             this.txtPlotNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(411, 73);
+            this.label7.Location = new System.Drawing.Point(413, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 24);
             this.label7.TabIndex = 2;
@@ -338,9 +361,10 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(437, 30);
+            this.label8.Location = new System.Drawing.Point(439, 30);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 24);
             this.label8.TabIndex = 0;
@@ -348,13 +372,14 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.txtAgentName);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtAgentNationalId);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox3.Location = new System.Drawing.Point(505, 145);
+            this.groupBox3.Location = new System.Drawing.Point(507, 145);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(490, 117);
             this.groupBox3.TabIndex = 1;
@@ -419,13 +444,14 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.txtOwnerName);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtOwnerNationalId);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox2.Location = new System.Drawing.Point(505, 28);
+            this.groupBox2.Location = new System.Drawing.Point(507, 28);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(490, 117);
             this.groupBox2.TabIndex = 0;
@@ -490,23 +516,27 @@
             // 
             // lblTitle
             // 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lblTitle.Location = new System.Drawing.Point(418, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(189, 36);
+            this.lblTitle.Size = new System.Drawing.Size(191, 36);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "إنشاء رخصة جديدة";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlValidityStatment
             // 
+            this.pnlValidityStatment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlValidityStatment.Controls.Add(this.bunifuSeparator2);
             this.pnlValidityStatment.Controls.Add(this.groupBox6);
-            this.pnlValidityStatment.Location = new System.Drawing.Point(3, 349);
+            this.pnlValidityStatment.Location = new System.Drawing.Point(3, 358);
             this.pnlValidityStatment.Name = "pnlValidityStatment";
-            this.pnlValidityStatment.Size = new System.Drawing.Size(1025, 295);
-            this.pnlValidityStatment.TabIndex = 5;
+            this.pnlValidityStatment.Size = new System.Drawing.Size(1027, 295);
+            this.pnlValidityStatment.TabIndex = 8;
             // 
             // bunifuSeparator2
             // 
@@ -517,13 +547,15 @@
             this.bunifuSeparator2.Location = new System.Drawing.Point(0, 290);
             this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(11);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Size = new System.Drawing.Size(1025, 5);
+            this.bunifuSeparator2.Size = new System.Drawing.Size(1027, 5);
             this.bunifuSeparator2.TabIndex = 5;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox6.Controls.Add(this.groupBox7);
             this.groupBox6.Controls.Add(this.groupBox9);
@@ -534,13 +566,15 @@
             this.groupBox6.Location = new System.Drawing.Point(10, 7);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox6.Size = new System.Drawing.Size(1004, 280);
+            this.groupBox6.Size = new System.Drawing.Size(1006, 280);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "بيان الصلاحية";
             // 
             // groupBox7
             // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.btnVReceiveDate);
             this.groupBox7.Controls.Add(this.picVReceiveDate);
             this.groupBox7.Controls.Add(this.txtVReceiveDate);
@@ -550,7 +584,7 @@
             this.groupBox7.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox7.Location = new System.Drawing.Point(9, 145);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(490, 117);
+            this.groupBox7.Size = new System.Drawing.Size(492, 117);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "تاريخ الاستلام";
@@ -571,6 +605,8 @@
             // 
             // picVReceiveDate
             // 
+            this.picVReceiveDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picVReceiveDate.BackColor = System.Drawing.Color.CornflowerBlue;
             this.picVReceiveDate.BorderRadius = 30;
             this.picVReceiveDate.ForeColor = System.Drawing.Color.White;
@@ -579,12 +615,14 @@
             this.picVReceiveDate.Location = new System.Drawing.Point(106, 24);
             this.picVReceiveDate.Margin = new System.Windows.Forms.Padding(2);
             this.picVReceiveDate.Name = "picVReceiveDate";
-            this.picVReceiveDate.Size = new System.Drawing.Size(275, 36);
+            this.picVReceiveDate.Size = new System.Drawing.Size(277, 36);
             this.picVReceiveDate.TabIndex = 4;
             this.picVReceiveDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
             // txtVReceiveDate
             // 
+            this.txtVReceiveDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVReceiveDate.BorderColorFocused = System.Drawing.Color.Red;
             this.txtVReceiveDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtVReceiveDate.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -597,16 +635,17 @@
             this.txtVReceiveDate.Location = new System.Drawing.Point(106, 68);
             this.txtVReceiveDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtVReceiveDate.Name = "txtVReceiveDate";
-            this.txtVReceiveDate.Size = new System.Drawing.Size(275, 35);
+            this.txtVReceiveDate.Size = new System.Drawing.Size(277, 35);
             this.txtVReceiveDate.TabIndex = 3;
             this.txtVReceiveDate.TabStop = false;
             this.txtVReceiveDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(388, 73);
+            this.label13.Location = new System.Drawing.Point(390, 73);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 24);
             this.label13.TabIndex = 2;
@@ -614,9 +653,10 @@
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(391, 30);
+            this.label14.Location = new System.Drawing.Point(393, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(93, 24);
             this.label14.TabIndex = 0;
@@ -624,6 +664,7 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox9.Controls.Add(this.btnVValidatySupplyDate);
             this.groupBox9.Controls.Add(this.picVValidatySupplyDate);
             this.groupBox9.Controls.Add(this.txtVValidatySupplyDate);
@@ -631,7 +672,7 @@
             this.groupBox9.Controls.Add(this.label10);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox9.Location = new System.Drawing.Point(505, 145);
+            this.groupBox9.Location = new System.Drawing.Point(507, 145);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(490, 117);
             this.groupBox9.TabIndex = 6;
@@ -707,6 +748,8 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.btnVInitialSupplyDate);
             this.groupBox8.Controls.Add(this.picVInitialSupplyDate);
             this.groupBox8.Controls.Add(this.txtVInitialSupplyDate);
@@ -716,7 +759,7 @@
             this.groupBox8.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox8.Location = new System.Drawing.Point(9, 28);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(490, 117);
+            this.groupBox8.Size = new System.Drawing.Size(492, 117);
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "تاريخ التوريد أولي";
@@ -737,6 +780,8 @@
             // 
             // picVInitialSupplyDate
             // 
+            this.picVInitialSupplyDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picVInitialSupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
             this.picVInitialSupplyDate.BorderRadius = 30;
             this.picVInitialSupplyDate.ForeColor = System.Drawing.Color.White;
@@ -745,12 +790,14 @@
             this.picVInitialSupplyDate.Location = new System.Drawing.Point(106, 24);
             this.picVInitialSupplyDate.Margin = new System.Windows.Forms.Padding(2);
             this.picVInitialSupplyDate.Name = "picVInitialSupplyDate";
-            this.picVInitialSupplyDate.Size = new System.Drawing.Size(275, 36);
+            this.picVInitialSupplyDate.Size = new System.Drawing.Size(277, 36);
             this.picVInitialSupplyDate.TabIndex = 4;
             this.picVInitialSupplyDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
             // txtVInitialSupplyDate
             // 
+            this.txtVInitialSupplyDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVInitialSupplyDate.BorderColorFocused = System.Drawing.Color.Red;
             this.txtVInitialSupplyDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtVInitialSupplyDate.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -763,16 +810,17 @@
             this.txtVInitialSupplyDate.Location = new System.Drawing.Point(106, 68);
             this.txtVInitialSupplyDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtVInitialSupplyDate.Name = "txtVInitialSupplyDate";
-            this.txtVInitialSupplyDate.Size = new System.Drawing.Size(275, 35);
+            this.txtVInitialSupplyDate.Size = new System.Drawing.Size(277, 35);
             this.txtVInitialSupplyDate.TabIndex = 3;
             this.txtVInitialSupplyDate.TabStop = false;
             this.txtVInitialSupplyDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(388, 73);
+            this.label5.Location = new System.Drawing.Point(390, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 24);
             this.label5.TabIndex = 2;
@@ -780,9 +828,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(391, 30);
+            this.label6.Location = new System.Drawing.Point(393, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 24);
             this.label6.TabIndex = 0;
@@ -790,6 +839,7 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox10.Controls.Add(this.btnVEntryDate);
             this.groupBox10.Controls.Add(this.picVEntryDate);
             this.groupBox10.Controls.Add(this.txtVEntryDate);
@@ -797,7 +847,7 @@
             this.groupBox10.Controls.Add(this.label12);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox10.Location = new System.Drawing.Point(505, 28);
+            this.groupBox10.Location = new System.Drawing.Point(507, 28);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(490, 117);
             this.groupBox10.TabIndex = 0;
@@ -873,12 +923,14 @@
             // 
             // pnlLicense
             // 
+            this.pnlLicense.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlLicense.Controls.Add(this.bunifuSeparator3);
             this.pnlLicense.Controls.Add(this.groupBox11);
-            this.pnlLicense.Location = new System.Drawing.Point(3, 650);
+            this.pnlLicense.Location = new System.Drawing.Point(3, 659);
             this.pnlLicense.Name = "pnlLicense";
-            this.pnlLicense.Size = new System.Drawing.Size(1025, 654);
-            this.pnlLicense.TabIndex = 6;
+            this.pnlLicense.Size = new System.Drawing.Size(1027, 806);
+            this.pnlLicense.TabIndex = 9;
             // 
             // bunifuSeparator3
             // 
@@ -886,17 +938,20 @@
             this.bunifuSeparator3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bunifuSeparator3.LineThickness = 65535;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(0, 648);
+            this.bunifuSeparator3.Location = new System.Drawing.Point(0, 800);
             this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(11);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Size = new System.Drawing.Size(1025, 6);
+            this.bunifuSeparator3.Size = new System.Drawing.Size(1027, 6);
             this.bunifuSeparator3.TabIndex = 5;
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = false;
             // 
             // groupBox11
             // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox11.Controls.Add(this.groupBox21);
             this.groupBox11.Controls.Add(this.groupBox20);
             this.groupBox11.Controls.Add(this.groupBox19);
             this.groupBox11.Controls.Add(this.groupBox18);
@@ -911,13 +966,132 @@
             this.groupBox11.Location = new System.Drawing.Point(10, 3);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox11.Size = new System.Drawing.Size(1004, 636);
+            this.groupBox11.Size = new System.Drawing.Size(1006, 788);
             this.groupBox11.TabIndex = 4;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "بيانات الرخصة";
             // 
+            // groupBox21
+            // 
+            this.groupBox21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox21.Controls.Add(this.btnAddFile);
+            this.groupBox21.Controls.Add(this.btnDeleteFile);
+            this.groupBox21.Controls.Add(this.btnDownloadFile);
+            this.groupBox21.Controls.Add(this.lvFilesList);
+            this.groupBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox21.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox21.Location = new System.Drawing.Point(9, 509);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox21.Size = new System.Drawing.Size(492, 273);
+            this.groupBox21.TabIndex = 12;
+            this.groupBox21.TabStop = false;
+            this.groupBox21.Text = "مستندات";
+            // 
+            // btnAddFile
+            // 
+            this.btnAddFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddFile.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddFile.color = System.Drawing.Color.CornflowerBlue;
+            this.btnAddFile.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnAddFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFile.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnAddFile.ForeColor = System.Drawing.Color.White;
+            this.btnAddFile.Image = global::LMS.Properties.Resources.icons8_browse_folder_40;
+            this.btnAddFile.ImagePosition = 1;
+            this.btnAddFile.ImageZoom = 40;
+            this.btnAddFile.LabelPosition = 35;
+            this.btnAddFile.LabelText = "إضافة ملف";
+            this.btnAddFile.Location = new System.Drawing.Point(10, 191);
+            this.btnAddFile.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddFile.Name = "btnAddFile";
+            this.btnAddFile.Size = new System.Drawing.Size(82, 70);
+            this.btnAddFile.TabIndex = 13;
+            this.btnAddFile.Click += new System.EventHandler(this.btnAddFile_Click);
+            // 
+            // btnDeleteFile
+            // 
+            this.btnDeleteFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDeleteFile.BackColor = System.Drawing.Color.Red;
+            this.btnDeleteFile.color = System.Drawing.Color.Red;
+            this.btnDeleteFile.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDeleteFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteFile.Enabled = false;
+            this.btnDeleteFile.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnDeleteFile.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteFile.Image = global::LMS.Properties.Resources.icons8_close_40;
+            this.btnDeleteFile.ImagePosition = 3;
+            this.btnDeleteFile.ImageZoom = 40;
+            this.btnDeleteFile.LabelPosition = 35;
+            this.btnDeleteFile.LabelText = "حذف الرخصة";
+            this.btnDeleteFile.Location = new System.Drawing.Point(198, 191);
+            this.btnDeleteFile.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDeleteFile.Name = "btnDeleteFile";
+            this.btnDeleteFile.Size = new System.Drawing.Size(82, 70);
+            this.btnDeleteFile.TabIndex = 12;
+            this.btnDeleteFile.Click += new System.EventHandler(this.btnDeleteFile_Click);
+            // 
+            // btnDownloadFile
+            // 
+            this.btnDownloadFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDownloadFile.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDownloadFile.color = System.Drawing.Color.CornflowerBlue;
+            this.btnDownloadFile.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnDownloadFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDownloadFile.Enabled = false;
+            this.btnDownloadFile.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnDownloadFile.ForeColor = System.Drawing.Color.White;
+            this.btnDownloadFile.Image = global::LMS.Properties.Resources.icons8_download2_40;
+            this.btnDownloadFile.ImagePosition = 3;
+            this.btnDownloadFile.ImageZoom = 40;
+            this.btnDownloadFile.LabelPosition = 35;
+            this.btnDownloadFile.LabelText = "إضافة ملف";
+            this.btnDownloadFile.Location = new System.Drawing.Point(104, 191);
+            this.btnDownloadFile.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDownloadFile.Name = "btnDownloadFile";
+            this.btnDownloadFile.Size = new System.Drawing.Size(82, 70);
+            this.btnDownloadFile.TabIndex = 1;
+            this.btnDownloadFile.Click += new System.EventHandler(this.btnDownloadFile_Click);
+            // 
+            // lvFilesList
+            // 
+            this.lvFilesList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvFilesList.AutoSizeTable = false;
+            this.lvFilesList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lvFilesList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvFilesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
+            this.fileName});
+            this.lvFilesList.Depth = 0;
+            this.lvFilesList.FullRowSelect = true;
+            this.lvFilesList.HideSelection = false;
+            this.lvFilesList.Location = new System.Drawing.Point(10, 28);
+            this.lvFilesList.MinimumSize = new System.Drawing.Size(200, 100);
+            this.lvFilesList.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.lvFilesList.MouseState = MaterialSkin.MouseState.OUT;
+            this.lvFilesList.Name = "lvFilesList";
+            this.lvFilesList.OwnerDraw = true;
+            this.lvFilesList.Size = new System.Drawing.Size(472, 157);
+            this.lvFilesList.TabIndex = 0;
+            this.lvFilesList.UseCompatibleStateImageBehavior = false;
+            this.lvFilesList.View = System.Windows.Forms.View.Details;
+            this.lvFilesList.SelectedIndexChanged += new System.EventHandler(this.lvFilesList_SelectedIndexChanged);
+            // 
+            // id
+            // 
+            this.id.Text = "ID";
+            this.id.Width = 50;
+            // 
+            // fileName
+            // 
+            this.fileName.Text = "File Name";
+            this.fileName.Width = 372;
+            // 
             // groupBox20
             // 
+            this.groupBox20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox20.Controls.Add(this.btnLFinalPaymentDate);
             this.groupBox20.Controls.Add(this.picLFinalPaymentDate);
             this.groupBox20.Controls.Add(this.txtLFinalPaymentDate);
@@ -925,7 +1099,7 @@
             this.groupBox20.Controls.Add(this.label30);
             this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox20.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox20.Location = new System.Drawing.Point(505, 274);
+            this.groupBox20.Location = new System.Drawing.Point(507, 274);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Size = new System.Drawing.Size(490, 117);
             this.groupBox20.TabIndex = 11;
@@ -1001,6 +1175,8 @@
             // 
             // groupBox19
             // 
+            this.groupBox19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox19.Controls.Add(this.btnLInitialSupplyDate);
             this.groupBox19.Controls.Add(this.picLInitialSupplyDate);
             this.groupBox19.Controls.Add(this.txtLInitialSupplyDate);
@@ -1010,7 +1186,7 @@
             this.groupBox19.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox19.Location = new System.Drawing.Point(9, 28);
             this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(490, 117);
+            this.groupBox19.Size = new System.Drawing.Size(492, 117);
             this.groupBox19.TabIndex = 10;
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "تاريخ التوريد أولي";
@@ -1031,6 +1207,8 @@
             // 
             // picLInitialSupplyDate
             // 
+            this.picLInitialSupplyDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picLInitialSupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
             this.picLInitialSupplyDate.BorderRadius = 30;
             this.picLInitialSupplyDate.ForeColor = System.Drawing.Color.White;
@@ -1039,12 +1217,14 @@
             this.picLInitialSupplyDate.Location = new System.Drawing.Point(106, 24);
             this.picLInitialSupplyDate.Margin = new System.Windows.Forms.Padding(2);
             this.picLInitialSupplyDate.Name = "picLInitialSupplyDate";
-            this.picLInitialSupplyDate.Size = new System.Drawing.Size(275, 36);
+            this.picLInitialSupplyDate.Size = new System.Drawing.Size(277, 36);
             this.picLInitialSupplyDate.TabIndex = 4;
             this.picLInitialSupplyDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
             // txtLInitialSupplyDate
             // 
+            this.txtLInitialSupplyDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLInitialSupplyDate.BorderColorFocused = System.Drawing.Color.Red;
             this.txtLInitialSupplyDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtLInitialSupplyDate.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -1057,16 +1237,17 @@
             this.txtLInitialSupplyDate.Location = new System.Drawing.Point(106, 68);
             this.txtLInitialSupplyDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtLInitialSupplyDate.Name = "txtLInitialSupplyDate";
-            this.txtLInitialSupplyDate.Size = new System.Drawing.Size(275, 35);
+            this.txtLInitialSupplyDate.Size = new System.Drawing.Size(277, 35);
             this.txtLInitialSupplyDate.TabIndex = 3;
             this.txtLInitialSupplyDate.TabStop = false;
             this.txtLInitialSupplyDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label27
             // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(388, 73);
+            this.label27.Location = new System.Drawing.Point(390, 73);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(99, 24);
             this.label27.TabIndex = 2;
@@ -1074,9 +1255,10 @@
             // 
             // label28
             // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(391, 30);
+            this.label28.Location = new System.Drawing.Point(396, 30);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(93, 24);
             this.label28.TabIndex = 0;
@@ -1084,19 +1266,23 @@
             // 
             // groupBox18
             // 
+            this.groupBox18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox18.Controls.Add(this.txtNotes);
             this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox18.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox18.Location = new System.Drawing.Point(505, 509);
+            this.groupBox18.Location = new System.Drawing.Point(507, 509);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox18.Size = new System.Drawing.Size(490, 117);
+            this.groupBox18.Size = new System.Drawing.Size(490, 267);
             this.groupBox18.TabIndex = 6;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "ملاحظات";
             // 
             // txtNotes
             // 
+            this.txtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtNotes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNotes.Depth = 0;
@@ -1106,12 +1292,14 @@
             this.txtNotes.Location = new System.Drawing.Point(9, 25);
             this.txtNotes.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(470, 78);
+            this.txtNotes.Size = new System.Drawing.Size(470, 236);
             this.txtNotes.TabIndex = 0;
             this.txtNotes.Text = "";
             // 
             // groupBox17
             // 
+            this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox17.Controls.Add(this.txtFees);
             this.groupBox17.Controls.Add(this.label25);
             this.groupBox17.Controls.Add(this.txtLicenseNumber);
@@ -1120,13 +1308,15 @@
             this.groupBox17.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox17.Location = new System.Drawing.Point(9, 391);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(490, 117);
+            this.groupBox17.Size = new System.Drawing.Size(492, 117);
             this.groupBox17.TabIndex = 9;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "بيانات إضافية";
             // 
             // txtFees
             // 
+            this.txtFees.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFees.BorderColorFocused = System.Drawing.Color.Red;
             this.txtFees.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtFees.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -1138,16 +1328,17 @@
             this.txtFees.Location = new System.Drawing.Point(9, 68);
             this.txtFees.Margin = new System.Windows.Forms.Padding(4);
             this.txtFees.Name = "txtFees";
-            this.txtFees.Size = new System.Drawing.Size(372, 35);
+            this.txtFees.Size = new System.Drawing.Size(374, 35);
             this.txtFees.TabIndex = 3;
             this.txtFees.TabStop = false;
             this.txtFees.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label25
             // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(429, 73);
+            this.label25.Location = new System.Drawing.Point(435, 73);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(54, 24);
             this.label25.TabIndex = 2;
@@ -1155,6 +1346,8 @@
             // 
             // txtLicenseNumber
             // 
+            this.txtLicenseNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLicenseNumber.BorderColorFocused = System.Drawing.Color.Red;
             this.txtLicenseNumber.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtLicenseNumber.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -1166,16 +1359,17 @@
             this.txtLicenseNumber.Location = new System.Drawing.Point(9, 25);
             this.txtLicenseNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtLicenseNumber.Name = "txtLicenseNumber";
-            this.txtLicenseNumber.Size = new System.Drawing.Size(372, 35);
+            this.txtLicenseNumber.Size = new System.Drawing.Size(374, 35);
             this.txtLicenseNumber.TabIndex = 1;
             this.txtLicenseNumber.TabStop = false;
             this.txtLicenseNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label26
             // 
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(398, 30);
+            this.label26.Location = new System.Drawing.Point(404, 30);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(85, 24);
             this.label26.TabIndex = 0;
@@ -1183,6 +1377,7 @@
             // 
             // groupBox16
             // 
+            this.groupBox16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox16.Controls.Add(this.btnLReceiveDate);
             this.groupBox16.Controls.Add(this.picLReceiveDate);
             this.groupBox16.Controls.Add(this.txtLReceiveDate);
@@ -1190,7 +1385,7 @@
             this.groupBox16.Controls.Add(this.label24);
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox16.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox16.Location = new System.Drawing.Point(505, 391);
+            this.groupBox16.Location = new System.Drawing.Point(507, 391);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(490, 117);
             this.groupBox16.TabIndex = 8;
@@ -1266,6 +1461,8 @@
             // 
             // groupBox12
             // 
+            this.groupBox12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox12.Controls.Add(this.btnLSignatureDate);
             this.groupBox12.Controls.Add(this.picLSignatureDate);
             this.groupBox12.Controls.Add(this.txtLSignatureDate);
@@ -1275,7 +1472,7 @@
             this.groupBox12.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox12.Location = new System.Drawing.Point(9, 274);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(490, 117);
+            this.groupBox12.Size = new System.Drawing.Size(492, 117);
             this.groupBox12.TabIndex = 7;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "تاريخ التوقيع";
@@ -1296,6 +1493,8 @@
             // 
             // picLSignatureDate
             // 
+            this.picLSignatureDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picLSignatureDate.BackColor = System.Drawing.Color.CornflowerBlue;
             this.picLSignatureDate.BorderRadius = 30;
             this.picLSignatureDate.ForeColor = System.Drawing.Color.White;
@@ -1304,12 +1503,14 @@
             this.picLSignatureDate.Location = new System.Drawing.Point(106, 24);
             this.picLSignatureDate.Margin = new System.Windows.Forms.Padding(2);
             this.picLSignatureDate.Name = "picLSignatureDate";
-            this.picLSignatureDate.Size = new System.Drawing.Size(275, 36);
+            this.picLSignatureDate.Size = new System.Drawing.Size(277, 36);
             this.picLSignatureDate.TabIndex = 4;
             this.picLSignatureDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
             // txtLSignatureDate
             // 
+            this.txtLSignatureDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLSignatureDate.BorderColorFocused = System.Drawing.Color.Red;
             this.txtLSignatureDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtLSignatureDate.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -1322,16 +1523,17 @@
             this.txtLSignatureDate.Location = new System.Drawing.Point(106, 68);
             this.txtLSignatureDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtLSignatureDate.Name = "txtLSignatureDate";
-            this.txtLSignatureDate.Size = new System.Drawing.Size(275, 35);
+            this.txtLSignatureDate.Size = new System.Drawing.Size(277, 35);
             this.txtLSignatureDate.TabIndex = 3;
             this.txtLSignatureDate.TabStop = false;
             this.txtLSignatureDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(388, 73);
+            this.label15.Location = new System.Drawing.Point(390, 73);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(99, 24);
             this.label15.TabIndex = 2;
@@ -1339,9 +1541,10 @@
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(391, 30);
+            this.label16.Location = new System.Drawing.Point(396, 30);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(93, 24);
             this.label16.TabIndex = 0;
@@ -1349,6 +1552,8 @@
             // 
             // groupBox13
             // 
+            this.groupBox13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox13.Controls.Add(this.btnLFeesPaymentDate);
             this.groupBox13.Controls.Add(this.picLFeesPaymentDate);
             this.groupBox13.Controls.Add(this.txtLFeesPaymentDate);
@@ -1358,7 +1563,7 @@
             this.groupBox13.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox13.Location = new System.Drawing.Point(9, 151);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(490, 117);
+            this.groupBox13.Size = new System.Drawing.Size(492, 117);
             this.groupBox13.TabIndex = 6;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "تاريخ دفع الرسوم";
@@ -1379,6 +1584,8 @@
             // 
             // picLFeesPaymentDate
             // 
+            this.picLFeesPaymentDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picLFeesPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
             this.picLFeesPaymentDate.BorderRadius = 30;
             this.picLFeesPaymentDate.ForeColor = System.Drawing.Color.White;
@@ -1387,12 +1594,14 @@
             this.picLFeesPaymentDate.Location = new System.Drawing.Point(106, 24);
             this.picLFeesPaymentDate.Margin = new System.Windows.Forms.Padding(2);
             this.picLFeesPaymentDate.Name = "picLFeesPaymentDate";
-            this.picLFeesPaymentDate.Size = new System.Drawing.Size(275, 36);
+            this.picLFeesPaymentDate.Size = new System.Drawing.Size(277, 36);
             this.picLFeesPaymentDate.TabIndex = 4;
             this.picLFeesPaymentDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
             // txtLFeesPaymentDate
             // 
+            this.txtLFeesPaymentDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLFeesPaymentDate.BorderColorFocused = System.Drawing.Color.Red;
             this.txtLFeesPaymentDate.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtLFeesPaymentDate.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -1405,16 +1614,17 @@
             this.txtLFeesPaymentDate.Location = new System.Drawing.Point(106, 68);
             this.txtLFeesPaymentDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtLFeesPaymentDate.Name = "txtLFeesPaymentDate";
-            this.txtLFeesPaymentDate.Size = new System.Drawing.Size(275, 35);
+            this.txtLFeesPaymentDate.Size = new System.Drawing.Size(277, 35);
             this.txtLFeesPaymentDate.TabIndex = 3;
             this.txtLFeesPaymentDate.TabStop = false;
             this.txtLFeesPaymentDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(388, 73);
+            this.label17.Location = new System.Drawing.Point(390, 73);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(99, 24);
             this.label17.TabIndex = 2;
@@ -1422,9 +1632,10 @@
             // 
             // label18
             // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(391, 30);
+            this.label18.Location = new System.Drawing.Point(396, 30);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(93, 24);
             this.label18.TabIndex = 0;
@@ -1432,6 +1643,7 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox14.Controls.Add(this.btnLExaminationFeeDate);
             this.groupBox14.Controls.Add(this.picLExaminationFeeDate);
             this.groupBox14.Controls.Add(this.txtLExaminationFeeDate);
@@ -1439,7 +1651,7 @@
             this.groupBox14.Controls.Add(this.label20);
             this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox14.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox14.Location = new System.Drawing.Point(505, 151);
+            this.groupBox14.Location = new System.Drawing.Point(507, 151);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(490, 117);
             this.groupBox14.TabIndex = 4;
@@ -1515,6 +1727,7 @@
             // 
             // groupBox15
             // 
+            this.groupBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox15.Controls.Add(this.btnLEntryDate);
             this.groupBox15.Controls.Add(this.picLEntryDate);
             this.groupBox15.Controls.Add(this.txtLEntryDate);
@@ -1522,7 +1735,7 @@
             this.groupBox15.Controls.Add(this.label22);
             this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox15.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox15.Location = new System.Drawing.Point(505, 28);
+            this.groupBox15.Location = new System.Drawing.Point(507, 28);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(490, 117);
             this.groupBox15.TabIndex = 0;
@@ -1600,33 +1813,14 @@
             // 
             this.panel1.Controls.Add(this.btnDeleteLicense);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Location = new System.Drawing.Point(3, 1310);
+            this.panel1.Location = new System.Drawing.Point(3, 1471);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1025, 100);
-            this.panel1.TabIndex = 6;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnSave.color = System.Drawing.Color.CornflowerBlue;
-            this.btnSave.colorActive = System.Drawing.Color.LightSkyBlue;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImagePosition = 15;
-            this.btnSave.ImageZoom = 20;
-            this.btnSave.LabelPosition = 35;
-            this.btnSave.LabelText = "حفظ";
-            this.btnSave.Location = new System.Drawing.Point(19, 6);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(152, 82);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.panel1.Size = new System.Drawing.Size(1027, 108);
+            this.panel1.TabIndex = 10;
             // 
             // btnDeleteLicense
             // 
+            this.btnDeleteLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDeleteLicense.BackColor = System.Drawing.Color.Red;
             this.btnDeleteLicense.color = System.Drawing.Color.Red;
             this.btnDeleteLicense.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -1638,13 +1832,34 @@
             this.btnDeleteLicense.ImageZoom = 25;
             this.btnDeleteLicense.LabelPosition = 35;
             this.btnDeleteLicense.LabelText = "حذف الرخصة";
-            this.btnDeleteLicense.Location = new System.Drawing.Point(183, 6);
+            this.btnDeleteLicense.Location = new System.Drawing.Point(183, 14);
             this.btnDeleteLicense.Margin = new System.Windows.Forms.Padding(6);
             this.btnDeleteLicense.Name = "btnDeleteLicense";
             this.btnDeleteLicense.Size = new System.Drawing.Size(152, 82);
             this.btnDeleteLicense.TabIndex = 11;
             this.btnDeleteLicense.Visible = false;
             this.btnDeleteLicense.Click += new System.EventHandler(this.btnDeleteLicense_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSave.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSave.color = System.Drawing.Color.CornflowerBlue;
+            this.btnSave.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImagePosition = 15;
+            this.btnSave.ImageZoom = 20;
+            this.btnSave.LabelPosition = 35;
+            this.btnSave.LabelText = "حفظ";
+            this.btnSave.Location = new System.Drawing.Point(19, 14);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(152, 82);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FRMNewLicense
             // 
@@ -1685,6 +1900,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnVEntryDate)).EndInit();
             this.pnlLicense.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
+            this.groupBox21.ResumeLayout(false);
             this.groupBox20.ResumeLayout(false);
             this.groupBox20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).EndInit();
@@ -1711,17 +1927,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel pnlScrollerContainer;
+        private System.Windows.Forms.Panel pnlScrollerContainer;
+        private System.Windows.Forms.Panel pnlMainInfoContainer;
+        private System.Windows.Forms.Label lblLastUpdate;
+        private System.Windows.Forms.Label lblCreatedOn;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private MaterialSkin.Controls.MaterialMultiLineTextBox txtWork;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox txtLocation;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtPlotNumber;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -1735,22 +1955,10 @@
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtOwnerNationalId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnlMainInfoContainer;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pnlValidityStatment;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtVEntryDate;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private Bunifu.Framework.UI.BunifuDatepicker picVEntryDate;
-        private Bunifu.Framework.UI.BunifuImageButton btnVEntryDate;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private Bunifu.Framework.UI.BunifuImageButton btnVInitialSupplyDate;
-        private Bunifu.Framework.UI.BunifuDatepicker picVInitialSupplyDate;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtVInitialSupplyDate;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox7;
         private Bunifu.Framework.UI.BunifuImageButton btnVReceiveDate;
         private Bunifu.Framework.UI.BunifuDatepicker picVReceiveDate;
@@ -1763,10 +1971,46 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txtVValidatySupplyDate;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private Bunifu.Framework.UI.BunifuImageButton btnVInitialSupplyDate;
+        private Bunifu.Framework.UI.BunifuDatepicker picVInitialSupplyDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtVInitialSupplyDate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private Bunifu.Framework.UI.BunifuImageButton btnVEntryDate;
+        private Bunifu.Framework.UI.BunifuDatepicker picVEntryDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtVEntryDate;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel pnlLicense;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
         private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.GroupBox groupBox20;
+        private Bunifu.Framework.UI.BunifuImageButton btnLFinalPaymentDate;
+        private Bunifu.Framework.UI.BunifuDatepicker picLFinalPaymentDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtLFinalPaymentDate;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.GroupBox groupBox19;
+        private Bunifu.Framework.UI.BunifuImageButton btnLInitialSupplyDate;
+        private Bunifu.Framework.UI.BunifuDatepicker picLInitialSupplyDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtLInitialSupplyDate;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox txtNotes;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtFees;
+        private System.Windows.Forms.Label label25;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtLicenseNumber;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private Bunifu.Framework.UI.BunifuImageButton btnLReceiveDate;
+        private Bunifu.Framework.UI.BunifuDatepicker picLReceiveDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtLReceiveDate;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox12;
         private Bunifu.Framework.UI.BunifuImageButton btnLSignatureDate;
         private Bunifu.Framework.UI.BunifuDatepicker picLSignatureDate;
@@ -1791,37 +2035,15 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txtLEntryDate;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.GroupBox groupBox16;
-        private Bunifu.Framework.UI.BunifuImageButton btnLReceiveDate;
-        private Bunifu.Framework.UI.BunifuDatepicker picLReceiveDate;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtLReceiveDate;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.GroupBox groupBox17;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtFees;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtLicenseNumber;
-        private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuTileButton btnSave;
-        private System.Windows.Forms.GroupBox groupBox18;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox txtNotes;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblCreatedOn;
-        private System.Windows.Forms.Label lblLastUpdate;
-        private System.Windows.Forms.GroupBox groupBox19;
-        private Bunifu.Framework.UI.BunifuImageButton btnLInitialSupplyDate;
-        private Bunifu.Framework.UI.BunifuDatepicker picLInitialSupplyDate;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtLInitialSupplyDate;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.GroupBox groupBox20;
-        private Bunifu.Framework.UI.BunifuImageButton btnLFinalPaymentDate;
-        private Bunifu.Framework.UI.BunifuDatepicker picLFinalPaymentDate;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtLFinalPaymentDate;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
         private Bunifu.Framework.UI.BunifuTileButton btnDeleteLicense;
+        private Bunifu.Framework.UI.BunifuTileButton btnSave;
+        private System.Windows.Forms.GroupBox groupBox21;
+        private MaterialSkin.Controls.MaterialListView lvFilesList;
+        private Bunifu.Framework.UI.BunifuTileButton btnDownloadFile;
+        private System.Windows.Forms.ColumnHeader id;
+        private System.Windows.Forms.ColumnHeader fileName;
+        private Bunifu.Framework.UI.BunifuTileButton btnDeleteFile;
+        private Bunifu.Framework.UI.BunifuTileButton btnAddFile;
     }
 }

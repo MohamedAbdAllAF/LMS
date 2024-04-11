@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ using System.Windows.Forms;
 using LMS.Controllers;
 using LMS.Models;
 using LMS.ViewModel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LMS.Views
 {
@@ -21,6 +23,7 @@ namespace LMS.Views
         LocationController locatcont = new LocationController();
         LicenseController licensecont = new LicenseController();
         LicenseVM licenseVM = new LicenseVM();
+        private List<(int id, string FileName, string Extension, byte[] Data)> fileList = new List<(int, string, string, byte[])>();
         public FRMNewLicense(int adminId)
         {
             InitializeComponent();
@@ -43,6 +46,10 @@ namespace LMS.Views
                 btnDeleteLicense.Visible = true;
                 LoadData();
             }
+            // Add columns only once when the form is initialized
+            lvFilesList.View = View.Details;
+            lvFilesList.GridLines = true;
+            lvFilesList.FullRowSelect = true;
         }
 
         public void LoadData()
@@ -343,6 +350,111 @@ namespace LMS.Views
                     MessageBox.Show("تم الحذف بنجاح");
                     frm.LoadForm(new FRMNewLicense(1));
                 }
+            }
+        }
+
+        private void btnAddFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+            DialogResult result = openFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                foreach (string file in openFileDialog.FileNames)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(file);
+                    string fileExtension = Path.GetExtension(file);
+                    byte[] fileData = File.ReadAllBytes(file);
+
+                    string displayName = fileName + fileExtension;
+
+                    int newId = 1;
+                    if (fileList.Count != 0)
+                        newId = fileList.Max(f => f.id) + 1;
+
+                    ListViewItem item = new ListViewItem(new[] {newId.ToString() , displayName });
+                    lvFilesList.Items.Add(item);
+
+                    fileList.Add((newId, displayName, fileExtension, fileData));
+                }
+            }
+        }
+
+        private void lvFilesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvFilesList.SelectedItems.Count > 0)
+            {
+                btnDownloadFile.Enabled = true;
+                btnDeleteFile.Enabled = true;
+            }
+            else
+            {
+                btnDownloadFile.Enabled = false;
+                btnDeleteFile.Enabled = false;
+            }
+        }
+
+        private void btnDeleteFile_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("هل تريد الحذف ؟", "تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (lvFilesList.SelectedItems.Count > 0)
+                {
+                    foreach (ListViewItem selectedItem in lvFilesList.SelectedItems)
+                    {
+                        lvFilesList.Items.Remove(selectedItem);
+
+                        int selectedIndex = fileList.FindIndex(item => item.id == int.Parse(selectedItem.SubItems[0].Text));
+
+                        if (selectedIndex != -1)
+                        {
+                            fileList.RemoveAt(selectedIndex);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select an item to delete.", "No Item Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void btnDownloadFile_Click(object sender, EventArgs e)
+        {
+            if (lvFilesList.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lvFilesList.SelectedItems[0];
+
+                var selectedFile = fileList.Find(item => item.id == int.Parse(selectedItem.SubItems[0].Text));
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.FileName = selectedFile.FileName; // Set initial filename
+                saveFileDialog.Filter = "All Files|*.*"; // Set file filter
+                saveFileDialog.Title = "Save File"; // Set dialog title
+
+                // Show the dialog and get the result
+                DialogResult result = saveFileDialog.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    // Get the selected file data
+                    byte[] fileData = selectedFile.Data;
+
+                    // Get the selected file extension
+                    string fileExtension = Path.GetExtension(saveFileDialog.FileName);
+
+                    // Save the file with the selected filename and extension
+                    File.WriteAllBytes(saveFileDialog.FileName, fileData);
+
+                    // Inform the user that the file has been saved
+                    MessageBox.Show("File saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Please select a file to save.", "No File Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

@@ -17,7 +17,7 @@ namespace LMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FRMLogin());
+            Application.Run(new FRMMain(1));
         }
     }
 }

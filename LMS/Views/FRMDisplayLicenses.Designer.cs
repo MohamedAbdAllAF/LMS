@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.flowLayoutPanelMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new Bunifu.Framework.UI.BunifuTileButton();
@@ -71,7 +71,7 @@
             this.btnDetails = new Bunifu.Framework.UI.BunifuTileButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.searchVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.flowLayoutPanelMain.SuspendLayout();
+            this.pnlMain.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpLocation.SuspendLayout();
@@ -83,38 +83,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // flowLayoutPanelMain
+            // pnlMain
             // 
-            this.flowLayoutPanelMain.AutoScroll = true;
-            this.flowLayoutPanelMain.Controls.Add(this.pnlHeader);
-            this.flowLayoutPanelMain.Controls.Add(this.pnlDataContainer);
-            this.flowLayoutPanelMain.Controls.Add(this.pnlOperations);
-            this.flowLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelMain.Name = "flowLayoutPanelMain";
-            this.flowLayoutPanelMain.Size = new System.Drawing.Size(1050, 680);
-            this.flowLayoutPanelMain.TabIndex = 0;
+            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.Controls.Add(this.panel3);
+            this.pnlMain.Controls.Add(this.pnlDataContainer);
+            this.pnlMain.Controls.Add(this.pnlHeader);
+            this.pnlMain.Controls.Add(this.pnlOperations);
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1050, 680);
+            this.pnlMain.TabIndex = 0;
             // 
             // pnlHeader
             // 
+            this.pnlHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlHeader.Controls.Add(this.groupBox1);
             this.pnlHeader.Controls.Add(this.label1);
             this.pnlHeader.Controls.Add(this.panel1);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(3, 3);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(1025, 211);
-            this.pnlHeader.TabIndex = 0;
+            this.pnlHeader.TabIndex = 1;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.rbtnLocation);
-            this.groupBox1.Controls.Add(this.grpLocation);
-            this.groupBox1.Controls.Add(this.grpOwner);
-            this.groupBox1.Controls.Add(this.grpAgent);
             this.groupBox1.Controls.Add(this.rbtnAgent);
             this.groupBox1.Controls.Add(this.rbtnOwner);
+            this.groupBox1.Controls.Add(this.grpAgent);
+            this.groupBox1.Controls.Add(this.grpLocation);
+            this.groupBox1.Controls.Add(this.grpOwner);
             this.groupBox1.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox1.Location = new System.Drawing.Point(9, 38);
             this.groupBox1.Name = "groupBox1";
@@ -146,17 +151,22 @@
             // 
             // rbtnLocation
             // 
+            this.rbtnLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnLocation.AutoSize = true;
+            this.rbtnLocation.Checked = true;
             this.rbtnLocation.Location = new System.Drawing.Point(859, 110);
             this.rbtnLocation.Name = "rbtnLocation";
             this.rbtnLocation.Size = new System.Drawing.Size(146, 28);
             this.rbtnLocation.TabIndex = 5;
+            this.rbtnLocation.TabStop = true;
             this.rbtnLocation.Text = "الموقع و رقم القطعة";
             this.rbtnLocation.UseVisualStyleBackColor = true;
             this.rbtnLocation.CheckedChanged += new System.EventHandler(this.rbtnLocation_CheckedChanged);
             // 
             // grpLocation
             // 
+            this.grpLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpLocation.Controls.Add(this.txtLocation);
             this.grpLocation.Controls.Add(this.txtPlotNumber);
             this.grpLocation.Controls.Add(this.label7);
@@ -172,6 +182,8 @@
             // 
             // txtLocation
             // 
+            this.txtLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLocation.BorderColorFocused = System.Drawing.Color.Red;
             this.txtLocation.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtLocation.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -191,6 +203,8 @@
             // 
             // txtPlotNumber
             // 
+            this.txtPlotNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPlotNumber.BorderColorFocused = System.Drawing.Color.Red;
             this.txtPlotNumber.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtPlotNumber.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -210,6 +224,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(411, 73);
@@ -220,6 +235,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(437, 30);
@@ -230,6 +246,8 @@
             // 
             // grpOwner
             // 
+            this.grpOwner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpOwner.Controls.Add(this.txtOwnerName);
             this.grpOwner.Controls.Add(this.label2);
             this.grpOwner.Controls.Add(this.txtOwnerNationalId);
@@ -245,6 +263,8 @@
             // 
             // txtOwnerName
             // 
+            this.txtOwnerName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOwnerName.BorderColorFocused = System.Drawing.Color.Red;
             this.txtOwnerName.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtOwnerName.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -264,6 +284,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(444, 73);
@@ -274,6 +295,8 @@
             // 
             // txtOwnerNationalId
             // 
+            this.txtOwnerNationalId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOwnerNationalId.BorderColorFocused = System.Drawing.Color.Red;
             this.txtOwnerNationalId.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtOwnerNationalId.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -293,6 +316,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(402, 30);
@@ -303,6 +327,8 @@
             // 
             // grpAgent
             // 
+            this.grpAgent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpAgent.Controls.Add(this.txtAgentName);
             this.grpAgent.Controls.Add(this.label4);
             this.grpAgent.Controls.Add(this.txtAgentNationalId);
@@ -318,6 +344,8 @@
             // 
             // txtAgentName
             // 
+            this.txtAgentName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAgentName.BorderColorFocused = System.Drawing.Color.Red;
             this.txtAgentName.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtAgentName.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -337,6 +365,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(444, 73);
@@ -347,6 +376,8 @@
             // 
             // txtAgentNationalId
             // 
+            this.txtAgentNationalId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAgentNationalId.BorderColorFocused = System.Drawing.Color.Red;
             this.txtAgentNationalId.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
             this.txtAgentNationalId.BorderColorMouseHover = System.Drawing.Color.Red;
@@ -366,6 +397,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(402, 30);
@@ -376,6 +408,7 @@
             // 
             // rbtnAgent
             // 
+            this.rbtnAgent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnAgent.AutoSize = true;
             this.rbtnAgent.Location = new System.Drawing.Point(941, 67);
             this.rbtnAgent.Name = "rbtnAgent";
@@ -387,23 +420,23 @@
             // 
             // rbtnOwner
             // 
+            this.rbtnOwner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnOwner.AutoSize = true;
-            this.rbtnOwner.Checked = true;
             this.rbtnOwner.Location = new System.Drawing.Point(945, 24);
             this.rbtnOwner.Name = "rbtnOwner";
             this.rbtnOwner.Size = new System.Drawing.Size(62, 28);
             this.rbtnOwner.TabIndex = 0;
-            this.rbtnOwner.TabStop = true;
             this.rbtnOwner.Text = "المالك";
             this.rbtnOwner.UseVisualStyleBackColor = true;
             this.rbtnOwner.CheckedChanged += new System.EventHandler(this.rbtnOwner_CheckedChanged);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Location = new System.Drawing.Point(430, 6);
+            this.label1.Location = new System.Drawing.Point(443, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(164, 29);
             this.label1.TabIndex = 1;
@@ -411,8 +444,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 206);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1025, 5);
@@ -420,13 +454,14 @@
             // 
             // pnlDataContainer
             // 
+            this.pnlDataContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDataContainer.Controls.Add(this.dgvDisplay);
-            this.pnlDataContainer.Controls.Add(this.panel3);
-            this.pnlDataContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDataContainer.Location = new System.Drawing.Point(3, 220);
             this.pnlDataContainer.Name = "pnlDataContainer";
-            this.pnlDataContainer.Size = new System.Drawing.Size(1025, 324);
-            this.pnlDataContainer.TabIndex = 1;
+            this.pnlDataContainer.Size = new System.Drawing.Size(1025, 311);
+            this.pnlDataContainer.TabIndex = 2;
             // 
             // dgvDisplay
             // 
@@ -481,7 +516,7 @@
             this.dgvDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDisplay.RowTemplate.Height = 30;
             this.dgvDisplay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDisplay.Size = new System.Drawing.Size(1025, 319);
+            this.dgvDisplay.Size = new System.Drawing.Size(1025, 311);
             this.dgvDisplay.TabIndex = 1;
             // 
             // ownerNationalIdDataGridViewTextBoxColumn
@@ -522,26 +557,29 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 319);
+            this.panel3.Location = new System.Drawing.Point(3, 537);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1025, 5);
             this.panel3.TabIndex = 0;
             // 
             // pnlOperations
             // 
+            this.pnlOperations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlOperations.Controls.Add(this.btnFees);
             this.pnlOperations.Controls.Add(this.btnDetails);
             this.pnlOperations.Controls.Add(this.panel2);
-            this.pnlOperations.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlOperations.Location = new System.Drawing.Point(3, 550);
+            this.pnlOperations.Location = new System.Drawing.Point(3, 543);
             this.pnlOperations.Name = "pnlOperations";
-            this.pnlOperations.Size = new System.Drawing.Size(1025, 127);
-            this.pnlOperations.TabIndex = 3;
+            this.pnlOperations.Size = new System.Drawing.Size(1025, 134);
+            this.pnlOperations.TabIndex = 4;
             // 
             // btnFees
             // 
+            this.btnFees.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFees.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnFees.color = System.Drawing.Color.CornflowerBlue;
             this.btnFees.colorActive = System.Drawing.Color.LightSkyBlue;
@@ -553,7 +591,7 @@
             this.btnFees.ImageZoom = 25;
             this.btnFees.LabelPosition = 35;
             this.btnFees.LabelText = "الأتعاب";
-            this.btnFees.Location = new System.Drawing.Point(679, 22);
+            this.btnFees.Location = new System.Drawing.Point(679, 29);
             this.btnFees.Margin = new System.Windows.Forms.Padding(6);
             this.btnFees.Name = "btnFees";
             this.btnFees.Size = new System.Drawing.Size(152, 82);
@@ -562,6 +600,7 @@
             // 
             // btnDetails
             // 
+            this.btnDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetails.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnDetails.color = System.Drawing.Color.CornflowerBlue;
             this.btnDetails.colorActive = System.Drawing.Color.LightSkyBlue;
@@ -573,7 +612,7 @@
             this.btnDetails.ImageZoom = 25;
             this.btnDetails.LabelPosition = 35;
             this.btnDetails.LabelText = "عرض و تعديل";
-            this.btnDetails.Location = new System.Drawing.Point(862, 22);
+            this.btnDetails.Location = new System.Drawing.Point(862, 29);
             this.btnDetails.Margin = new System.Windows.Forms.Padding(6);
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.Size = new System.Drawing.Size(152, 82);
@@ -582,8 +621,9 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 122);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1025, 5);
@@ -598,7 +638,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 680);
-            this.Controls.Add(this.flowLayoutPanelMain);
+            this.Controls.Add(this.pnlMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -606,7 +646,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMDisplayLicenses";
             this.Load += new System.EventHandler(this.FRMDisplayLicenses_Load);
-            this.flowLayoutPanelMain.ResumeLayout(false);
+            this.pnlMain.ResumeLayout(false);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -626,12 +666,19 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMain;
+        private System.Windows.Forms.DataGridViewTextBoxColumn agnetNationalIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn agnetNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource searchVMBindingSource1;
+        private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel pnlHeader;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private Bunifu.Framework.UI.BunifuTileButton btnSearch;
+        private System.Windows.Forms.RadioButton rbtnLocation;
+        private System.Windows.Forms.GroupBox grpLocation;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtLocation;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtPlotNumber;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox grpOwner;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtOwnerName;
         private System.Windows.Forms.Label label2;
@@ -642,30 +689,22 @@
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtAgentNationalId;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox grpLocation;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtPlotNumber;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton rbtnLocation;
         private System.Windows.Forms.RadioButton rbtnAgent;
         private System.Windows.Forms.RadioButton rbtnOwner;
-        private Bunifu.Framework.UI.BunifuTileButton btnSearch;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtLocation;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlDataContainer;
-        private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvDisplay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn agnetNationalIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn agnetNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ownerNationalIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ownerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn agentNationalIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn agentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn plotNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource searchVMBindingSource1;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlOperations;
+        private Bunifu.Framework.UI.BunifuTileButton btnFees;
         private Bunifu.Framework.UI.BunifuTileButton btnDetails;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuTileButton btnFees;
     }
 }

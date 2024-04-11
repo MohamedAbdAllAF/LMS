@@ -54,7 +54,9 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "LMS.Reports.MLicenseReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 218);
             this.reportViewer1.Name = "reportViewer1";
@@ -66,6 +68,8 @@
             // 
             // lblTitle
             // 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lblTitle.Location = new System.Drawing.Point(483, 0);
@@ -77,6 +81,8 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox10.Controls.Add(this.rbtnAddedInSystem);
             this.groupBox10.Controls.Add(this.groupBox2);
             this.groupBox10.Controls.Add(this.groupBox1);
@@ -96,6 +102,7 @@
             // 
             // rbtnAddedInSystem
             // 
+            this.rbtnAddedInSystem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnAddedInSystem.AutoSize = true;
             this.rbtnAddedInSystem.Checked = true;
             this.rbtnAddedInSystem.Location = new System.Drawing.Point(569, 139);
@@ -109,6 +116,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.rbtnLFinalPaymentDate);
             this.groupBox2.Controls.Add(this.rbtnLExaminationFeeDate);
             this.groupBox2.Controls.Add(this.rbtnLInitialSupplyDate);
@@ -125,6 +133,7 @@
             // 
             // rbtnLFinalPaymentDate
             // 
+            this.rbtnLFinalPaymentDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnLFinalPaymentDate.AutoSize = true;
             this.rbtnLFinalPaymentDate.Location = new System.Drawing.Point(31, 62);
             this.rbtnLFinalPaymentDate.Name = "rbtnLFinalPaymentDate";
@@ -136,6 +145,7 @@
             // 
             // rbtnLExaminationFeeDate
             // 
+            this.rbtnLExaminationFeeDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnLExaminationFeeDate.AutoSize = true;
             this.rbtnLExaminationFeeDate.Location = new System.Drawing.Point(177, 62);
             this.rbtnLExaminationFeeDate.Name = "rbtnLExaminationFeeDate";
@@ -147,6 +157,7 @@
             // 
             // rbtnLInitialSupplyDate
             // 
+            this.rbtnLInitialSupplyDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnLInitialSupplyDate.AutoSize = true;
             this.rbtnLInitialSupplyDate.Location = new System.Drawing.Point(61, 28);
             this.rbtnLInitialSupplyDate.Name = "rbtnLInitialSupplyDate";
@@ -158,6 +169,7 @@
             // 
             // rbtnLEntryDate
             // 
+            this.rbtnLEntryDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnLEntryDate.AutoSize = true;
             this.rbtnLEntryDate.Location = new System.Drawing.Point(234, 28);
             this.rbtnLEntryDate.Name = "rbtnLEntryDate";
@@ -169,6 +181,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.rbtnVValidatySupplyDate);
             this.groupBox1.Controls.Add(this.rbtnVInitialSupplyDate);
             this.groupBox1.Controls.Add(this.rbtnVEntryDate);
@@ -184,6 +197,7 @@
             // 
             // rbtnVValidatySupplyDate
             // 
+            this.rbtnVValidatySupplyDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnVValidatySupplyDate.AutoSize = true;
             this.rbtnVValidatySupplyDate.Location = new System.Drawing.Point(42, 62);
             this.rbtnVValidatySupplyDate.Name = "rbtnVValidatySupplyDate";
@@ -195,6 +209,7 @@
             // 
             // rbtnVInitialSupplyDate
             // 
+            this.rbtnVInitialSupplyDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnVInitialSupplyDate.AutoSize = true;
             this.rbtnVInitialSupplyDate.Location = new System.Drawing.Point(15, 28);
             this.rbtnVInitialSupplyDate.Name = "rbtnVInitialSupplyDate";
@@ -206,6 +221,7 @@
             // 
             // rbtnVEntryDate
             // 
+            this.rbtnVEntryDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnVEntryDate.AutoSize = true;
             this.rbtnVEntryDate.Location = new System.Drawing.Point(136, 28);
             this.rbtnVEntryDate.Name = "rbtnVEntryDate";
@@ -217,6 +233,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(215, 107);
@@ -227,6 +244,8 @@
             // 
             // picTo
             // 
+            this.picTo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picTo.BackColor = System.Drawing.Color.CornflowerBlue;
             this.picTo.BorderRadius = 30;
             this.picTo.ForeColor = System.Drawing.Color.White;
@@ -241,6 +260,8 @@
             // 
             // picFrom
             // 
+            this.picFrom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picFrom.BackColor = System.Drawing.Color.CornflowerBlue;
             this.picFrom.BorderRadius = 30;
             this.picFrom.ForeColor = System.Drawing.Color.White;
@@ -255,6 +276,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(216, 48);

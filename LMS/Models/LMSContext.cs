@@ -12,8 +12,8 @@ namespace LMS.Models
     {
         //Accessing The Connection String
         //public LMSContext() : base("DBConnection") { }
-        public LMSContext() : base("LocalDB") { }
-        //public LMSContext() : base("Testing") { }
+        //public LMSContext() : base("LocalDB") { }
+        public LMSContext() : base("Testing") { }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<AdminLog> AdminLogs { get; set; }
         public DbSet<Fee> Fees { get; set; }
