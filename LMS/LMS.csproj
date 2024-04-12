@@ -296,6 +296,7 @@
     <None Include="Resources\icons8-download.gif" />
     <None Include="Resources\icons8-download-40.png" />
     <None Include="Resources\icons8-download2-40.png" />
+    <None Include="Resources\icons8-open-40.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />

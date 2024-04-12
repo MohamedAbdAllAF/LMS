@@ -57,25 +57,21 @@
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btnVReceiveDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picVReceiveDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtVReceiveDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.btnVValidatySupplyDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picVValidatySupplyDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtVValidatySupplyDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.btnVInitialSupplyDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picVInitialSupplyDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtVInitialSupplyDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.btnVEntryDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picVEntryDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtVEntryDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label11 = new System.Windows.Forms.Label();
@@ -84,20 +80,15 @@
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
-            this.btnAddFile = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnDeleteFile = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnDownloadFile = new Bunifu.Framework.UI.BunifuTileButton();
             this.lvFilesList = new MaterialSkin.Controls.MaterialListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.fileName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox20 = new System.Windows.Forms.GroupBox();
-            this.btnLFinalPaymentDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picLFinalPaymentDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtLFinalPaymentDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.btnLInitialSupplyDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picLInitialSupplyDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtLInitialSupplyDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label27 = new System.Windows.Forms.Label();
@@ -110,36 +101,46 @@
             this.txtLicenseNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.btnLReceiveDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picLReceiveDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtLReceiveDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.btnLSignatureDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picLSignatureDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtLSignatureDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.btnLFeesPaymentDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picLFeesPaymentDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtLFeesPaymentDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.btnLExaminationFeeDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picLExaminationFeeDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtLExaminationFeeDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.btnLEntryDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.picLEntryDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtLEntryDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVReceiveDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnVValidatySupplyDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnVInitialSupplyDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnVEntryDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnOpenFile = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnAddFile = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnDeleteFile = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnDownloadFile = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnLFinalPaymentDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnLInitialSupplyDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnLReceiveDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnLSignatureDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnLFeesPaymentDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnLExaminationFeeDate = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnLEntryDate = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnDeleteLicense = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
             this.pnlScrollerContainer.SuspendLayout();
@@ -152,33 +153,33 @@
             this.pnlValidityStatment.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVReceiveDate)).BeginInit();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVValidatySupplyDate)).BeginInit();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVInitialSupplyDate)).BeginInit();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVEntryDate)).BeginInit();
             this.pnlLicense.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox21.SuspendLayout();
             this.groupBox20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).BeginInit();
             this.groupBox19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLInitialSupplyDate)).BeginInit();
             this.groupBox18.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLReceiveDate)).BeginInit();
             this.groupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLSignatureDate)).BeginInit();
             this.groupBox13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLFeesPaymentDate)).BeginInit();
             this.groupBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLExaminationFeeDate)).BeginInit();
             this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVReceiveDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVValidatySupplyDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVInitialSupplyDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVEntryDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLInitialSupplyDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLReceiveDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLSignatureDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLFeesPaymentDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLExaminationFeeDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlScrollerContainer
@@ -203,7 +204,7 @@
             this.pnlMainInfoContainer.Controls.Add(this.bunifuSeparator1);
             this.pnlMainInfoContainer.Controls.Add(this.groupBox1);
             this.pnlMainInfoContainer.Controls.Add(this.lblTitle);
-            this.pnlMainInfoContainer.Location = new System.Drawing.Point(3, 12);
+            this.pnlMainInfoContainer.Location = new System.Drawing.Point(3, 3);
             this.pnlMainInfoContainer.Name = "pnlMainInfoContainer";
             this.pnlMainInfoContainer.Size = new System.Drawing.Size(1027, 340);
             this.pnlMainInfoContainer.TabIndex = 7;
@@ -533,7 +534,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlValidityStatment.Controls.Add(this.bunifuSeparator2);
             this.pnlValidityStatment.Controls.Add(this.groupBox6);
-            this.pnlValidityStatment.Location = new System.Drawing.Point(3, 358);
+            this.pnlValidityStatment.Location = new System.Drawing.Point(3, 349);
             this.pnlValidityStatment.Name = "pnlValidityStatment";
             this.pnlValidityStatment.Size = new System.Drawing.Size(1027, 295);
             this.pnlValidityStatment.TabIndex = 8;
@@ -588,20 +589,6 @@
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "تاريخ الاستلام";
-            // 
-            // btnVReceiveDate
-            // 
-            this.btnVReceiveDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnVReceiveDate.Image = ((System.Drawing.Image)(resources.GetObject("btnVReceiveDate.Image")));
-            this.btnVReceiveDate.ImageActive = null;
-            this.btnVReceiveDate.Location = new System.Drawing.Point(9, 26);
-            this.btnVReceiveDate.Name = "btnVReceiveDate";
-            this.btnVReceiveDate.Size = new System.Drawing.Size(90, 75);
-            this.btnVReceiveDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnVReceiveDate.TabIndex = 5;
-            this.btnVReceiveDate.TabStop = false;
-            this.btnVReceiveDate.Zoom = 5;
-            this.btnVReceiveDate.Click += new System.EventHandler(this.btnVReceiveDate_Click);
             // 
             // picVReceiveDate
             // 
@@ -679,20 +666,6 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "تاريخ توريد بيان الصلاحية";
             // 
-            // btnVValidatySupplyDate
-            // 
-            this.btnVValidatySupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnVValidatySupplyDate.Image = ((System.Drawing.Image)(resources.GetObject("btnVValidatySupplyDate.Image")));
-            this.btnVValidatySupplyDate.ImageActive = null;
-            this.btnVValidatySupplyDate.Location = new System.Drawing.Point(9, 26);
-            this.btnVValidatySupplyDate.Name = "btnVValidatySupplyDate";
-            this.btnVValidatySupplyDate.Size = new System.Drawing.Size(90, 75);
-            this.btnVValidatySupplyDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnVValidatySupplyDate.TabIndex = 5;
-            this.btnVValidatySupplyDate.TabStop = false;
-            this.btnVValidatySupplyDate.Zoom = 5;
-            this.btnVValidatySupplyDate.Click += new System.EventHandler(this.btnVValidatySupplyDate_Click);
-            // 
             // picVValidatySupplyDate
             // 
             this.picVValidatySupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -763,20 +736,6 @@
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "تاريخ التوريد أولي";
-            // 
-            // btnVInitialSupplyDate
-            // 
-            this.btnVInitialSupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnVInitialSupplyDate.Image = ((System.Drawing.Image)(resources.GetObject("btnVInitialSupplyDate.Image")));
-            this.btnVInitialSupplyDate.ImageActive = null;
-            this.btnVInitialSupplyDate.Location = new System.Drawing.Point(9, 26);
-            this.btnVInitialSupplyDate.Name = "btnVInitialSupplyDate";
-            this.btnVInitialSupplyDate.Size = new System.Drawing.Size(90, 75);
-            this.btnVInitialSupplyDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnVInitialSupplyDate.TabIndex = 5;
-            this.btnVInitialSupplyDate.TabStop = false;
-            this.btnVInitialSupplyDate.Zoom = 5;
-            this.btnVInitialSupplyDate.Click += new System.EventHandler(this.btnVInitialSupplyDate_Click);
             // 
             // picVInitialSupplyDate
             // 
@@ -854,20 +813,6 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "تاريخ الدخول";
             // 
-            // btnVEntryDate
-            // 
-            this.btnVEntryDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnVEntryDate.Image = ((System.Drawing.Image)(resources.GetObject("btnVEntryDate.Image")));
-            this.btnVEntryDate.ImageActive = null;
-            this.btnVEntryDate.Location = new System.Drawing.Point(9, 26);
-            this.btnVEntryDate.Name = "btnVEntryDate";
-            this.btnVEntryDate.Size = new System.Drawing.Size(90, 75);
-            this.btnVEntryDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnVEntryDate.TabIndex = 5;
-            this.btnVEntryDate.TabStop = false;
-            this.btnVEntryDate.Zoom = 5;
-            this.btnVEntryDate.Click += new System.EventHandler(this.btnVEntryDate_Click);
-            // 
             // picVEntryDate
             // 
             this.picVEntryDate.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -927,7 +872,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlLicense.Controls.Add(this.bunifuSeparator3);
             this.pnlLicense.Controls.Add(this.groupBox11);
-            this.pnlLicense.Location = new System.Drawing.Point(3, 659);
+            this.pnlLicense.Location = new System.Drawing.Point(3, 650);
             this.pnlLicense.Name = "pnlLicense";
             this.pnlLicense.Size = new System.Drawing.Size(1027, 806);
             this.pnlLicense.TabIndex = 9;
@@ -975,6 +920,7 @@
             // 
             this.groupBox21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox21.Controls.Add(this.btnOpenFile);
             this.groupBox21.Controls.Add(this.btnAddFile);
             this.groupBox21.Controls.Add(this.btnDeleteFile);
             this.groupBox21.Controls.Add(this.btnDownloadFile);
@@ -988,71 +934,6 @@
             this.groupBox21.TabIndex = 12;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "مستندات";
-            // 
-            // btnAddFile
-            // 
-            this.btnAddFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddFile.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnAddFile.color = System.Drawing.Color.CornflowerBlue;
-            this.btnAddFile.colorActive = System.Drawing.Color.LightSkyBlue;
-            this.btnAddFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFile.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnAddFile.ForeColor = System.Drawing.Color.White;
-            this.btnAddFile.Image = global::LMS.Properties.Resources.icons8_browse_folder_40;
-            this.btnAddFile.ImagePosition = 1;
-            this.btnAddFile.ImageZoom = 40;
-            this.btnAddFile.LabelPosition = 35;
-            this.btnAddFile.LabelText = "إضافة ملف";
-            this.btnAddFile.Location = new System.Drawing.Point(10, 191);
-            this.btnAddFile.Margin = new System.Windows.Forms.Padding(6);
-            this.btnAddFile.Name = "btnAddFile";
-            this.btnAddFile.Size = new System.Drawing.Size(82, 70);
-            this.btnAddFile.TabIndex = 13;
-            this.btnAddFile.Click += new System.EventHandler(this.btnAddFile_Click);
-            // 
-            // btnDeleteFile
-            // 
-            this.btnDeleteFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDeleteFile.BackColor = System.Drawing.Color.Red;
-            this.btnDeleteFile.color = System.Drawing.Color.Red;
-            this.btnDeleteFile.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDeleteFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteFile.Enabled = false;
-            this.btnDeleteFile.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnDeleteFile.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteFile.Image = global::LMS.Properties.Resources.icons8_close_40;
-            this.btnDeleteFile.ImagePosition = 3;
-            this.btnDeleteFile.ImageZoom = 40;
-            this.btnDeleteFile.LabelPosition = 35;
-            this.btnDeleteFile.LabelText = "حذف الرخصة";
-            this.btnDeleteFile.Location = new System.Drawing.Point(198, 191);
-            this.btnDeleteFile.Margin = new System.Windows.Forms.Padding(6);
-            this.btnDeleteFile.Name = "btnDeleteFile";
-            this.btnDeleteFile.Size = new System.Drawing.Size(82, 70);
-            this.btnDeleteFile.TabIndex = 12;
-            this.btnDeleteFile.Click += new System.EventHandler(this.btnDeleteFile_Click);
-            // 
-            // btnDownloadFile
-            // 
-            this.btnDownloadFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDownloadFile.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnDownloadFile.color = System.Drawing.Color.CornflowerBlue;
-            this.btnDownloadFile.colorActive = System.Drawing.Color.LightSkyBlue;
-            this.btnDownloadFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDownloadFile.Enabled = false;
-            this.btnDownloadFile.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnDownloadFile.ForeColor = System.Drawing.Color.White;
-            this.btnDownloadFile.Image = global::LMS.Properties.Resources.icons8_download2_40;
-            this.btnDownloadFile.ImagePosition = 3;
-            this.btnDownloadFile.ImageZoom = 40;
-            this.btnDownloadFile.LabelPosition = 35;
-            this.btnDownloadFile.LabelText = "إضافة ملف";
-            this.btnDownloadFile.Location = new System.Drawing.Point(104, 191);
-            this.btnDownloadFile.Margin = new System.Windows.Forms.Padding(6);
-            this.btnDownloadFile.Name = "btnDownloadFile";
-            this.btnDownloadFile.Size = new System.Drawing.Size(82, 70);
-            this.btnDownloadFile.TabIndex = 1;
-            this.btnDownloadFile.Click += new System.EventHandler(this.btnDownloadFile_Click);
             // 
             // lvFilesList
             // 
@@ -1105,20 +986,6 @@
             this.groupBox20.TabIndex = 11;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "تاريخ دفع نهائى";
-            // 
-            // btnLFinalPaymentDate
-            // 
-            this.btnLFinalPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLFinalPaymentDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLFinalPaymentDate.Image")));
-            this.btnLFinalPaymentDate.ImageActive = null;
-            this.btnLFinalPaymentDate.Location = new System.Drawing.Point(9, 26);
-            this.btnLFinalPaymentDate.Name = "btnLFinalPaymentDate";
-            this.btnLFinalPaymentDate.Size = new System.Drawing.Size(90, 75);
-            this.btnLFinalPaymentDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLFinalPaymentDate.TabIndex = 5;
-            this.btnLFinalPaymentDate.TabStop = false;
-            this.btnLFinalPaymentDate.Zoom = 5;
-            this.btnLFinalPaymentDate.Click += new System.EventHandler(this.btnLFinalPaymentDate_Click);
             // 
             // picLFinalPaymentDate
             // 
@@ -1190,20 +1057,6 @@
             this.groupBox19.TabIndex = 10;
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "تاريخ التوريد أولي";
-            // 
-            // btnLInitialSupplyDate
-            // 
-            this.btnLInitialSupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLInitialSupplyDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLInitialSupplyDate.Image")));
-            this.btnLInitialSupplyDate.ImageActive = null;
-            this.btnLInitialSupplyDate.Location = new System.Drawing.Point(9, 26);
-            this.btnLInitialSupplyDate.Name = "btnLInitialSupplyDate";
-            this.btnLInitialSupplyDate.Size = new System.Drawing.Size(90, 75);
-            this.btnLInitialSupplyDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLInitialSupplyDate.TabIndex = 5;
-            this.btnLInitialSupplyDate.TabStop = false;
-            this.btnLInitialSupplyDate.Zoom = 5;
-            this.btnLInitialSupplyDate.Click += new System.EventHandler(this.btnLInitialSupplyDate_Click);
             // 
             // picLInitialSupplyDate
             // 
@@ -1392,20 +1245,6 @@
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "تاريخ الأستلام";
             // 
-            // btnLReceiveDate
-            // 
-            this.btnLReceiveDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLReceiveDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLReceiveDate.Image")));
-            this.btnLReceiveDate.ImageActive = null;
-            this.btnLReceiveDate.Location = new System.Drawing.Point(9, 26);
-            this.btnLReceiveDate.Name = "btnLReceiveDate";
-            this.btnLReceiveDate.Size = new System.Drawing.Size(90, 75);
-            this.btnLReceiveDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLReceiveDate.TabIndex = 5;
-            this.btnLReceiveDate.TabStop = false;
-            this.btnLReceiveDate.Zoom = 5;
-            this.btnLReceiveDate.Click += new System.EventHandler(this.btnLReceiveDate_Click);
-            // 
             // picLReceiveDate
             // 
             this.picLReceiveDate.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -1476,20 +1315,6 @@
             this.groupBox12.TabIndex = 7;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "تاريخ التوقيع";
-            // 
-            // btnLSignatureDate
-            // 
-            this.btnLSignatureDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLSignatureDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLSignatureDate.Image")));
-            this.btnLSignatureDate.ImageActive = null;
-            this.btnLSignatureDate.Location = new System.Drawing.Point(9, 26);
-            this.btnLSignatureDate.Name = "btnLSignatureDate";
-            this.btnLSignatureDate.Size = new System.Drawing.Size(90, 75);
-            this.btnLSignatureDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLSignatureDate.TabIndex = 5;
-            this.btnLSignatureDate.TabStop = false;
-            this.btnLSignatureDate.Zoom = 5;
-            this.btnLSignatureDate.Click += new System.EventHandler(this.btnLSignatureDate_Click);
             // 
             // picLSignatureDate
             // 
@@ -1568,20 +1393,6 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "تاريخ دفع الرسوم";
             // 
-            // btnLFeesPaymentDate
-            // 
-            this.btnLFeesPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLFeesPaymentDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLFeesPaymentDate.Image")));
-            this.btnLFeesPaymentDate.ImageActive = null;
-            this.btnLFeesPaymentDate.Location = new System.Drawing.Point(9, 26);
-            this.btnLFeesPaymentDate.Name = "btnLFeesPaymentDate";
-            this.btnLFeesPaymentDate.Size = new System.Drawing.Size(90, 75);
-            this.btnLFeesPaymentDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLFeesPaymentDate.TabIndex = 5;
-            this.btnLFeesPaymentDate.TabStop = false;
-            this.btnLFeesPaymentDate.Zoom = 5;
-            this.btnLFeesPaymentDate.Click += new System.EventHandler(this.btnLFeesPaymentDate_Click);
-            // 
             // picLFeesPaymentDate
             // 
             this.picLFeesPaymentDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1658,20 +1469,6 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "تاريخ رسم الفحص";
             // 
-            // btnLExaminationFeeDate
-            // 
-            this.btnLExaminationFeeDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLExaminationFeeDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLExaminationFeeDate.Image")));
-            this.btnLExaminationFeeDate.ImageActive = null;
-            this.btnLExaminationFeeDate.Location = new System.Drawing.Point(9, 26);
-            this.btnLExaminationFeeDate.Name = "btnLExaminationFeeDate";
-            this.btnLExaminationFeeDate.Size = new System.Drawing.Size(90, 75);
-            this.btnLExaminationFeeDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLExaminationFeeDate.TabIndex = 5;
-            this.btnLExaminationFeeDate.TabStop = false;
-            this.btnLExaminationFeeDate.Zoom = 5;
-            this.btnLExaminationFeeDate.Click += new System.EventHandler(this.btnLExaminationFeeDate_Click);
-            // 
             // picLExaminationFeeDate
             // 
             this.picLExaminationFeeDate.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -1742,20 +1539,6 @@
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "تاريخ الدخول";
             // 
-            // btnLEntryDate
-            // 
-            this.btnLEntryDate.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLEntryDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLEntryDate.Image")));
-            this.btnLEntryDate.ImageActive = null;
-            this.btnLEntryDate.Location = new System.Drawing.Point(9, 26);
-            this.btnLEntryDate.Name = "btnLEntryDate";
-            this.btnLEntryDate.Size = new System.Drawing.Size(90, 75);
-            this.btnLEntryDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLEntryDate.TabIndex = 5;
-            this.btnLEntryDate.TabStop = false;
-            this.btnLEntryDate.Zoom = 5;
-            this.btnLEntryDate.Click += new System.EventHandler(this.btnLEntryDate_Click);
-            // 
             // picLEntryDate
             // 
             this.picLEntryDate.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -1813,10 +1596,251 @@
             // 
             this.panel1.Controls.Add(this.btnDeleteLicense);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Location = new System.Drawing.Point(3, 1471);
+            this.panel1.Location = new System.Drawing.Point(3, 1462);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1027, 108);
             this.panel1.TabIndex = 10;
+            // 
+            // btnVReceiveDate
+            // 
+            this.btnVReceiveDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnVReceiveDate.Image = ((System.Drawing.Image)(resources.GetObject("btnVReceiveDate.Image")));
+            this.btnVReceiveDate.ImageActive = null;
+            this.btnVReceiveDate.Location = new System.Drawing.Point(9, 26);
+            this.btnVReceiveDate.Name = "btnVReceiveDate";
+            this.btnVReceiveDate.Size = new System.Drawing.Size(90, 75);
+            this.btnVReceiveDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnVReceiveDate.TabIndex = 5;
+            this.btnVReceiveDate.TabStop = false;
+            this.btnVReceiveDate.Zoom = 5;
+            this.btnVReceiveDate.Click += new System.EventHandler(this.btnVReceiveDate_Click);
+            // 
+            // btnVValidatySupplyDate
+            // 
+            this.btnVValidatySupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnVValidatySupplyDate.Image = ((System.Drawing.Image)(resources.GetObject("btnVValidatySupplyDate.Image")));
+            this.btnVValidatySupplyDate.ImageActive = null;
+            this.btnVValidatySupplyDate.Location = new System.Drawing.Point(9, 26);
+            this.btnVValidatySupplyDate.Name = "btnVValidatySupplyDate";
+            this.btnVValidatySupplyDate.Size = new System.Drawing.Size(90, 75);
+            this.btnVValidatySupplyDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnVValidatySupplyDate.TabIndex = 5;
+            this.btnVValidatySupplyDate.TabStop = false;
+            this.btnVValidatySupplyDate.Zoom = 5;
+            this.btnVValidatySupplyDate.Click += new System.EventHandler(this.btnVValidatySupplyDate_Click);
+            // 
+            // btnVInitialSupplyDate
+            // 
+            this.btnVInitialSupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnVInitialSupplyDate.Image = ((System.Drawing.Image)(resources.GetObject("btnVInitialSupplyDate.Image")));
+            this.btnVInitialSupplyDate.ImageActive = null;
+            this.btnVInitialSupplyDate.Location = new System.Drawing.Point(9, 26);
+            this.btnVInitialSupplyDate.Name = "btnVInitialSupplyDate";
+            this.btnVInitialSupplyDate.Size = new System.Drawing.Size(90, 75);
+            this.btnVInitialSupplyDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnVInitialSupplyDate.TabIndex = 5;
+            this.btnVInitialSupplyDate.TabStop = false;
+            this.btnVInitialSupplyDate.Zoom = 5;
+            this.btnVInitialSupplyDate.Click += new System.EventHandler(this.btnVInitialSupplyDate_Click);
+            // 
+            // btnVEntryDate
+            // 
+            this.btnVEntryDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnVEntryDate.Image = ((System.Drawing.Image)(resources.GetObject("btnVEntryDate.Image")));
+            this.btnVEntryDate.ImageActive = null;
+            this.btnVEntryDate.Location = new System.Drawing.Point(9, 26);
+            this.btnVEntryDate.Name = "btnVEntryDate";
+            this.btnVEntryDate.Size = new System.Drawing.Size(90, 75);
+            this.btnVEntryDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnVEntryDate.TabIndex = 5;
+            this.btnVEntryDate.TabStop = false;
+            this.btnVEntryDate.Zoom = 5;
+            this.btnVEntryDate.Click += new System.EventHandler(this.btnVEntryDate_Click);
+            // 
+            // btnOpenFile
+            // 
+            this.btnOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnOpenFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnOpenFile.color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnOpenFile.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnOpenFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenFile.Enabled = false;
+            this.btnOpenFile.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnOpenFile.ForeColor = System.Drawing.Color.White;
+            this.btnOpenFile.Image = global::LMS.Properties.Resources.icons8_open_40;
+            this.btnOpenFile.ImagePosition = 1;
+            this.btnOpenFile.ImageZoom = 40;
+            this.btnOpenFile.LabelPosition = 35;
+            this.btnOpenFile.LabelText = "فتح ملف";
+            this.btnOpenFile.Location = new System.Drawing.Point(258, 191);
+            this.btnOpenFile.Margin = new System.Windows.Forms.Padding(6);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.Size = new System.Drawing.Size(82, 70);
+            this.btnOpenFile.TabIndex = 14;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
+            // 
+            // btnAddFile
+            // 
+            this.btnAddFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddFile.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddFile.color = System.Drawing.Color.CornflowerBlue;
+            this.btnAddFile.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnAddFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFile.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnAddFile.ForeColor = System.Drawing.Color.White;
+            this.btnAddFile.Image = global::LMS.Properties.Resources.icons8_browse_folder_40;
+            this.btnAddFile.ImagePosition = 1;
+            this.btnAddFile.ImageZoom = 40;
+            this.btnAddFile.LabelPosition = 35;
+            this.btnAddFile.LabelText = "إضافة ملف";
+            this.btnAddFile.Location = new System.Drawing.Point(10, 191);
+            this.btnAddFile.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddFile.Name = "btnAddFile";
+            this.btnAddFile.Size = new System.Drawing.Size(82, 70);
+            this.btnAddFile.TabIndex = 13;
+            this.btnAddFile.Click += new System.EventHandler(this.btnAddFile_Click);
+            // 
+            // btnDeleteFile
+            // 
+            this.btnDeleteFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDeleteFile.BackColor = System.Drawing.Color.Red;
+            this.btnDeleteFile.color = System.Drawing.Color.Red;
+            this.btnDeleteFile.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDeleteFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteFile.Enabled = false;
+            this.btnDeleteFile.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnDeleteFile.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteFile.Image = global::LMS.Properties.Resources.icons8_close_40;
+            this.btnDeleteFile.ImagePosition = 3;
+            this.btnDeleteFile.ImageZoom = 40;
+            this.btnDeleteFile.LabelPosition = 35;
+            this.btnDeleteFile.LabelText = "حذف ملف";
+            this.btnDeleteFile.Location = new System.Drawing.Point(382, 191);
+            this.btnDeleteFile.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDeleteFile.Name = "btnDeleteFile";
+            this.btnDeleteFile.Size = new System.Drawing.Size(82, 70);
+            this.btnDeleteFile.TabIndex = 12;
+            this.btnDeleteFile.Click += new System.EventHandler(this.btnDeleteFile_Click);
+            // 
+            // btnDownloadFile
+            // 
+            this.btnDownloadFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDownloadFile.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnDownloadFile.color = System.Drawing.Color.ForestGreen;
+            this.btnDownloadFile.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnDownloadFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDownloadFile.Enabled = false;
+            this.btnDownloadFile.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnDownloadFile.ForeColor = System.Drawing.Color.White;
+            this.btnDownloadFile.Image = global::LMS.Properties.Resources.icons8_download2_40;
+            this.btnDownloadFile.ImagePosition = 3;
+            this.btnDownloadFile.ImageZoom = 40;
+            this.btnDownloadFile.LabelPosition = 35;
+            this.btnDownloadFile.LabelText = "تحميل ملف";
+            this.btnDownloadFile.Location = new System.Drawing.Point(134, 191);
+            this.btnDownloadFile.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDownloadFile.Name = "btnDownloadFile";
+            this.btnDownloadFile.Size = new System.Drawing.Size(82, 70);
+            this.btnDownloadFile.TabIndex = 1;
+            this.btnDownloadFile.Click += new System.EventHandler(this.btnDownloadFile_Click);
+            // 
+            // btnLFinalPaymentDate
+            // 
+            this.btnLFinalPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLFinalPaymentDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLFinalPaymentDate.Image")));
+            this.btnLFinalPaymentDate.ImageActive = null;
+            this.btnLFinalPaymentDate.Location = new System.Drawing.Point(9, 26);
+            this.btnLFinalPaymentDate.Name = "btnLFinalPaymentDate";
+            this.btnLFinalPaymentDate.Size = new System.Drawing.Size(90, 75);
+            this.btnLFinalPaymentDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLFinalPaymentDate.TabIndex = 5;
+            this.btnLFinalPaymentDate.TabStop = false;
+            this.btnLFinalPaymentDate.Zoom = 5;
+            this.btnLFinalPaymentDate.Click += new System.EventHandler(this.btnLFinalPaymentDate_Click);
+            // 
+            // btnLInitialSupplyDate
+            // 
+            this.btnLInitialSupplyDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLInitialSupplyDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLInitialSupplyDate.Image")));
+            this.btnLInitialSupplyDate.ImageActive = null;
+            this.btnLInitialSupplyDate.Location = new System.Drawing.Point(9, 26);
+            this.btnLInitialSupplyDate.Name = "btnLInitialSupplyDate";
+            this.btnLInitialSupplyDate.Size = new System.Drawing.Size(90, 75);
+            this.btnLInitialSupplyDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLInitialSupplyDate.TabIndex = 5;
+            this.btnLInitialSupplyDate.TabStop = false;
+            this.btnLInitialSupplyDate.Zoom = 5;
+            this.btnLInitialSupplyDate.Click += new System.EventHandler(this.btnLInitialSupplyDate_Click);
+            // 
+            // btnLReceiveDate
+            // 
+            this.btnLReceiveDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLReceiveDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLReceiveDate.Image")));
+            this.btnLReceiveDate.ImageActive = null;
+            this.btnLReceiveDate.Location = new System.Drawing.Point(9, 26);
+            this.btnLReceiveDate.Name = "btnLReceiveDate";
+            this.btnLReceiveDate.Size = new System.Drawing.Size(90, 75);
+            this.btnLReceiveDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLReceiveDate.TabIndex = 5;
+            this.btnLReceiveDate.TabStop = false;
+            this.btnLReceiveDate.Zoom = 5;
+            this.btnLReceiveDate.Click += new System.EventHandler(this.btnLReceiveDate_Click);
+            // 
+            // btnLSignatureDate
+            // 
+            this.btnLSignatureDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLSignatureDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLSignatureDate.Image")));
+            this.btnLSignatureDate.ImageActive = null;
+            this.btnLSignatureDate.Location = new System.Drawing.Point(9, 26);
+            this.btnLSignatureDate.Name = "btnLSignatureDate";
+            this.btnLSignatureDate.Size = new System.Drawing.Size(90, 75);
+            this.btnLSignatureDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLSignatureDate.TabIndex = 5;
+            this.btnLSignatureDate.TabStop = false;
+            this.btnLSignatureDate.Zoom = 5;
+            this.btnLSignatureDate.Click += new System.EventHandler(this.btnLSignatureDate_Click);
+            // 
+            // btnLFeesPaymentDate
+            // 
+            this.btnLFeesPaymentDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLFeesPaymentDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLFeesPaymentDate.Image")));
+            this.btnLFeesPaymentDate.ImageActive = null;
+            this.btnLFeesPaymentDate.Location = new System.Drawing.Point(9, 26);
+            this.btnLFeesPaymentDate.Name = "btnLFeesPaymentDate";
+            this.btnLFeesPaymentDate.Size = new System.Drawing.Size(90, 75);
+            this.btnLFeesPaymentDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLFeesPaymentDate.TabIndex = 5;
+            this.btnLFeesPaymentDate.TabStop = false;
+            this.btnLFeesPaymentDate.Zoom = 5;
+            this.btnLFeesPaymentDate.Click += new System.EventHandler(this.btnLFeesPaymentDate_Click);
+            // 
+            // btnLExaminationFeeDate
+            // 
+            this.btnLExaminationFeeDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLExaminationFeeDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLExaminationFeeDate.Image")));
+            this.btnLExaminationFeeDate.ImageActive = null;
+            this.btnLExaminationFeeDate.Location = new System.Drawing.Point(9, 26);
+            this.btnLExaminationFeeDate.Name = "btnLExaminationFeeDate";
+            this.btnLExaminationFeeDate.Size = new System.Drawing.Size(90, 75);
+            this.btnLExaminationFeeDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLExaminationFeeDate.TabIndex = 5;
+            this.btnLExaminationFeeDate.TabStop = false;
+            this.btnLExaminationFeeDate.Zoom = 5;
+            this.btnLExaminationFeeDate.Click += new System.EventHandler(this.btnLExaminationFeeDate_Click);
+            // 
+            // btnLEntryDate
+            // 
+            this.btnLEntryDate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLEntryDate.Image = ((System.Drawing.Image)(resources.GetObject("btnLEntryDate.Image")));
+            this.btnLEntryDate.ImageActive = null;
+            this.btnLEntryDate.Location = new System.Drawing.Point(9, 26);
+            this.btnLEntryDate.Name = "btnLEntryDate";
+            this.btnLEntryDate.Size = new System.Drawing.Size(90, 75);
+            this.btnLEntryDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLEntryDate.TabIndex = 5;
+            this.btnLEntryDate.TabStop = false;
+            this.btnLEntryDate.Zoom = 5;
+            this.btnLEntryDate.Click += new System.EventHandler(this.btnLEntryDate_Click);
             // 
             // btnDeleteLicense
             // 
@@ -1888,44 +1912,44 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVReceiveDate)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVValidatySupplyDate)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVInitialSupplyDate)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVEntryDate)).EndInit();
             this.pnlLicense.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox21.ResumeLayout(false);
             this.groupBox20.ResumeLayout(false);
             this.groupBox20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).EndInit();
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLInitialSupplyDate)).EndInit();
             this.groupBox18.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLReceiveDate)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLSignatureDate)).EndInit();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLFeesPaymentDate)).EndInit();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLExaminationFeeDate)).EndInit();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnVReceiveDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVValidatySupplyDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVInitialSupplyDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVEntryDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLFinalPaymentDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLInitialSupplyDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLReceiveDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLSignatureDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLFeesPaymentDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLExaminationFeeDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2045,5 +2069,6 @@
         private System.Windows.Forms.ColumnHeader fileName;
         private Bunifu.Framework.UI.BunifuTileButton btnDeleteFile;
         private Bunifu.Framework.UI.BunifuTileButton btnAddFile;
+        private Bunifu.Framework.UI.BunifuTileButton btnOpenFile;
     }
 }
