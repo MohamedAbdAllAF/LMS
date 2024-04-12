@@ -146,12 +146,14 @@ namespace LMS.Views
         {
             if (_isNormal)
             {
-                this.WindowState = FormWindowState.Maximized;
+                WindowState = FormWindowState.Maximized;
+                lblMaxmize.Image = Properties.Resources.icons8_restore_down_40;
                 _isNormal = false;
             }
             else
             {
-                this.WindowState = FormWindowState.Normal;
+                WindowState = FormWindowState.Normal;
+                lblMaxmize.Image = Properties.Resources.icons8_maximize_40;
                 _isNormal = true;
             }
         }

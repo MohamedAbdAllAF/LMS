@@ -33,6 +33,9 @@ namespace LMS.Controllers
             {
                 try
                 {
+                    var isUserExist = context.Users.Where(u => u.NationalId == user.NationalId).FirstOrDefault();
+                    if(isUserExist != null)
+                        return Convert.ToInt32(isUserExist.Id);
                     context.Users.Add(new User { Name = user.Name, NationalId = user.NationalId });
                     context.SaveChanges();
                     var userId = context.Users.Where(u => u.NationalId == user.NationalId).Select(u => u.Id).FirstOrDefault();

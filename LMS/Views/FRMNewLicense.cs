@@ -23,6 +23,7 @@ namespace LMS.Views
         LocationController locatcont = new LocationController();
         LicenseController licensecont = new LicenseController();
         LicenseVM licenseVM = new LicenseVM();
+        AttachedFilesController _filesController = new AttachedFilesController();
         private List<(int id, string FileName, string Extension, byte[] Data)> fileList = new List<(int, string, string, byte[])>();
         public FRMNewLicense(int adminId)
         {
@@ -59,6 +60,18 @@ namespace LMS.Views
             licenseVM = licensecont.GetLicenseVM(licenseId);
             lblCreatedOn.Text = $"تاريخ الأضافة : {licenseVM.CreatedOn}";
             lblLastUpdate.Text = $"تاريخ اخر تعديل : {licenseVM.LastUptate}";
+
+            fileList.Clear();
+            fileList = licenseVM.fileList;
+            if (fileList.Count > 0)
+            {
+                foreach (var file in fileList)
+                {
+                    string displayName = file.FileName + file.Extension;
+                    ListViewItem item = new ListViewItem(new[] { file.id.ToString(), displayName });
+                    lvFilesList.Items.Add(item);
+                }
+            }
 
             txtOwnerNationalId.Text = licenseVM.OwnarNationalId;
             txtOwnerName.Text = licenseVM.OwnarName;
@@ -240,7 +253,7 @@ namespace LMS.Views
                 {
                     if (MessageBox.Show("هل تريد الحفظ ؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        if (licensecont.AddLicense(AdminId, Owner, Agent, validityStat, location, license))
+                        if (licensecont.AddLicense(AdminId, Owner, Agent, validityStat, location, license, fileList))
                             MessageBox.Show("تم الإضافة بنجاح");
                     }
                 }
@@ -403,17 +416,26 @@ namespace LMS.Views
             {
                 if (lvFilesList.SelectedItems.Count > 0)
                 {
+                    List<(int id, string FileName, string Extension, byte[] Data)> deletedFiles = 
+                        new List<(int id, string FileName, string Extension, byte[] Data)>();
+
                     foreach (ListViewItem selectedItem in lvFilesList.SelectedItems)
                     {
                         lvFilesList.Items.Remove(selectedItem);
 
                         int selectedIndex = fileList.FindIndex(item => item.id == int.Parse(selectedItem.SubItems[0].Text));
+                        deletedFiles.Add(fileList[selectedIndex]);
 
                         if (selectedIndex != -1)
                         {
                             fileList.RemoveAt(selectedIndex);
                         }
                     }
+                    if (status == "Edit")
+                    {
+                        var done = _filesController.DeleteFiles(AdminId, deletedFiles);
+                    }
+                    MessageBox.Show("File deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

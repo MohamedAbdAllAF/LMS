@@ -24,6 +24,7 @@ namespace LMS.Controllers
         LocationController locationControl = new LocationController();
         ValidityStatmentController ValidityControl =new ValidityStatmentController();
         AdminLogController Log = new AdminLogController();
+        AttachedFilesController _attachedFilesController = new AttachedFilesController();
 
         public string NationalIdGenrator()
         {
@@ -34,7 +35,7 @@ namespace LMS.Controllers
         }
 
         public bool AddLicense(int adminId, User owner, User agent,
-            ValidityStatment validityStatment, string location, license license)
+            ValidityStatment validityStatment, string location, license license, List<(int id, string FileName, string Extension, byte[] Data)> fileList)
         {
             if (owner.NationalId == "")
                 owner.NationalId = NationalIdGenrator();
@@ -57,6 +58,7 @@ namespace LMS.Controllers
                 context.SaveChanges();
                 var recId = context.Licenses.Max(l => l.Id);
 
+                _attachedFilesController.AddFiles(adminId, recId, fileList);
                 Log.AddLog(adminId, "licenses", "OwnerID", recId, "قام بإضافة المالك");
                 Log.AddLog(adminId, "licenses", "AgentID", recId, "قام بإضافة الوكيل");
                 Log.AddLog(adminId, "licenses", "LocationId", recId, "قام بإضافة الموقع");
@@ -595,6 +597,16 @@ namespace LMS.Controllers
                 var agent = context.Users.FirstOrDefault(u => u.Id == license.AgentID);
                 var location = context.Locations.FirstOrDefault(l => l.Id == license.LocationId);
                 var validaty = context.validityStatments.FirstOrDefault(v => v.Id == license.ValidityStatId);
+                var files = context.AttachedFiles.Where(f => f.LicenseId == licenseId).ToList();
+
+                List<(int id, string FileName, string Extension, byte[] Data)> fileList = new List<(int, string, string, byte[])>();
+                if (files.Count > 0)
+                {
+                    foreach (var file in files)
+                    {
+                        fileList.Add((file.Id, file.FileName, file.FileExtension, file.FileData));
+                    }
+                }
 
                 result = new LicenseVM
                 {
@@ -606,6 +618,7 @@ namespace LMS.Controllers
                     PlotNumber = license.PlotNumber,
                     Work = license.Work,
                     Fees = license.Fees,
+                    fileList = fileList,
                     LicenseNumber = license.LicenseNumber,
                     Notes = license.Notes,
                     LEntryDate = license.EntryDate,
@@ -622,7 +635,7 @@ namespace LMS.Controllers
                     LastUptate = license.LastUpdate,
                     CreatedOn = license.CreatedOn
                 };
-                if(agent == null)
+                if (agent == null)
                     result.AgentName = result.AgentNationalId = "";
                 else
                 {

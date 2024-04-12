@@ -21,6 +21,6 @@ namespace LMS.Models
         public DbSet<Location> Locations { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<ValidityStatment> validityStatments { get; set; }
-
+        public DbSet<AttachedFiles> AttachedFiles { get; set; }
     }
 }

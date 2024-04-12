@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AdminLogController.cs" />
+    <Compile Include="Controllers\AttachedFilesController.cs" />
     <Compile Include="Controllers\ExceptionHandler.cs" />
     <Compile Include="Controllers\FeesController.cs" />
     <Compile Include="Controllers\LicenseController.cs" />
@@ -140,8 +141,13 @@
     <Compile Include="Migrations\202402110357357_Agent_NULLABLE.designer.cs">
       <DependentUpon>202402110357357_Agent_NULLABLE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404120454314_Add_AttachedFiles_table.cs" />
+    <Compile Include="Migrations\202404120454314_Add_AttachedFiles_table.designer.cs">
+      <DependentUpon>202404120454314_Add_AttachedFiles_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\AttachedFiles.cs" />
     <Compile Include="Models\Fee.cs" />
     <Compile Include="Models\license.cs" />
     <Compile Include="Models\LMSContext.cs" />
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402110357357_Agent_NULLABLE.resx">
       <DependentUpon>202402110357357_Agent_NULLABLE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404120454314_Add_AttachedFiles_table.resx">
+      <DependentUpon>202404120454314_Add_AttachedFiles_table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -297,6 +306,8 @@
     <None Include="Resources\icons8-download-40.png" />
     <None Include="Resources\icons8-download2-40.png" />
     <None Include="Resources\icons8-open-40.png" />
+    <None Include="Resources\icons8-maximize-40.png" />
+    <None Include="Resources\icons8-restore-down-40.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />

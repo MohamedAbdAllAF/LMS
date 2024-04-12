@@ -35,17 +35,17 @@
             this.btnLicenseSearch = new MaterialSkin.Controls.MaterialButton();
             this.btnNewLicense = new MaterialSkin.Controls.MaterialButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.pctDashboard = new System.Windows.Forms.PictureBox();
             this.pnlHeader = new System.Windows.Forms.Panel();
-            this.lblMaxmize = new System.Windows.Forms.Label();
-            this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.lblMaxmize = new System.Windows.Forms.Label();
+            this.lblMinimize = new System.Windows.Forms.Label();
+            this.pctDashboard = new System.Windows.Forms.PictureBox();
             this.pnlSideBar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctDashboard)).BeginInit();
             this.pnlHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctDashboard)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSideBar
@@ -134,23 +134,12 @@
             this.pnlLogo.Size = new System.Drawing.Size(230, 120);
             this.pnlLogo.TabIndex = 0;
             // 
-            // pctDashboard
-            // 
-            this.pctDashboard.Image = global::LMS.Properties.Resources.lms_high_resolution_logo_color_on_transparent_background;
-            this.pctDashboard.Location = new System.Drawing.Point(65, 0);
-            this.pctDashboard.Name = "pctDashboard";
-            this.pctDashboard.Size = new System.Drawing.Size(100, 120);
-            this.pctDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctDashboard.TabIndex = 0;
-            this.pctDashboard.TabStop = false;
-            this.pctDashboard.Click += new System.EventHandler(this.pctDashboard_Click);
-            // 
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.pnlHeader.Controls.Add(this.lblMaxmize);
             this.pnlHeader.Controls.Add(this.lblMinimize);
             this.pnlHeader.Controls.Add(this.lblExit);
+            this.pnlHeader.Controls.Add(this.lblMaxmize);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
@@ -159,30 +148,6 @@
             this.pnlHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseDown);
             this.pnlHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseMove);
             this.pnlHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseUp);
-            // 
-            // lblMaxmize
-            // 
-            this.lblMaxmize.Image = global::LMS.Properties.Resources.icons8_minimize_30;
-            this.lblMaxmize.Location = new System.Drawing.Point(81, 0);
-            this.lblMaxmize.Name = "lblMaxmize";
-            this.lblMaxmize.Size = new System.Drawing.Size(40, 40);
-            this.lblMaxmize.TabIndex = 2;
-            this.lblMaxmize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblMaxmize.Click += new System.EventHandler(this.lblMaxmize_Click);
-            this.lblMaxmize.MouseEnter += new System.EventHandler(this.lblMaxmize_MouseEnter);
-            this.lblMaxmize.MouseLeave += new System.EventHandler(this.lblMaxmize_MouseLeave);
-            // 
-            // lblMinimize
-            // 
-            this.lblMinimize.Image = global::LMS.Properties.Resources.icons8_minimize_30;
-            this.lblMinimize.Location = new System.Drawing.Point(40, 0);
-            this.lblMinimize.Name = "lblMinimize";
-            this.lblMinimize.Size = new System.Drawing.Size(40, 40);
-            this.lblMinimize.TabIndex = 1;
-            this.lblMinimize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblMinimize.Click += new System.EventHandler(this.lblMinimize_Click);
-            this.lblMinimize.MouseEnter += new System.EventHandler(this.lblMinimize_MouseEnter);
-            this.lblMinimize.MouseLeave += new System.EventHandler(this.lblMinimize_MouseLeave);
             // 
             // lblExit
             // 
@@ -209,6 +174,41 @@
             this.bunifuElipse1.ElipseRadius = 30;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // lblMaxmize
+            // 
+            this.lblMaxmize.Image = global::LMS.Properties.Resources.icons8_maximize_40;
+            this.lblMaxmize.Location = new System.Drawing.Point(40, 0);
+            this.lblMaxmize.Name = "lblMaxmize";
+            this.lblMaxmize.Size = new System.Drawing.Size(40, 40);
+            this.lblMaxmize.TabIndex = 2;
+            this.lblMaxmize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMaxmize.Click += new System.EventHandler(this.lblMaxmize_Click);
+            this.lblMaxmize.MouseEnter += new System.EventHandler(this.lblMaxmize_MouseEnter);
+            this.lblMaxmize.MouseLeave += new System.EventHandler(this.lblMaxmize_MouseLeave);
+            // 
+            // lblMinimize
+            // 
+            this.lblMinimize.Image = global::LMS.Properties.Resources.icons8_minimize_30;
+            this.lblMinimize.Location = new System.Drawing.Point(80, 0);
+            this.lblMinimize.Name = "lblMinimize";
+            this.lblMinimize.Size = new System.Drawing.Size(40, 40);
+            this.lblMinimize.TabIndex = 1;
+            this.lblMinimize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMinimize.Click += new System.EventHandler(this.lblMinimize_Click);
+            this.lblMinimize.MouseEnter += new System.EventHandler(this.lblMinimize_MouseEnter);
+            this.lblMinimize.MouseLeave += new System.EventHandler(this.lblMinimize_MouseLeave);
+            // 
+            // pctDashboard
+            // 
+            this.pctDashboard.Image = global::LMS.Properties.Resources.lms_high_resolution_logo_color_on_transparent_background;
+            this.pctDashboard.Location = new System.Drawing.Point(65, 0);
+            this.pctDashboard.Name = "pctDashboard";
+            this.pctDashboard.Size = new System.Drawing.Size(100, 120);
+            this.pctDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctDashboard.TabIndex = 0;
+            this.pctDashboard.TabStop = false;
+            this.pctDashboard.Click += new System.EventHandler(this.pctDashboard_Click);
+            // 
             // FRMMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -229,8 +229,8 @@
             this.pnlSideBar.ResumeLayout(false);
             this.pnlSideBar.PerformLayout();
             this.pnlLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctDashboard)).EndInit();
             this.pnlHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctDashboard)).EndInit();
             this.ResumeLayout(false);
 
         }

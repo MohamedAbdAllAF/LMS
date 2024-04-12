@@ -65,5 +65,6 @@ namespace LMS.Models
         public virtual Location Locat { get; set; }
         public virtual ValidityStatment ValStat { get; set; }
         public virtual ICollection<Fee> FeesObj { get; set; }
+        public virtual ICollection<AttachedFiles> AttachedFiles { get; set; }
     }
 }

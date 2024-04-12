@@ -18,6 +18,7 @@ namespace LMS.ViewModel
         public decimal? Fees { get; set; }
         public string LicenseNumber { get; set; }
         public string Notes { get; set; }
+        public List<(int id, string FileName, string Extension, byte[] Data)> fileList { get; set; }
         public DateTime? LEntryDate { get; set; }
         public DateTime? LExaminationFeeDate { get; set; }
         public DateTime? LInitialSupplyDate { get; set; }
