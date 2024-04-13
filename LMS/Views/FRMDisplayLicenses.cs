@@ -1,11 +1,5 @@
 ﻿using LMS.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -71,7 +65,7 @@ namespace LMS.Views
             }
         }
 
-        private void txtAgentNationalId_OnValueChanged(object sender, EventArgs e)
+        private async void txtAgentNationalId_OnValueChanged(object sender, EventArgs e)
         {
             if(dgvDisplay.Rows.Count > 0)
                 dgvDisplay.Refresh();
@@ -80,18 +74,18 @@ namespace LMS.Views
             {
                 if (txtOwnerName.Text != string.Empty && txtOwnerNationalId.Text != string.Empty)
                 {
-                    dgvDisplay.DataSource = liceControl.SearchLicenseByOwnerNationalIdAndName(
-                        txtOwnerNationalId.Text, txtOwnerName.Text);
+                    dgvDisplay.DataSource = await Task.Run(() => liceControl.SearchLicenseByOwnerNationalIdAndName(
+                        txtOwnerNationalId.Text, txtOwnerName.Text));
                 }
                 else
                 {
                     if (txtOwnerName.Text != string.Empty)
                     {
-                        dgvDisplay.DataSource = liceControl.SearchLicenseByOwnerName(txtOwnerName.Text);
+                        dgvDisplay.DataSource = await Task.Run(() => liceControl.SearchLicenseByOwnerName(txtOwnerName.Text));
                     }
                     if (txtOwnerNationalId.Text != string.Empty)
                     {
-                        dgvDisplay.DataSource = liceControl.SearchLicenseByOwnerNationalID(txtOwnerNationalId.Text);
+                        dgvDisplay.DataSource = await Task.Run(() => liceControl.SearchLicenseByOwnerNationalID(txtOwnerNationalId.Text));
                     }
                 }
             }
@@ -101,18 +95,18 @@ namespace LMS.Views
             {
                 if (txtAgentName.Text != string.Empty && txtAgentNationalId.Text != string.Empty)
                 {
-                    dgvDisplay.DataSource = liceControl.SearchLicenseByAgentNameAndNationalId(
-                        txtAgentNationalId.Text, txtAgentName.Text);
+                    dgvDisplay.DataSource = await Task.Run(() => liceControl.SearchLicenseByAgentNameAndNationalId(
+                        txtAgentNationalId.Text, txtAgentName.Text));
                 }
                 else
                 {
                     if (txtAgentName.Text != string.Empty)
                     {
-                        dgvDisplay.DataSource = liceControl.SearchLicenseByAgentName(txtAgentName.Text);
+                        dgvDisplay.DataSource = await Task.Run(() => liceControl.SearchLicenseByAgentName(txtAgentName.Text));
                     }
                     if (txtAgentNationalId.Text != string.Empty)
                     {
-                        dgvDisplay.DataSource = liceControl.SearchLicenseByAgentNationalID(txtAgentNationalId.Text);
+                        dgvDisplay.DataSource = await Task.Run(() => liceControl.SearchLicenseByAgentNationalID(txtAgentNationalId.Text));
                     }
                 }
             }
@@ -122,26 +116,27 @@ namespace LMS.Views
             {
                 if (txtLocation.Text != string.Empty && txtPlotNumber.Text != string.Empty)
                 {
-                    dgvDisplay.DataSource = liceControl.SearchLicenseByLocationAndPlotNumber(txtLocation.Text,txtPlotNumber.Text);
+                    dgvDisplay.DataSource = await Task.Run(() => liceControl.SearchLicenseByLocationAndPlotNumber(txtLocation.Text, txtPlotNumber.Text));
                 }
                 else
                 {
                     if (txtLocation.Text != string.Empty)
                     {
-                        dgvDisplay.DataSource = liceControl.SearchLicenseByLocation(txtLocation.Text);
+                        dgvDisplay.DataSource = await Task.Run(() => liceControl.SearchLicenseByLocation(txtLocation.Text));
                     }
                     if (txtPlotNumber.Text != string.Empty)
                     {
-                        dgvDisplay.DataSource = liceControl.SearchLicenseByPlotNumber(txtPlotNumber.Text);
+                        dgvDisplay.DataSource = await Task.Run(() => liceControl.SearchLicenseByPlotNumber(txtPlotNumber.Text));
                     }
                 }
             }
             dgvDisplay.Columns["LicenseId"].Visible = false;
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private async void btnSearch_Click(object sender, EventArgs e)
         {
-            dgvDisplay.DataSource = liceControl.SearchLicenseByOwnerNationalID(txtOwnerNationalId.Text);
+            var result = await Task.Run(() => liceControl.SearchLicenseByOwnerNationalID(txtOwnerNationalId.Text));
+            dgvDisplay.DataSource = result;
         }
 
         private void btndetails_Click(object sender, EventArgs e)

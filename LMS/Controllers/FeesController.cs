@@ -2,8 +2,8 @@
 using LMS.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace LMS.Controllers
@@ -13,13 +13,13 @@ namespace LMS.Controllers
         LMSContext context = new LMSContext();
         AdminLogController log = new AdminLogController();
         ExceptionHandler errHandler = new ExceptionHandler();
-        public bool AddNewFee(int adminId,Fee fee)
+        public async Task<bool> AddNewFee(int adminId,Fee fee)
         {
             try
             {
                 context.Fees.Add(fee);
-                context.SaveChanges();
-                var id = context.Fees.Max(fe => fe.Id);
+                await context.SaveChangesAsync();
+                var id = await context.Fees.MaxAsync(fe => fe.Id);
                 log.AddLog(adminId, "Fees", "N/A", id, "قام بإضافة الأتعاب");
                 return true;
             }catch (Exception ex)
@@ -29,13 +29,13 @@ namespace LMS.Controllers
             }
         }
 
-        public bool DeleteFee(int feeId)
+        public async Task<bool> DeleteFee(int feeId)
         {
             try
             {
                 var fee = context.Fees.FirstOrDefault(fe => fe.Id == feeId);
                 context.Fees.Remove(fee);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
                 return true;
             }catch (Exception ex)
             {
@@ -44,11 +44,11 @@ namespace LMS.Controllers
             }
         }
 
-        public List<FeesVM> GetFees(int licenseId)
+        public async Task<List<FeesVM>> GetFees(int licenseId)
         {
             List<FeesVM> result = new List<FeesVM>();
 
-            var fees = context.Fees.Where(f => f.LicenseId == licenseId).ToList();
+            var fees = await context.Fees.Where(f => f.LicenseId == licenseId).ToListAsync();
 
             foreach (var fee in fees)
             {

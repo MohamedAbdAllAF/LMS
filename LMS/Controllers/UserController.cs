@@ -1,8 +1,7 @@
 ﻿using LMS.Models;
 using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace LMS.Controllers
@@ -14,13 +13,13 @@ namespace LMS.Controllers
         AdminLogController LogControl = new AdminLogController();
 
         // Function To Add User And Retreive his ID 
-        public int AddNewUser(int adminId,User user)
+        public async Task<int> AddNewUser(int adminId,User user)
         {
-            if (IsExist(user.Name))
+            if (await IsExist(user.Name))
             {
                 try
                 {
-                    var userId = context.Users.Where(u => u.Name == user.Name).Select(u => u.Id).FirstOrDefault();
+                    var userId = await context.Users.Where(u => u.Name == user.Name).Select(u => u.Id).FirstOrDefaultAsync();
                     return Convert.ToInt32(userId);
                 }
                 catch (Exception ex)
@@ -33,15 +32,15 @@ namespace LMS.Controllers
             {
                 try
                 {
-                    var isUserExist = context.Users.Where(u => u.NationalId == user.NationalId).FirstOrDefault();
+                    var isUserExist = await context.Users.Where(u => u.NationalId == user.NationalId).FirstOrDefaultAsync();
                     if(isUserExist != null)
                         return Convert.ToInt32(isUserExist.Id);
                     context.Users.Add(new User { Name = user.Name, NationalId = user.NationalId });
-                    context.SaveChanges();
-                    var userId = context.Users.Where(u => u.NationalId == user.NationalId).Select(u => u.Id).FirstOrDefault();
+                    await context.SaveChangesAsync();
+                    var userId = await context.Users.Where(u => u.NationalId == user.NationalId).Select(u => u.Id).FirstOrDefaultAsync();
                     LogControl.AddLog(adminId, "Users", "NationalId", userId, "قام بإضافة الرقم القومي الخاص بالمستخدم");
                     LogControl.AddLog(adminId, "Users", "Name", userId, "قام بإضافة اسم المستخدم");
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                     return Convert.ToInt32(userId);
                 }
                 catch (Exception ex)
@@ -52,16 +51,16 @@ namespace LMS.Controllers
             }
         }
 
-        public bool IsExist(string Name)
+        public async Task<bool> IsExist(string Name)
         {
-            return context.Users.Any(user=>user.Name == Name);
+            return await context.Users.AnyAsync(user=>user.Name == Name);
         }
-        public int UpdateUser(int adminId, User user)
+        public async Task<int> UpdateUser(int adminId, User user)
         {
-            var oldUser = context.Users.FirstOrDefault(u => u.NationalId == user.NationalId);
+            var oldUser = await context.Users.FirstOrDefaultAsync(u => u.NationalId == user.NationalId);
             string name = oldUser.Name;
             oldUser.Name = user.Name;
-            int result = context.SaveChanges();
+            int result = await context.SaveChangesAsync();
             if (result > 0)
             {
                 LogControl.

@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LMS.Controllers;
@@ -53,11 +49,11 @@ namespace LMS.Views
             lvFilesList.FullRowSelect = true;
         }
 
-        public void LoadData()
+        public async void LoadData()
         {
             #region Retreive data from database for editing
 
-            licenseVM = licensecont.GetLicenseVM(licenseId);
+            licenseVM = await Task.Run(() => licensecont.GetLicenseVM(licenseId));
             lblCreatedOn.Text = $"تاريخ الأضافة : {licenseVM.CreatedOn}";
             lblLastUpdate.Text = $"تاريخ اخر تعديل : {licenseVM.LastUptate}";
 
@@ -157,11 +153,12 @@ namespace LMS.Views
             picVEntryDate.Value = DateTime.Now;
         }
 
-        private void FRMNewLicense_Load(object sender, EventArgs e)
+        private async void FRMNewLicense_Load(object sender, EventArgs e)
         {
             #region txtLocation AutoComplete
             AutoCompleteStringCollection ac = new AutoCompleteStringCollection();
-            foreach (var location in locatcont.GetAllLocations())
+            var locations = await Task.Run(() => locatcont.GetAllLocations());
+            foreach (var location in locations)
             {
                 ac.Add(location.Name.ToString());
             }
@@ -169,7 +166,7 @@ namespace LMS.Views
             #endregion
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             List<string> errorMessages = new List<string>();
             User Owner=null,Agent=null;
@@ -253,7 +250,8 @@ namespace LMS.Views
                 {
                     if (MessageBox.Show("هل تريد الحفظ ؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        if (licensecont.AddLicense(AdminId, Owner, Agent, validityStat, location, license, fileList))
+                        var isDone = await licensecont.AddLicense(AdminId, Owner, Agent, validityStat, location, license, fileList);
+                        if (isDone)
                             MessageBox.Show("تم الإضافة بنجاح");
                     }
                 }
@@ -286,7 +284,8 @@ namespace LMS.Views
                             Notes = txtNotes.Text,
                             LastUptate = DateTime.Now
                         };
-                        if (licensecont.UpdateLicense(AdminId, licenseId, newLicense) > 0)
+                        var isDone = await licensecont.UpdateLicense(AdminId, licenseId, newLicense);
+                        if (isDone)
                         {
                             FRMMain frm = (FRMMain)Application.OpenForms["FRMMain"];
                             frm.LoadForm(new FRMNewLicense(1, "Edit", licenseId));
@@ -353,11 +352,12 @@ namespace LMS.Views
         }
         #endregion
 
-        private void btnDeleteLicense_Click(object sender, EventArgs e)
+        private async void btnDeleteLicense_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("هل تريد الحذف ؟", "تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                if (licensecont.DeleteLicense(AdminId, licenseId))
+                var isDone = await licensecont.DeleteLicense(AdminId, licenseId);
+                if (isDone)
                 {
                     FRMMain frm = (FRMMain)Application.OpenForms["FRMMain"];
                     MessageBox.Show("تم الحذف بنجاح");
@@ -366,7 +366,7 @@ namespace LMS.Views
             }
         }
 
-        private void btnAddFile_Click(object sender, EventArgs e)
+        private async void btnAddFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = true;
@@ -378,7 +378,15 @@ namespace LMS.Views
                 {
                     string fileName = Path.GetFileNameWithoutExtension(file);
                     string fileExtension = Path.GetExtension(file);
-                    byte[] fileData = File.ReadAllBytes(file);
+
+                    // Read file data asynchronously
+                    byte[] fileData;
+                    using (FileStream stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize: 4096, useAsync: true))
+                    {
+                        MemoryStream memoryStream = new MemoryStream();
+                        await stream.CopyToAsync(memoryStream);
+                        fileData = memoryStream.ToArray();
+                    }
 
                     string displayName = fileName + fileExtension;
 
@@ -386,7 +394,7 @@ namespace LMS.Views
                     if (fileList.Count != 0)
                         newId = fileList.Max(f => f.id) + 1;
 
-                    ListViewItem item = new ListViewItem(new[] {newId.ToString() , displayName });
+                    ListViewItem item = new ListViewItem(new[] { newId.ToString(), displayName });
                     lvFilesList.Items.Add(item);
 
                     fileList.Add((newId, displayName, fileExtension, fileData));
@@ -410,7 +418,7 @@ namespace LMS.Views
             }
         }
 
-        private void btnDeleteFile_Click(object sender, EventArgs e)
+        private async void btnDeleteFile_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("هل تريد الحذف ؟", "تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
@@ -433,9 +441,9 @@ namespace LMS.Views
                     }
                     if (status == "Edit")
                     {
-                        var done = _filesController.DeleteFiles(AdminId, deletedFiles);
+                        var done = await _filesController.DeleteFiles(AdminId, deletedFiles);
                     }
-                    MessageBox.Show("File deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("تم حذف الملف بنجاح", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -468,10 +476,9 @@ namespace LMS.Views
 
                     File.WriteAllBytes(saveFileDialog.FileName, fileData);
 
-                    MessageBox.Show("File saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("تم حفظ الملف بنجاح", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-
             else
             {
                 MessageBox.Show("Please select a file to save.", "No File Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);

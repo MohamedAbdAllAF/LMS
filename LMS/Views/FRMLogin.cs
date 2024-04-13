@@ -1,12 +1,7 @@
 ﻿using LMS.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Data.Entity;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LMS.Views
@@ -49,17 +44,18 @@ namespace LMS.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtPassword.Text != string.Empty && txtUserName.Text != string.Empty)
+            if (txtPassword.Text != string.Empty && txtUserName.Text != string.Empty)
             {
-                //var admin = context.Admins.FirstOrDefault();
+                //var admin = await context.Admins.FirstOrDefaultAsync();
 
-                if(txtPassword.Text =="123456" && txtUserName.Text == "User1")
+                if (txtPassword.Text == "123456" && txtUserName.Text == "User1")
                 {
                     this.Hide();
                     var frm = new FRMMain(1);
                     frm.Closed += (s, args) => this.Close();
                     frm.Show();
-                }else
+                }
+                else
                 {
                     MessageBox.Show("Error");
                 }

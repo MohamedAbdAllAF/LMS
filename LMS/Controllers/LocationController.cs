@@ -1,8 +1,8 @@
 ﻿using LMS.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace LMS.Controllers
@@ -13,11 +13,11 @@ namespace LMS.Controllers
         ExceptionHandler errHandle = new ExceptionHandler();
         AdminLogController Log = new AdminLogController();
 
-        public int AddNewLocation(int adminId,string location)
+        public async Task<int> AddNewLocation(int adminId,string location)
         {
-            if (IsExist(location))
+            if (await IsExist(location))
             {
-                var id =context.Locations.Where(l=>l.Name == location).Select(l=>l.Id).FirstOrDefault();
+                var id = await context.Locations.Where(l => l.Name == location).Select(l => l.Id).FirstOrDefaultAsync();
                 return id;
             }
             else
@@ -25,8 +25,8 @@ namespace LMS.Controllers
                 try
                 {
                     context.Locations.Add(new Location { Name = location });
-                    context.SaveChanges();
-                    var id = context.Locations.Where(l => l.Name == location).Select(l => l.Id).FirstOrDefault();
+                    await context.SaveChangesAsync();
+                    var id = await context.Locations.Where(l => l.Name == location).Select(l => l.Id).FirstOrDefaultAsync();
                     Log.AddLog(adminId, "Locations", "Name", id, "قام بإضافة موقع");
                     return id;
                 } catch (Exception ex)
@@ -37,14 +37,14 @@ namespace LMS.Controllers
             }
         }
 
-        public bool IsExist(string location)
+        public async Task<bool> IsExist(string location)
         {
-            return context.Locations.Any(l=>l.Name == location);
+            return await context.Locations.AnyAsync(l=>l.Name == location);
         }
 
-        public List<Location> GetAllLocations()
+        public async Task<List<Location>> GetAllLocations()
         {
-            var result = context.Locations.ToList();
+            var result = await context.Locations.ToListAsync();
 
             return result;
         }

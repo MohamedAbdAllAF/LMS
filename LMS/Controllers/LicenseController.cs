@@ -1,17 +1,10 @@
-﻿using Bunifu.Framework;
-using LMS.Models;
+﻿using LMS.Models;
 using LMS.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
-using System.Globalization;
 using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace LMS.Controllers
@@ -26,27 +19,28 @@ namespace LMS.Controllers
         AdminLogController Log = new AdminLogController();
         AttachedFilesController _attachedFilesController = new AttachedFilesController();
 
-        public string NationalIdGenrator()
+        public async Task<string> NationalIdGenrator()
         {
             var id = 0;
-            if (context.Users.ToList().Count != 0)
-                id = context.Users.Max(u => u.Id);
+            var users = await context.Users.ToListAsync();
+            if (users.Count != 0)
+                id = await context.Users.MaxAsync(u => u.Id);
             return id.ToString("D14");
         }
 
-        public bool AddLicense(int adminId, User owner, User agent,
+        public async Task<bool> AddLicense(int adminId, User owner, User agent,
             ValidityStatment validityStatment, string location, license license, List<(int id, string FileName, string Extension, byte[] Data)> fileList)
         {
             if (owner.NationalId == "")
-                owner.NationalId = NationalIdGenrator();
-            int ownerId = userControl.AddNewUser(adminId,owner);
+                owner.NationalId = await NationalIdGenrator();
+            int ownerId = await userControl.AddNewUser(adminId,owner);
             int agentId;
             if (agent == null)
                 agentId = ownerId;
             else
-                agentId = userControl.AddNewUser(adminId,agent);
-            int locationId = locationControl.AddNewLocation(adminId,location);
-            int validityId = ValidityControl.AddNewValidityStatment(adminId,validityStatment);
+                agentId = await userControl.AddNewUser(adminId,agent);
+            int locationId = await locationControl.AddNewLocation(adminId,location);
+            int validityId = await ValidityControl.AddNewValidityStatment(adminId,validityStatment);
             license.OwnerID = ownerId;
             license.AgentID = agentId;
             license.LocationId = locationId;
@@ -55,10 +49,10 @@ namespace LMS.Controllers
             try
             {
                 context.Licenses.Add(license);
-                context.SaveChanges();
-                var recId = context.Licenses.Max(l => l.Id);
+                await context.SaveChangesAsync();
+                var recId = await context.Licenses.MaxAsync(l => l.Id);
 
-                _attachedFilesController.AddFiles(adminId, recId, fileList);
+                await _attachedFilesController.AddFiles(adminId, recId, fileList);
                 Log.AddLog(adminId, "licenses", "OwnerID", recId, "قام بإضافة المالك");
                 Log.AddLog(adminId, "licenses", "AgentID", recId, "قام بإضافة الوكيل");
                 Log.AddLog(adminId, "licenses", "LocationId", recId, "قام بإضافة الموقع");
@@ -109,19 +103,19 @@ namespace LMS.Controllers
             }
         }
 
-        public List<LicenseVM> GetAllLicensesForReports()
+        public async Task<List<LicenseVM>> GetAllLicensesForReports()
         {
             List<LicenseVM> result = new List<LicenseVM>();
 
-            var licenses = context.Licenses.ToList();
+            var licenses = await context.Licenses.ToListAsync();
 
             foreach (var license in licenses)
             {
                 LicenseVM licenseVM;
-                var owner = context.Users.FirstOrDefault(u => u.Id == license.OwnerID);
-                var agent = context.Users.FirstOrDefault(u => u.Id == license.AgentID);
-                var location = context.Locations.FirstOrDefault(l => l.Id == license.LocationId);
-                var validationStat = context.validityStatments.FirstOrDefault(v => v.Id == license.ValidityStatId);
+                var owner = await context.Users.FirstOrDefaultAsync(u => u.Id == license.OwnerID);
+                var agent = await context.Users.FirstOrDefaultAsync(u => u.Id == license.AgentID);
+                var location = await context.Locations.FirstOrDefaultAsync(l => l.Id == license.LocationId);
+                var validationStat = await context.validityStatments.FirstOrDefaultAsync(v => v.Id == license.ValidityStatId);
 
                 licenseVM = new LicenseVM
                 {
@@ -160,35 +154,35 @@ namespace LMS.Controllers
             return result;
         }
 
-        public List<LicenseVM> GetAllLicensesInRange(DateTime From,DateTime To,string Choice)
+        public async Task<List<LicenseVM>> GetAllLicensesInRange(DateTime From,DateTime To,string Choice)
         {
             List<LicenseVM> result = new List<LicenseVM>();
 
             List<license> licenses = null;
             if (Choice == "CreatedOn")
-                licenses = context.Licenses.Where(l => l.CreatedOn >= From && l.CreatedOn <= To).ToList();
+                licenses = await context.Licenses.Where(l => l.CreatedOn >= From && l.CreatedOn <= To).ToListAsync();
             else if (Choice == "LEntryDate")
-                licenses = context.Licenses.Where(l => l.EntryDate >= From && l.EntryDate <= To).ToList();
+                licenses = await context.Licenses.Where(l => l.EntryDate >= From && l.EntryDate <= To).ToListAsync();
             else if (Choice == "LExaminationFeeDate")
-                licenses = context.Licenses.Where(l => l.ExaminationFeeDate >= From && l.ExaminationFeeDate <= To).ToList();
+                licenses = await context.Licenses.Where(l => l.ExaminationFeeDate >= From && l.ExaminationFeeDate <= To).ToListAsync();
             else if (Choice == "LFinalPaymentDate")
-                licenses = context.Licenses.Where(l => l.FinalPaymentDate >= From && l.FinalPaymentDate <= To).ToList();
+                licenses = await context.Licenses.Where(l => l.FinalPaymentDate >= From && l.FinalPaymentDate <= To).ToListAsync();
             else if (Choice == "LInitialSupplyDate")
-                licenses = context.Licenses.Where(l => l.InitialSupplyDate >= From && l.InitialSupplyDate <= To).ToList();
+                licenses = await context.Licenses.Where(l => l.InitialSupplyDate >= From && l.InitialSupplyDate <= To).ToListAsync();
             else if (Choice == "VEntryDate")
-                licenses = context.Licenses.Where(l => l.ValStat.EntryDate >= From && l.ValStat.EntryDate <= To).ToList();
+                licenses = await context.Licenses.Where(l => l.ValStat.EntryDate >= From && l.ValStat.EntryDate <= To).ToListAsync();
             else if (Choice == "VInitialSupplyDate")
-                licenses = context.Licenses.Where(l => l.ValStat.InitialSupplyDate >= From && l.ValStat.InitialSupplyDate <= To).ToList();
+                licenses = await context.Licenses.Where(l => l.ValStat.InitialSupplyDate >= From && l.ValStat.InitialSupplyDate <= To).ToListAsync();
             else if(Choice == "VValidatySupplyDate")
-                licenses = context.Licenses.Where(l => l.ValStat.ValidatySupplyDate >= From && l.ValStat.ValidatySupplyDate <= To).ToList();
+                licenses = await context.Licenses.Where(l => l.ValStat.ValidatySupplyDate >= From && l.ValStat.ValidatySupplyDate <= To).ToListAsync();
 
             foreach (var license in licenses)
             {
                 LicenseVM licenseVM;
-                var owner = context.Users.FirstOrDefault(u => u.Id == license.OwnerID);
-                var agent = context.Users.FirstOrDefault(u => u.Id == license.AgentID);
-                var location = context.Locations.FirstOrDefault(l => l.Id == license.LocationId);
-                var validationStat = context.validityStatments.FirstOrDefault(v => v.Id == license.ValidityStatId);
+                var owner = await context.Users.FirstOrDefaultAsync(u => u.Id == license.OwnerID);
+                var agent = await context.Users.FirstOrDefaultAsync(u => u.Id == license.AgentID);
+                var location = await context.Locations.FirstOrDefaultAsync(l => l.Id == license.LocationId);
+                var validationStat = await context.validityStatments.FirstOrDefaultAsync(v => v.Id == license.ValidityStatId);
 
                 licenseVM = new LicenseVM
                 {
@@ -265,22 +259,22 @@ namespace LMS.Controllers
             return licenseVM;
         }
 
-        public List<SearchVM> SearchLicenseByOwnerNationalID(string id)
+        public async Task<List<SearchVM>> SearchLicenseByOwnerNationalID(string id)
         { 
             List<SearchVM> result = new List<SearchVM>();
-            var users = context.Users.Where(u=>u.NationalId.Contains(id)).ToList();
+            var users = await context.Users.Where(u=>u.NationalId.Contains(id)).ToListAsync();
             if (users != null)
             {
                 foreach (var user in users)
                 {
                     SearchVM item;
-                    var licenses = context.Licenses.Where(l => l.OwnerID == user.Id).ToList();
+                    var licenses = await context.Licenses.Where(l => l.OwnerID == user.Id).ToListAsync();
                     if (licenses != null)
                     {
                         foreach (var license in licenses)
                         {
-                            var agent = context.Users.Where(u => u.Id == license.AgentID).FirstOrDefault();
-                            var location = context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefault();
+                            var agent = await context.Users.Where(u => u.Id == license.AgentID).FirstOrDefaultAsync();
+                            var location = await context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefaultAsync();
                             item = new SearchVM
                             {
                                 LicenseId  =license.Id,
@@ -306,22 +300,22 @@ namespace LMS.Controllers
             return result;
         }
 
-        public List<SearchVM> SearchLicenseByOwnerName(string key)
+        public async Task<List<SearchVM>> SearchLicenseByOwnerName(string key)
         {
             List<SearchVM> result = new List<SearchVM>();
-            var users = context.Users.Where(u => u.Name.Contains(key)).ToList();
+            var users = await context.Users.Where(u => u.Name.Contains(key)).ToListAsync();
             if (users != null)
             {
                 foreach (var user in users)
                 {
                     SearchVM item;
-                    var licenses = context.Licenses.Where(l => l.OwnerID == user.Id).ToList();
+                    var licenses = await context.Licenses.Where(l => l.OwnerID == user.Id).ToListAsync();
                     if (licenses != null)
                     {
                         foreach (var license in licenses)
                         {
-                            var agent = context.Users.Where(u => u.Id == license.AgentID).FirstOrDefault();
-                            var location = context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefault();
+                            var agent = await context.Users.Where(u => u.Id == license.AgentID).FirstOrDefaultAsync();
+                            var location = await context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefaultAsync();
                             item = new SearchVM
                             {
                                 LicenseId = license.Id,
@@ -347,24 +341,24 @@ namespace LMS.Controllers
             return result;
         }
 
-        public List<SearchVM> SearchLicenseByOwnerNationalIdAndName(string nationalId,string name)
+        public async Task<List<SearchVM>> SearchLicenseByOwnerNationalIdAndName(string nationalId,string name)
         {
             List<SearchVM> result = new List<SearchVM>();
-            var users = context.Users.Where(
-                u => u.Name.Contains(name) && u.NationalId.Contains(nationalId)).ToList();
+            var users = await context.Users.Where(
+                u => u.Name.Contains(name) && u.NationalId.Contains(nationalId)).ToListAsync();
 
             if (users != null)
             {
                 foreach (var user in users)
                 {
                     SearchVM item;
-                    var licenses = context.Licenses.Where(l => l.OwnerID == user.Id).ToList();
+                    var licenses = await context.Licenses.Where(l => l.OwnerID == user.Id).ToListAsync();
                     if (licenses != null)
                     {
                         foreach (var license in licenses)
                         {
-                            var agent = context.Users.Where(u => u.Id == license.AgentID).FirstOrDefault();
-                            var location = context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefault();
+                            var agent = await context.Users.Where(u => u.Id == license.AgentID).FirstOrDefaultAsync();
+                            var location = await context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefaultAsync();
                             item = new SearchVM
                             {
                                 LicenseId = license.Id,
@@ -390,22 +384,22 @@ namespace LMS.Controllers
             return result;
         }
 
-        public List<SearchVM> SearchLicenseByAgentNationalID(string id)
+        public async Task<List<SearchVM>> SearchLicenseByAgentNationalID(string id)
         {
             List<SearchVM> result = new List<SearchVM>();
-            var users = context.Users.Where(u => u.NationalId.Contains(id)).ToList();
+            var users = await context.Users.Where(u => u.NationalId.Contains(id)).ToListAsync();
             if (users != null)
             {
                 foreach (var user in users)
                 {
                     SearchVM item;
-                    var licenses = context.Licenses.Where(l => l.AgentID == user.Id).ToList();
+                    var licenses = await context.Licenses.Where(l => l.AgentID == user.Id).ToListAsync();
                     if (licenses != null)
                     {
                         foreach (var license in licenses)
                         {
-                            var owner = context.Users.Where(u => u.Id == license.OwnerID).FirstOrDefault();
-                            var location = context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefault();
+                            var owner = await context.Users.Where(u => u.Id == license.OwnerID).FirstOrDefaultAsync();
+                            var location = await context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefaultAsync();
                             item = new SearchVM
                             {
                                 LicenseId = license.Id,
@@ -424,22 +418,22 @@ namespace LMS.Controllers
             return result;
         }
 
-        public List<SearchVM> SearchLicenseByAgentName(string key)
+        public async Task<List<SearchVM>> SearchLicenseByAgentName(string key)
         {
             List<SearchVM> result = new List<SearchVM>();
-            var users = context.Users.Where(u => u.Name.Contains(key)).ToList();
+            var users = await context.Users.Where(u => u.Name.Contains(key)).ToListAsync();
             if (users != null)
             {
                 foreach (var user in users)
                 {
                     SearchVM item;
-                    var licenses = context.Licenses.Where(l => l.AgentID == user.Id).ToList();
+                    var licenses = await context.Licenses.Where(l => l.AgentID == user.Id).ToListAsync();
                     if (licenses != null)
                     {
                         foreach (var license in licenses)
                         {
-                            var owner = context.Users.Where(u => u.Id == license.OwnerID).FirstOrDefault();
-                            var location = context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefault();
+                            var owner = await context.Users.Where(u => u.Id == license.OwnerID).FirstOrDefaultAsync();
+                            var location = await context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefaultAsync();
                             item = new SearchVM
                             {
                                 LicenseId = license.Id,
@@ -458,24 +452,24 @@ namespace LMS.Controllers
             return result;
         }
 
-        public List<SearchVM> SearchLicenseByAgentNameAndNationalId(string nationaId,string name)
+        public async Task<List<SearchVM>> SearchLicenseByAgentNameAndNationalId(string nationaId,string name)
         {
             List<SearchVM> result = new List<SearchVM>();
-            var users = context.Users.Where(
-                u => u.Name.Contains(name) && u.NationalId.Contains(nationaId)).ToList();
+            var users = await context.Users.Where(
+                u => u.Name.Contains(name) && u.NationalId.Contains(nationaId)).ToListAsync();
 
             if (users != null)
             {
                 foreach (var user in users)
                 {
                     SearchVM item;
-                    var licenses = context.Licenses.Where(l => l.AgentID == user.Id).ToList();
+                    var licenses = await context.Licenses.Where(l => l.AgentID == user.Id).ToListAsync();
                     if (licenses != null)
                     {
                         foreach (var license in licenses)
                         {
-                            var owner = context.Users.Where(u => u.Id == license.OwnerID).FirstOrDefault();
-                            var location = context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefault();
+                            var owner = await context.Users.Where(u => u.Id == license.OwnerID).FirstOrDefaultAsync();
+                            var location = await context.Locations.Where(l => l.Id == license.LocationId).FirstOrDefaultAsync();
                             item = new SearchVM
                             {
                                 LicenseId = license.Id,
@@ -494,22 +488,22 @@ namespace LMS.Controllers
             return result;
         }
 
-        public List<SearchVM> SearchLicenseByLocation(string key)
+        public async Task<List<SearchVM>> SearchLicenseByLocation(string key)
         {
             List<SearchVM> result = new List<SearchVM>();
-            var locations = context.Locations.Where(u => u.Name.Contains(key)).ToList();
+            var locations = await context.Locations.Where(u => u.Name.Contains(key)).ToListAsync();
             if (locations != null)
             {
                 foreach (var location in locations)
                 {
                     SearchVM item;
-                    var licenses = context.Licenses.Where(l => l.LocationId == location.Id).ToList();
+                    var licenses = await context.Licenses.Where(l => l.LocationId == location.Id).ToListAsync();
                     if (licenses != null)
                     {
                         foreach (var license in licenses)
                         {
-                            var agent = context.Users.Where(u => u.Id == license.AgentID).FirstOrDefault();
-                            var owner = context.Users.Where(u => u.Id == license.OwnerID).FirstOrDefault();
+                            var agent = await context.Users.Where(u => u.Id == license.AgentID).FirstOrDefaultAsync();
+                            var owner = await context.Users.Where(u => u.Id == license.OwnerID).FirstOrDefaultAsync();
                             item = new SearchVM
                             {
                                 LicenseId = license.Id,
@@ -535,22 +529,22 @@ namespace LMS.Controllers
             return result;
         }
 
-        public List<SearchVM> SearchLicenseByPlotNumber(string key)
+        public async Task<List<SearchVM>> SearchLicenseByPlotNumber(string key)
         {
             List<SearchVM> result = new List<SearchVM>();
-            var licenses = context.Licenses.Where(u => u.PlotNumber.Contains(key)).ToList();
+            var licenses = await context.Licenses.Where(u => u.PlotNumber.Contains(key)).ToListAsync();
             if (licenses != null)
             {
                 foreach (var license in licenses)
                 {
                     SearchVM item;
-                    var locations = context.Locations.Where(l => l.Id == license.LocationId).ToList();
+                    var locations = await context.Locations.Where(l => l.Id == license.LocationId).ToListAsync();
                     if (licenses != null)
                     {
                         foreach (var location in locations)
                         {
-                            var agent = context.Users.Where(u => u.Id == license.AgentID).FirstOrDefault();
-                            var owner = context.Users.Where(u => u.Id == license.OwnerID).FirstOrDefault();
+                            var agent = await context.Users.Where(u => u.Id == license.AgentID).FirstOrDefaultAsync();
+                            var owner = await context.Users.Where(u => u.Id == license.OwnerID).FirstOrDefaultAsync();
                             item = new SearchVM
                             {
                                 LicenseId = license.Id,
@@ -576,10 +570,10 @@ namespace LMS.Controllers
             return result;
         }
 
-        public List<SearchVM> SearchLicenseByLocationAndPlotNumber(string location,string plotNumber)
+        public async Task<List<SearchVM>> SearchLicenseByLocationAndPlotNumber(string location,string plotNumber)
         {
             List<SearchVM> result = new List<SearchVM>();
-            List<SearchVM> plots = SearchLicenseByPlotNumber(plotNumber);
+            List<SearchVM> plots = await SearchLicenseByPlotNumber(plotNumber);
             if(plots != null)
             {
                 result = plots.Where(p=>p.Location.Contains(location)).ToList();
@@ -587,17 +581,17 @@ namespace LMS.Controllers
             return result;
         }
 
-        public LicenseVM GetLicenseVM(int licenseId)
+        public async Task<LicenseVM> GetLicenseVM(int licenseId)
         {
             LicenseVM result = new LicenseVM();
-            var license = context.Licenses.FirstOrDefault(l=>l.Id == licenseId);
+            var license = await context.Licenses.FirstOrDefaultAsync(l=>l.Id == licenseId);
             if(license != null)
             {
-                var owner = context.Users.FirstOrDefault(u => u.Id == license.OwnerID);
-                var agent = context.Users.FirstOrDefault(u => u.Id == license.AgentID);
-                var location = context.Locations.FirstOrDefault(l => l.Id == license.LocationId);
-                var validaty = context.validityStatments.FirstOrDefault(v => v.Id == license.ValidityStatId);
-                var files = context.AttachedFiles.Where(f => f.LicenseId == licenseId).ToList();
+                var owner = await context.Users.FirstOrDefaultAsync(u => u.Id == license.OwnerID);
+                var agent = await context.Users.FirstOrDefaultAsync(u => u.Id == license.AgentID);
+                var location = await context.Locations.FirstOrDefaultAsync(l => l.Id == license.LocationId);
+                var validaty = await context.validityStatments.FirstOrDefaultAsync(v => v.Id == license.ValidityStatId);
+                var files = await context.AttachedFiles.Where(f => f.LicenseId == licenseId).ToListAsync();
 
                 List<(int id, string FileName, string Extension, byte[] Data)> fileList = new List<(int, string, string, byte[])>();
                 if (files.Count > 0)
@@ -647,21 +641,21 @@ namespace LMS.Controllers
             return result;
         }
 
-        public int UpdateLicense(int adminId,int id,LicenseVM newlicense)
+        public async Task<bool> UpdateLicense(int adminId,int id,LicenseVM newlicense)
         {
             try
             {
-                var oldlicence = context.Licenses.FirstOrDefault(l => l.Id == id);
-                var oldOwner = context.Users.FirstOrDefault(l => l.Id == oldlicence.OwnerID);
-                var oldAgent = context.Users.FirstOrDefault(u => u.Id == oldlicence.AgentID);
-                var oldLocation = context.Locations.FirstOrDefault(l => l.Id == oldlicence.LocationId);
-                var oldvalidity = context.validityStatments.FirstOrDefault(v => v.Id == oldlicence.ValidityStatId);
+                var oldlicence = await context.Licenses.FirstOrDefaultAsync(l => l.Id == id);
+                var oldOwner = await context.Users.FirstOrDefaultAsync(l => l.Id == oldlicence.OwnerID);
+                var oldAgent = await context.Users.FirstOrDefaultAsync(u => u.Id == oldlicence.AgentID);
+                var oldLocation = await context.Locations.FirstOrDefaultAsync(l => l.Id == oldlicence.LocationId);
+                var oldvalidity = await context.validityStatments.FirstOrDefaultAsync(v => v.Id == oldlicence.ValidityStatId);
 
                 if (oldOwner.NationalId != newlicense.OwnarNationalId)
                 {
                     if (newlicense.OwnarNationalId == "")
-                        newlicense.OwnarNationalId = NationalIdGenrator();
-                    int ownerId = userControl.AddNewUser(adminId, new User
+                        newlicense.OwnarNationalId = await NationalIdGenrator();
+                    int ownerId = await userControl.AddNewUser(adminId, new User
                     {
                         NationalId = newlicense.OwnarNationalId,
                         Name = newlicense.OwnarName
@@ -674,7 +668,7 @@ namespace LMS.Controllers
                 {
                     if (oldOwner.Name != newlicense.OwnarName)
                     {
-                        int x = userControl.UpdateUser(adminId, new User
+                        int x = await userControl.UpdateUser(adminId, new User
                         {
                             Name = newlicense.OwnarName,
                             NationalId = newlicense.OwnarNationalId
@@ -691,8 +685,8 @@ namespace LMS.Controllers
                     else if (newlicense.AgentNationalId != string.Empty || newlicense.AgentNationalId != "")
                     {
                         if (newlicense.AgentNationalId == "")
-                            newlicense.AgentNationalId = NationalIdGenrator();
-                        int agentId = userControl.AddNewUser(adminId, new User
+                            newlicense.AgentNationalId = await NationalIdGenrator();
+                        int agentId = await userControl.AddNewUser(adminId, new User
                         {
                             NationalId = newlicense.AgentNationalId,
                             Name = newlicense.AgentName
@@ -711,8 +705,8 @@ namespace LMS.Controllers
                 else if (oldAgent.NationalId != newlicense.AgentNationalId)
                 {
                     if (newlicense.AgentNationalId == "")
-                        newlicense.AgentNationalId = NationalIdGenrator();
-                    int agentId = userControl.AddNewUser(adminId, new User
+                        newlicense.AgentNationalId = await NationalIdGenrator();
+                    int agentId = await userControl.AddNewUser(adminId, new User
                     {
                         NationalId = newlicense.AgentNationalId,
                         Name = newlicense.AgentName
@@ -725,7 +719,7 @@ namespace LMS.Controllers
                 {
                     if (oldAgent.Name != newlicense.AgentName)
                     {
-                        int x = userControl.UpdateUser(adminId, new User
+                        int x = await userControl.UpdateUser(adminId, new User
                         {
                             Name = newlicense.AgentName,
                             NationalId = newlicense.AgentNationalId
@@ -735,13 +729,13 @@ namespace LMS.Controllers
 
                 if (oldLocation.Name != newlicense.Location)
                 {
-                    int locationId = locationControl.AddNewLocation(adminId, newlicense.Location);
+                    int locationId = await locationControl.AddNewLocation(adminId, newlicense.Location);
                     oldlicence.LocationId = locationId;
                     Log.AddLog(adminId, "Licenses", "N/A", oldlicence.Id,
                         $"قام بتغيير بيانات الموقع من {oldLocation.Id} الي {locationId}");
                 }
 
-                ValidityControl.UpdateValidityStatment(adminId, new ValidityStatment
+                await ValidityControl.UpdateValidityStatment(adminId, new ValidityStatment
                 {
                     Id = (int)oldlicence.ValidityStatId,
                     EntryDate = newlicense.VEntryDate,
@@ -908,25 +902,25 @@ namespace LMS.Controllers
                     oldlicence.ReceiveDate = newlicense.LReceiveDate;
                 }
                 oldlicence.LastUpdate = newlicense.LastUptate;
-                context.SaveChanges();
-                return 1;
+                await context.SaveChangesAsync();
+                return true;
             }catch (Exception ex)
             {
                 errHandle.AddExeption(ex, "LicenseController", "UpdateLicense",DateTime.Now);
-                return -1;
+                return false;
             }
         }
 
-        public bool DeleteLicense(int adminId,int License)
+        public async Task<bool> DeleteLicense(int adminId,int License)
         {
-            var oldlicence = context.Licenses.FirstOrDefault(l => l.Id == License);
+            var oldlicence = await context.Licenses.FirstOrDefaultAsync(l => l.Id == License);
             try
             {
                 if (oldlicence != null)
                 {
                     context.Licenses.Remove(oldlicence);
                     Log.AddLog(adminId, "Licenses", "N/A", oldlicence.Id,"قام بحذف رخصة");
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                     return true;
                 }
             }

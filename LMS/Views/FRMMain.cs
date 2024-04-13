@@ -1,12 +1,7 @@
 ﻿using LMS.Views.ResizeHandler;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity.Core.Metadata.Edm;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,7 +17,14 @@ namespace LMS.Views
         {
             InitializeComponent();
             AdminId = adminId;
-            LoadForm(new FRMDashboard());
+            //LoadForm(new FRMDashboard());
+            InitializeAsync();
+        }
+
+        private async void InitializeAsync()
+        {
+            Form childForm = new FRMDashboard();
+            await LoadFormAsync(childForm);
         }
 
         #region Form Loader Controller
@@ -42,6 +44,27 @@ namespace LMS.Views
             pnlContainer.Controls.Add(childForm);
             pnlContainer.Tag = childForm;
             childForm.BringToFront();
+            childForm.Show();
+        }
+
+        public async Task LoadFormAsync(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                activeForm.Dispose();
+            }
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlContainer.Controls.Add(childForm);
+            pnlContainer.Tag = childForm;
+            childForm.BringToFront();
+
+            // Use await to asynchronously show the form
+            await Task.Yield(); // Ensure the control returns to the caller to maintain responsiveness
             childForm.Show();
         }
 
@@ -122,25 +145,6 @@ namespace LMS.Views
 
         #endregion
 
-        private void btnNewLicense_Click(object sender, EventArgs e)
-        {
-            LoadForm(new FRMNewLicense(AdminId));
-        }
-
-        private void pctDashboard_Click(object sender, EventArgs e)
-        {
-            LoadForm(new FRMDashboard());
-        }
-
-        private void btnLicenseSearch_Click(object sender, EventArgs e)
-        {
-            LoadForm(new FRMDisplayLicenses());
-        }
-
-        private void materialButton1_Click(object sender, EventArgs e)
-        {
-            LoadForm(new FRMLicenseReport());
-        }
         #region Maximize Label Events
         private void lblMaxmize_Click(object sender, EventArgs e)
         {
@@ -168,5 +172,25 @@ namespace LMS.Views
             lblMaxmize.BackColor = Color.FromArgb(100, 149, 237);
         }
         #endregion
+
+        private async void btnNewLicense_Click(object sender, EventArgs e)
+        {
+            await LoadFormAsync(new FRMNewLicense(AdminId));
+        }
+
+        private async void pctDashboard_Click(object sender, EventArgs e)
+        {
+            await LoadFormAsync(new FRMDashboard());
+        }
+
+        private async void btnLicenseSearch_Click(object sender, EventArgs e)
+        {
+            await LoadFormAsync(new FRMDisplayLicenses());
+        }
+
+        private async void materialButton1_Click(object sender, EventArgs e)
+        {
+            await LoadFormAsync(new FRMLicenseReport());
+        }
     }
 }

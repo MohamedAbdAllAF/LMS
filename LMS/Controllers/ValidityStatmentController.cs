@@ -1,9 +1,6 @@
 ﻿using LMS.Models;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace LMS.Controllers
@@ -14,13 +11,13 @@ namespace LMS.Controllers
         ExceptionHandler errHandle = new ExceptionHandler();
         AdminLogController log = new AdminLogController();
 
-        public int AddNewValidityStatment(int adminId , ValidityStatment dataObj)
+        public async Task<int> AddNewValidityStatment(int adminId , ValidityStatment dataObj)
         {   
             try
             {
                 context.validityStatments.Add(dataObj);
-                context.SaveChanges();
-                var id = context.validityStatments.Max(x => x.Id);
+                await context.SaveChangesAsync();
+                var id = await context.validityStatments.MaxAsync(x => x.Id);
 
                 if (dataObj.EntryDate == null && dataObj.InitialSupplyDate == null &&
                     dataObj.ValidatySupplyDate == null && dataObj.ReceiveDate == null)
@@ -47,9 +44,9 @@ namespace LMS.Controllers
             }
         }
 
-        public int UpdateValidityStatment(int adminId, ValidityStatment newValidity)
+        public async Task<int> UpdateValidityStatment(int adminId, ValidityStatment newValidity)
         {
-            var oldvalidity = context.validityStatments.FirstOrDefault(v=>v.Id == newValidity.Id);
+            var oldvalidity = await context.validityStatments.FirstOrDefaultAsync(v=>v.Id == newValidity.Id);
             if (oldvalidity != null)
             {
                 if (newValidity.EntryDate == null && newValidity.InitialSupplyDate == null &&
@@ -111,7 +108,7 @@ namespace LMS.Controllers
                         oldvalidity.ReceiveDate = newValidity.ReceiveDate;
                     }
 
-                    return context.SaveChanges();
+                    return await context.SaveChangesAsync();
                 }
             }
             return 0;

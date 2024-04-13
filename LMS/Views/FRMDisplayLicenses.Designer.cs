@@ -34,10 +34,26 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlDataContainer = new System.Windows.Forms.Panel();
+            this.dgvDisplay = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.ownerNationalIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ownerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agentNationalIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plotNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new Bunifu.Framework.UI.BunifuTileButton();
             this.rbtnLocation = new System.Windows.Forms.RadioButton();
+            this.rbtnAgent = new System.Windows.Forms.RadioButton();
+            this.rbtnOwner = new System.Windows.Forms.RadioButton();
+            this.grpAgent = new System.Windows.Forms.GroupBox();
+            this.txtAgentName = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtAgentNationalId = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label5 = new System.Windows.Forms.Label();
             this.grpLocation = new System.Windows.Forms.GroupBox();
             this.txtLocation = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtPlotNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -48,37 +64,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtOwnerNationalId = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.grpAgent = new System.Windows.Forms.GroupBox();
-            this.txtAgentName = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtAgentNationalId = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.rbtnAgent = new System.Windows.Forms.RadioButton();
-            this.rbtnOwner = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlDataContainer = new System.Windows.Forms.Panel();
-            this.dgvDisplay = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.ownerNationalIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ownerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agentNationalIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plotNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pnlOperations = new System.Windows.Forms.Panel();
             this.btnFees = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDetails = new Bunifu.Framework.UI.BunifuTileButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.searchVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pnlMain.SuspendLayout();
-            this.pnlHeader.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.grpLocation.SuspendLayout();
-            this.grpOwner.SuspendLayout();
-            this.grpAgent.SuspendLayout();
             this.pnlDataContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
+            this.pnlHeader.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.grpAgent.SuspendLayout();
+            this.grpLocation.SuspendLayout();
+            this.grpOwner.SuspendLayout();
             this.pnlOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +96,119 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1050, 680);
             this.pnlMain.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.Red;
+            this.panel3.Location = new System.Drawing.Point(3, 537);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1025, 5);
+            this.panel3.TabIndex = 0;
+            // 
+            // pnlDataContainer
+            // 
+            this.pnlDataContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDataContainer.Controls.Add(this.dgvDisplay);
+            this.pnlDataContainer.Location = new System.Drawing.Point(3, 220);
+            this.pnlDataContainer.Name = "pnlDataContainer";
+            this.pnlDataContainer.Size = new System.Drawing.Size(1025, 311);
+            this.pnlDataContainer.TabIndex = 2;
+            // 
+            // dgvDisplay
+            // 
+            this.dgvDisplay.AllowUserToAddRows = false;
+            this.dgvDisplay.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDisplay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDisplay.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDisplay.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ownerNationalIdDataGridViewTextBoxColumn,
+            this.ownerNameDataGridViewTextBoxColumn,
+            this.agentNationalIdDataGridViewTextBoxColumn,
+            this.agentNameDataGridViewTextBoxColumn,
+            this.locationDataGridViewTextBoxColumn,
+            this.plotNumberDataGridViewTextBoxColumn});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDisplay.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDisplay.DoubleBuffered = true;
+            this.dgvDisplay.EnableHeadersVisualStyles = false;
+            this.dgvDisplay.HeaderBgColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvDisplay.HeaderForeColor = System.Drawing.Color.Honeydew;
+            this.dgvDisplay.Location = new System.Drawing.Point(0, 0);
+            this.dgvDisplay.Name = "dgvDisplay";
+            this.dgvDisplay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgvDisplay.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDisplay.RowTemplate.Height = 30;
+            this.dgvDisplay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDisplay.Size = new System.Drawing.Size(1025, 311);
+            this.dgvDisplay.TabIndex = 1;
+            // 
+            // ownerNationalIdDataGridViewTextBoxColumn
+            // 
+            this.ownerNationalIdDataGridViewTextBoxColumn.DataPropertyName = "OwnerNationalId";
+            this.ownerNationalIdDataGridViewTextBoxColumn.HeaderText = "الرقم القومي للمالك";
+            this.ownerNationalIdDataGridViewTextBoxColumn.Name = "ownerNationalIdDataGridViewTextBoxColumn";
+            // 
+            // ownerNameDataGridViewTextBoxColumn
+            // 
+            this.ownerNameDataGridViewTextBoxColumn.DataPropertyName = "OwnerName";
+            this.ownerNameDataGridViewTextBoxColumn.HeaderText = "اسم المالك";
+            this.ownerNameDataGridViewTextBoxColumn.Name = "ownerNameDataGridViewTextBoxColumn";
+            // 
+            // agentNationalIdDataGridViewTextBoxColumn
+            // 
+            this.agentNationalIdDataGridViewTextBoxColumn.DataPropertyName = "AgentNationalId";
+            this.agentNationalIdDataGridViewTextBoxColumn.HeaderText = "الرقم القومي للوكيل";
+            this.agentNationalIdDataGridViewTextBoxColumn.Name = "agentNationalIdDataGridViewTextBoxColumn";
+            // 
+            // agentNameDataGridViewTextBoxColumn
+            // 
+            this.agentNameDataGridViewTextBoxColumn.DataPropertyName = "AgentName";
+            this.agentNameDataGridViewTextBoxColumn.HeaderText = "اسم الوكيل";
+            this.agentNameDataGridViewTextBoxColumn.Name = "agentNameDataGridViewTextBoxColumn";
+            // 
+            // locationDataGridViewTextBoxColumn
+            // 
+            this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
+            this.locationDataGridViewTextBoxColumn.HeaderText = "الموقع";
+            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
+            // 
+            // plotNumberDataGridViewTextBoxColumn
+            // 
+            this.plotNumberDataGridViewTextBoxColumn.DataPropertyName = "PlotNumber";
+            this.plotNumberDataGridViewTextBoxColumn.HeaderText = "رقم القطعة";
+            this.plotNumberDataGridViewTextBoxColumn.Name = "plotNumberDataGridViewTextBoxColumn";
             // 
             // pnlHeader
             // 
@@ -153,15 +266,120 @@
             // 
             this.rbtnLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnLocation.AutoSize = true;
-            this.rbtnLocation.Checked = true;
             this.rbtnLocation.Location = new System.Drawing.Point(859, 110);
             this.rbtnLocation.Name = "rbtnLocation";
             this.rbtnLocation.Size = new System.Drawing.Size(146, 28);
             this.rbtnLocation.TabIndex = 5;
-            this.rbtnLocation.TabStop = true;
             this.rbtnLocation.Text = "الموقع و رقم القطعة";
             this.rbtnLocation.UseVisualStyleBackColor = true;
             this.rbtnLocation.CheckedChanged += new System.EventHandler(this.rbtnLocation_CheckedChanged);
+            // 
+            // rbtnAgent
+            // 
+            this.rbtnAgent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnAgent.AutoSize = true;
+            this.rbtnAgent.Location = new System.Drawing.Point(941, 67);
+            this.rbtnAgent.Name = "rbtnAgent";
+            this.rbtnAgent.Size = new System.Drawing.Size(66, 28);
+            this.rbtnAgent.TabIndex = 1;
+            this.rbtnAgent.Text = "الوكيل";
+            this.rbtnAgent.UseVisualStyleBackColor = true;
+            this.rbtnAgent.CheckedChanged += new System.EventHandler(this.rbtnAgent_CheckedChanged);
+            // 
+            // rbtnOwner
+            // 
+            this.rbtnOwner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnOwner.AutoSize = true;
+            this.rbtnOwner.Checked = true;
+            this.rbtnOwner.Location = new System.Drawing.Point(945, 24);
+            this.rbtnOwner.Name = "rbtnOwner";
+            this.rbtnOwner.Size = new System.Drawing.Size(62, 28);
+            this.rbtnOwner.TabIndex = 0;
+            this.rbtnOwner.TabStop = true;
+            this.rbtnOwner.Text = "المالك";
+            this.rbtnOwner.UseVisualStyleBackColor = true;
+            this.rbtnOwner.CheckedChanged += new System.EventHandler(this.rbtnOwner_CheckedChanged);
+            // 
+            // grpAgent
+            // 
+            this.grpAgent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpAgent.Controls.Add(this.txtAgentName);
+            this.grpAgent.Controls.Add(this.label4);
+            this.grpAgent.Controls.Add(this.txtAgentNationalId);
+            this.grpAgent.Controls.Add(this.label5);
+            this.grpAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAgent.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.grpAgent.Location = new System.Drawing.Point(259, 23);
+            this.grpAgent.Name = "grpAgent";
+            this.grpAgent.Size = new System.Drawing.Size(490, 117);
+            this.grpAgent.TabIndex = 3;
+            this.grpAgent.TabStop = false;
+            this.grpAgent.Text = "الوكيل";
+            // 
+            // txtAgentName
+            // 
+            this.txtAgentName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAgentName.BorderColorFocused = System.Drawing.Color.Red;
+            this.txtAgentName.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
+            this.txtAgentName.BorderColorMouseHover = System.Drawing.Color.Red;
+            this.txtAgentName.BorderThickness = 2;
+            this.txtAgentName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAgentName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtAgentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAgentName.isPassword = false;
+            this.txtAgentName.Location = new System.Drawing.Point(9, 68);
+            this.txtAgentName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAgentName.Name = "txtAgentName";
+            this.txtAgentName.Size = new System.Drawing.Size(386, 35);
+            this.txtAgentName.TabIndex = 3;
+            this.txtAgentName.TabStop = false;
+            this.txtAgentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAgentName.OnValueChanged += new System.EventHandler(this.txtAgentNationalId_OnValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(444, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 24);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "الاسم";
+            // 
+            // txtAgentNationalId
+            // 
+            this.txtAgentNationalId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAgentNationalId.BorderColorFocused = System.Drawing.Color.Red;
+            this.txtAgentNationalId.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
+            this.txtAgentNationalId.BorderColorMouseHover = System.Drawing.Color.Red;
+            this.txtAgentNationalId.BorderThickness = 2;
+            this.txtAgentNationalId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAgentNationalId.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtAgentNationalId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAgentNationalId.isPassword = false;
+            this.txtAgentNationalId.Location = new System.Drawing.Point(9, 25);
+            this.txtAgentNationalId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAgentNationalId.Name = "txtAgentNationalId";
+            this.txtAgentNationalId.Size = new System.Drawing.Size(386, 35);
+            this.txtAgentNationalId.TabIndex = 1;
+            this.txtAgentNationalId.TabStop = false;
+            this.txtAgentNationalId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAgentNationalId.OnValueChanged += new System.EventHandler(this.txtAgentNationalId_OnValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(402, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "الرقم القومي";
             // 
             // grpLocation
             // 
@@ -325,111 +543,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "الرقم القومي";
             // 
-            // grpAgent
-            // 
-            this.grpAgent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpAgent.Controls.Add(this.txtAgentName);
-            this.grpAgent.Controls.Add(this.label4);
-            this.grpAgent.Controls.Add(this.txtAgentNationalId);
-            this.grpAgent.Controls.Add(this.label5);
-            this.grpAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpAgent.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.grpAgent.Location = new System.Drawing.Point(259, 23);
-            this.grpAgent.Name = "grpAgent";
-            this.grpAgent.Size = new System.Drawing.Size(490, 117);
-            this.grpAgent.TabIndex = 3;
-            this.grpAgent.TabStop = false;
-            this.grpAgent.Text = "الوكيل";
-            // 
-            // txtAgentName
-            // 
-            this.txtAgentName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAgentName.BorderColorFocused = System.Drawing.Color.Red;
-            this.txtAgentName.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
-            this.txtAgentName.BorderColorMouseHover = System.Drawing.Color.Red;
-            this.txtAgentName.BorderThickness = 2;
-            this.txtAgentName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAgentName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtAgentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAgentName.isPassword = false;
-            this.txtAgentName.Location = new System.Drawing.Point(9, 68);
-            this.txtAgentName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAgentName.Name = "txtAgentName";
-            this.txtAgentName.Size = new System.Drawing.Size(386, 35);
-            this.txtAgentName.TabIndex = 3;
-            this.txtAgentName.TabStop = false;
-            this.txtAgentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtAgentName.OnValueChanged += new System.EventHandler(this.txtAgentNationalId_OnValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(444, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 24);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "الاسم";
-            // 
-            // txtAgentNationalId
-            // 
-            this.txtAgentNationalId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAgentNationalId.BorderColorFocused = System.Drawing.Color.Red;
-            this.txtAgentNationalId.BorderColorIdle = System.Drawing.Color.CornflowerBlue;
-            this.txtAgentNationalId.BorderColorMouseHover = System.Drawing.Color.Red;
-            this.txtAgentNationalId.BorderThickness = 2;
-            this.txtAgentNationalId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAgentNationalId.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtAgentNationalId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAgentNationalId.isPassword = false;
-            this.txtAgentNationalId.Location = new System.Drawing.Point(9, 25);
-            this.txtAgentNationalId.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAgentNationalId.Name = "txtAgentNationalId";
-            this.txtAgentNationalId.Size = new System.Drawing.Size(386, 35);
-            this.txtAgentNationalId.TabIndex = 1;
-            this.txtAgentNationalId.TabStop = false;
-            this.txtAgentNationalId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtAgentNationalId.OnValueChanged += new System.EventHandler(this.txtAgentNationalId_OnValueChanged);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(402, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 24);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "الرقم القومي";
-            // 
-            // rbtnAgent
-            // 
-            this.rbtnAgent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbtnAgent.AutoSize = true;
-            this.rbtnAgent.Location = new System.Drawing.Point(941, 67);
-            this.rbtnAgent.Name = "rbtnAgent";
-            this.rbtnAgent.Size = new System.Drawing.Size(66, 28);
-            this.rbtnAgent.TabIndex = 1;
-            this.rbtnAgent.Text = "الوكيل";
-            this.rbtnAgent.UseVisualStyleBackColor = true;
-            this.rbtnAgent.CheckedChanged += new System.EventHandler(this.rbtnAgent_CheckedChanged);
-            // 
-            // rbtnOwner
-            // 
-            this.rbtnOwner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbtnOwner.AutoSize = true;
-            this.rbtnOwner.Location = new System.Drawing.Point(945, 24);
-            this.rbtnOwner.Name = "rbtnOwner";
-            this.rbtnOwner.Size = new System.Drawing.Size(62, 28);
-            this.rbtnOwner.TabIndex = 0;
-            this.rbtnOwner.Text = "المالك";
-            this.rbtnOwner.UseVisualStyleBackColor = true;
-            this.rbtnOwner.CheckedChanged += new System.EventHandler(this.rbtnOwner_CheckedChanged);
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -451,119 +564,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1025, 5);
             this.panel1.TabIndex = 0;
-            // 
-            // pnlDataContainer
-            // 
-            this.pnlDataContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlDataContainer.Controls.Add(this.dgvDisplay);
-            this.pnlDataContainer.Location = new System.Drawing.Point(3, 220);
-            this.pnlDataContainer.Name = "pnlDataContainer";
-            this.pnlDataContainer.Size = new System.Drawing.Size(1025, 311);
-            this.pnlDataContainer.TabIndex = 2;
-            // 
-            // dgvDisplay
-            // 
-            this.dgvDisplay.AllowUserToAddRows = false;
-            this.dgvDisplay.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDisplay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDisplay.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDisplay.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ownerNationalIdDataGridViewTextBoxColumn,
-            this.ownerNameDataGridViewTextBoxColumn,
-            this.agentNationalIdDataGridViewTextBoxColumn,
-            this.agentNameDataGridViewTextBoxColumn,
-            this.locationDataGridViewTextBoxColumn,
-            this.plotNumberDataGridViewTextBoxColumn});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDisplay.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDisplay.DoubleBuffered = true;
-            this.dgvDisplay.EnableHeadersVisualStyles = false;
-            this.dgvDisplay.HeaderBgColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvDisplay.HeaderForeColor = System.Drawing.Color.Honeydew;
-            this.dgvDisplay.Location = new System.Drawing.Point(0, 0);
-            this.dgvDisplay.Name = "dgvDisplay";
-            this.dgvDisplay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvDisplay.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDisplay.RowTemplate.Height = 30;
-            this.dgvDisplay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDisplay.Size = new System.Drawing.Size(1025, 311);
-            this.dgvDisplay.TabIndex = 1;
-            // 
-            // ownerNationalIdDataGridViewTextBoxColumn
-            // 
-            this.ownerNationalIdDataGridViewTextBoxColumn.DataPropertyName = "OwnerNationalId";
-            this.ownerNationalIdDataGridViewTextBoxColumn.HeaderText = "الرقم القومي للمالك";
-            this.ownerNationalIdDataGridViewTextBoxColumn.Name = "ownerNationalIdDataGridViewTextBoxColumn";
-            // 
-            // ownerNameDataGridViewTextBoxColumn
-            // 
-            this.ownerNameDataGridViewTextBoxColumn.DataPropertyName = "OwnerName";
-            this.ownerNameDataGridViewTextBoxColumn.HeaderText = "اسم المالك";
-            this.ownerNameDataGridViewTextBoxColumn.Name = "ownerNameDataGridViewTextBoxColumn";
-            // 
-            // agentNationalIdDataGridViewTextBoxColumn
-            // 
-            this.agentNationalIdDataGridViewTextBoxColumn.DataPropertyName = "AgentNationalId";
-            this.agentNationalIdDataGridViewTextBoxColumn.HeaderText = "الرقم القومي للوكيل";
-            this.agentNationalIdDataGridViewTextBoxColumn.Name = "agentNationalIdDataGridViewTextBoxColumn";
-            // 
-            // agentNameDataGridViewTextBoxColumn
-            // 
-            this.agentNameDataGridViewTextBoxColumn.DataPropertyName = "AgentName";
-            this.agentNameDataGridViewTextBoxColumn.HeaderText = "اسم الوكيل";
-            this.agentNameDataGridViewTextBoxColumn.Name = "agentNameDataGridViewTextBoxColumn";
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "الموقع";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            // 
-            // plotNumberDataGridViewTextBoxColumn
-            // 
-            this.plotNumberDataGridViewTextBoxColumn.DataPropertyName = "PlotNumber";
-            this.plotNumberDataGridViewTextBoxColumn.HeaderText = "رقم القطعة";
-            this.plotNumberDataGridViewTextBoxColumn.Name = "plotNumberDataGridViewTextBoxColumn";
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Location = new System.Drawing.Point(3, 537);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1025, 5);
-            this.panel3.TabIndex = 0;
             // 
             // pnlOperations
             // 
@@ -647,18 +647,18 @@
             this.Text = "FRMDisplayLicenses";
             this.Load += new System.EventHandler(this.FRMDisplayLicenses_Load);
             this.pnlMain.ResumeLayout(false);
+            this.pnlDataContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.grpAgent.ResumeLayout(false);
+            this.grpAgent.PerformLayout();
             this.grpLocation.ResumeLayout(false);
             this.grpLocation.PerformLayout();
             this.grpOwner.ResumeLayout(false);
             this.grpOwner.PerformLayout();
-            this.grpAgent.ResumeLayout(false);
-            this.grpAgent.PerformLayout();
-            this.pnlDataContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
             this.pnlOperations.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).EndInit();
             this.ResumeLayout(false);

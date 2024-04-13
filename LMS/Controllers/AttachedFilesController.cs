@@ -1,8 +1,7 @@
 ﻿using LMS.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace LMS.Controllers
@@ -13,7 +12,7 @@ namespace LMS.Controllers
         ExceptionHandler _errHandle = new ExceptionHandler();
         AdminLogController _log = new AdminLogController();
 
-        public bool AddFiles(int adminId, int licenseId, List<(int id, string FileName, string Extension, byte[] Data)> fileList)
+        public async Task<bool> AddFiles(int adminId, int licenseId, List<(int id, string FileName, string Extension, byte[] Data)> fileList)
         {
             try
             {
@@ -27,7 +26,7 @@ namespace LMS.Controllers
                         LicenseId = licenseId
                     };
                     _context.AttachedFiles.Add(filemodel);
-                    _context.SaveChanges();
+                    await _context.SaveChangesAsync();
                     _log.AddLog(adminId, "AttachedFiles", "N/A", filemodel.Id, "قام بإضافة ملف");
                 }
                 return true;
@@ -39,18 +38,18 @@ namespace LMS.Controllers
             }
         }
 
-        public bool DeleteFiles(int adminId, List<(int id, string FileName, string Extension, byte[] Data)> fileList)
+        public async Task<bool> DeleteFiles(int adminId, List<(int id, string FileName, string Extension, byte[] Data)> fileList)
         {
             try
             {
                 foreach (var file in fileList)
                 {
-                    var filedata = _context.AttachedFiles.FirstOrDefault(fe => fe.Id == file.id);
+                    var filedata = await _context.AttachedFiles.FirstOrDefaultAsync(fe => fe.Id == file.id);
                     _context.AttachedFiles.Remove(filedata);
                     _log.AddLog(adminId, "AttachedFiles", "N/A", file.id, "قام بحذف ملف");
                 }
 
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception ex)

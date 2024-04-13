@@ -2,11 +2,9 @@
 using LMS.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,10 +22,15 @@ namespace LMS.Views
             picFeeDate.Value = DateTime.Now;
             this.adminId = _adminId;
             this.licenseId = _liccenseId;
-            LoadData();
+            InitializeAsync();
         }
 
-        private void btnAddFee_Click(object sender, EventArgs e)
+        private async void InitializeAsync()
+        {
+            await LoadData();
+        }
+
+        private async void btnAddFee_Click(object sender, EventArgs e)
         {
             decimal x;
             if (!decimal.TryParse(txtFeeAmount.Text, out x))
@@ -51,13 +54,13 @@ namespace LMS.Views
                 if (MessageBox.Show("هل تريد الإضافة", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 == DialogResult.Yes)
                 {
-                    feesController.AddNewFee(adminId, new Fee
+                    await Task.Run(() => feesController.AddNewFee(adminId, new Fee
                     {
                         LicenseId = licenseId,
                         Amount = Convert.ToDecimal(txtFeeAmount.Text),
                         CreatedOn = picFeeDate.Value
-                    });
-                    LoadData();
+                    }));
+                    await LoadData();
                 }
             }
         }
@@ -67,7 +70,7 @@ namespace LMS.Views
             txtFeeDate.Text = picFeeDate.Value.ToString();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvDisplay.Rows.Count > 0)
             {
@@ -75,25 +78,27 @@ namespace LMS.Views
                     == DialogResult.Yes)
                 {
                     string id = dgvDisplay.CurrentRow.Cells[0].Value.ToString();
-                    if (feesController.DeleteFee(Convert.ToInt32(id)))
+                    var isDone = await Task.Run(() => feesController.DeleteFee(Convert.ToInt32(id)));
+                    if (isDone)
                         MessageBox.Show("تم الحذف بنجاح");
                     else
                         MessageBox.Show("لم يتم الحذف");
-                    LoadData();
+                    await LoadData();
                 }
             }
             else MessageBox.Show("اختر الرخصة أولاً");
         }
 
-        public void LoadData()
+        public async Task LoadData()
         {
-            decimal? fees = context.Licenses.Where(l => l.Id == licenseId).Select(l => l.Fees).FirstOrDefault();
+            decimal? fees = await context.Licenses.Where(l => l.Id == licenseId).Select(l => l.Fees).FirstOrDefaultAsync();
             decimal paid = 0;
-            foreach (var fee in feesController.GetFees(licenseId))
+            var feesList = await Task.Run(() => feesController.GetFees(licenseId));
+            foreach (var fee in feesList)
             {
                 paid += fee.Amount;
             }
-            dgvDisplay.DataSource = feesController.GetFees(licenseId);
+            dgvDisplay.DataSource = await Task.Run(() => feesController.GetFees(licenseId));
             dgvDisplay.Columns["FeeId"].Visible = false;
             dgvDisplay.Columns["Amount"].HeaderText = "قيمة المبلغ";
             dgvDisplay.Columns["CreatedOn"].HeaderText = "تاريخ الإضافة";

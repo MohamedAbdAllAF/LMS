@@ -1,12 +1,6 @@
 ﻿using LMS.Controllers;
 using Microsoft.Reporting.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,7 +20,7 @@ namespace LMS.Views
             
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             var choice = "";
             if (rbtnAddedInSystem.Checked) choice = "CreatedOn";
@@ -41,8 +35,9 @@ namespace LMS.Views
             reportViewer1.LocalReport.DataSources.Clear();
             DateTime From = new DateTime(picFrom.Value.Year, picFrom.Value.Month, picFrom.Value.Day,0,0,0);
             DateTime To = new DateTime(picTo.Value.Year, picTo.Value.Month, picTo.Value.Day,23,59,59);
+            var licenses = await Task.Run(() => LicenseController.GetAllLicensesInRange(From, To, choice));
             ReportDataSource source = new ReportDataSource(
-                "LicenseDataSet", LicenseController.GetAllLicensesInRange(From,To,choice));
+                "LicenseDataSet", licenses);
             this.reportViewer1.LocalReport.DataSources.Add(source);
             this.reportViewer1.RefreshReport();
         }
@@ -87,10 +82,11 @@ namespace LMS.Views
             }
         }
 
-        private void btnGetAll_Click(object sender, EventArgs e)
+        private async void btnGetAll_Click(object sender, EventArgs e)
         {
+            var licenses = await Task.Run(() => LicenseController.GetAllLicensesForReports());
             ReportDataSource source = new ReportDataSource(
-                "LicenseDataSet", LicenseController.GetAllLicensesForReports());
+                "LicenseDataSet", licenses);
             reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(source);
             this.reportViewer1.RefreshReport();
