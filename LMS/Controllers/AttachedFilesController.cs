@@ -18,6 +18,8 @@ namespace LMS.Controllers
             {
                 foreach (var file in fileList)
                 {
+                    if (await _context.AttachedFiles.AnyAsync(f => f.Id == file.id))
+                        continue;
                     var filemodel = new AttachedFiles
                     {
                         FileName = file.FileName,

@@ -49,10 +49,18 @@ namespace LMS.Views
             lvFilesList.FullRowSelect = true;
         }
 
+        private void SetLoading(bool displayLoader)
+        {
+            if (displayLoader)
+                picLoader.Visible = true;
+            else
+                picLoader.Visible = false;
+        }
+
         public async void LoadData()
         {
             #region Retreive data from database for editing
-
+            SetLoading(true);
             licenseVM = await Task.Run(() => licensecont.GetLicenseVM(licenseId));
             lblCreatedOn.Text = $"تاريخ الأضافة : {licenseVM.CreatedOn}";
             lblLastUpdate.Text = $"تاريخ اخر تعديل : {licenseVM.LastUptate}";
@@ -134,7 +142,7 @@ namespace LMS.Views
             txtLicenseNumber.Text = licenseVM.LicenseNumber;
             txtFees.Text = licenseVM.Fees.ToString();
             txtNotes.Text = licenseVM.Notes;
-
+            SetLoading(false);
             #endregion
         }
 
@@ -266,6 +274,7 @@ namespace LMS.Views
                             AgentNationalId = txtAgentNationalId.Text,
                             AgentName = txtAgentName.Text,
                             Location = txtLocation.Text,
+                            fileList = fileList,
                             PlotNumber = txtPlotNumber.Text,
                             LicenseNumber = txtLicenseNumber.Text,
                             Work = txtWork.Text,

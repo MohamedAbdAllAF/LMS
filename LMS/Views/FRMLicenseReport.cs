@@ -20,8 +20,17 @@ namespace LMS.Views
             
         }
 
+        private void SetLoading(bool displayLoader)
+        {
+            if (displayLoader)
+                picLoader.Visible = true;
+            else
+                picLoader.Visible = false;
+        }
+
         private async void btnSave_Click(object sender, EventArgs e)
         {
+            SetLoading(true);
             var choice = "";
             if (rbtnAddedInSystem.Checked) choice = "CreatedOn";
             else if (rbtnLEntryDate.Checked) choice = "LEntryDate";
@@ -40,6 +49,7 @@ namespace LMS.Views
                 "LicenseDataSet", licenses);
             this.reportViewer1.LocalReport.DataSources.Add(source);
             this.reportViewer1.RefreshReport();
+            SetLoading(false);
         }
 
         private void rbtnVValidatySupplyDate_Click(object sender, EventArgs e)
@@ -84,12 +94,14 @@ namespace LMS.Views
 
         private async void btnGetAll_Click(object sender, EventArgs e)
         {
+            SetLoading(true);
             var licenses = await Task.Run(() => LicenseController.GetAllLicensesForReports());
             ReportDataSource source = new ReportDataSource(
                 "LicenseDataSet", licenses);
             reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(source);
             this.reportViewer1.RefreshReport();
+            SetLoading(false);
         }
     }
 }

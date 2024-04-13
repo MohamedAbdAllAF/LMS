@@ -47,9 +47,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnGetAll = new Bunifu.Framework.UI.BunifuTileButton();
+            this.picLoader = new System.Windows.Forms.PictureBox();
             this.groupBox10.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoader)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -294,14 +296,14 @@
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::LMS.Properties.Resources.data_transfer;
-            this.btnSave.ImagePosition = 10;
-            this.btnSave.ImageZoom = 15;
+            this.btnSave.ImagePosition = 5;
+            this.btnSave.ImageZoom = 30;
             this.btnSave.LabelPosition = 35;
             this.btnSave.LabelText = "جلب";
             this.btnSave.Location = new System.Drawing.Point(15, 50);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(214, 78);
+            this.btnSave.Size = new System.Drawing.Size(116, 78);
             this.btnSave.TabIndex = 7;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -314,22 +316,34 @@
             this.btnGetAll.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnGetAll.ForeColor = System.Drawing.Color.White;
             this.btnGetAll.Image = global::LMS.Properties.Resources.data_transfer;
-            this.btnGetAll.ImagePosition = 10;
-            this.btnGetAll.ImageZoom = 15;
+            this.btnGetAll.ImagePosition = 5;
+            this.btnGetAll.ImageZoom = 30;
             this.btnGetAll.LabelPosition = 35;
             this.btnGetAll.LabelText = "جلب الكل";
             this.btnGetAll.Location = new System.Drawing.Point(15, 133);
             this.btnGetAll.Margin = new System.Windows.Forms.Padding(6);
             this.btnGetAll.Name = "btnGetAll";
-            this.btnGetAll.Size = new System.Drawing.Size(214, 78);
+            this.btnGetAll.Size = new System.Drawing.Size(116, 78);
             this.btnGetAll.TabIndex = 8;
             this.btnGetAll.Click += new System.EventHandler(this.btnGetAll_Click);
+            // 
+            // picLoader
+            // 
+            this.picLoader.Image = global::LMS.Properties.Resources._752;
+            this.picLoader.Location = new System.Drawing.Point(140, 51);
+            this.picLoader.Name = "picLoader";
+            this.picLoader.Size = new System.Drawing.Size(92, 161);
+            this.picLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picLoader.TabIndex = 9;
+            this.picLoader.TabStop = false;
+            this.picLoader.Visible = false;
             // 
             // FRMLicenseReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 680);
+            this.Controls.Add(this.picLoader);
             this.Controls.Add(this.btnGetAll);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.btnSave);
@@ -347,6 +361,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoader)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,5 +387,6 @@
         private System.Windows.Forms.RadioButton rbtnLFinalPaymentDate;
         private System.Windows.Forms.RadioButton rbtnAddedInSystem;
         private Bunifu.Framework.UI.BunifuTileButton btnGetAll;
+        private System.Windows.Forms.PictureBox picLoader;
     }
 }

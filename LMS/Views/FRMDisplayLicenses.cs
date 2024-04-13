@@ -67,7 +67,8 @@ namespace LMS.Views
 
         private async void txtAgentNationalId_OnValueChanged(object sender, EventArgs e)
         {
-            if(dgvDisplay.Rows.Count > 0)
+            SetLoading(true);
+            if (dgvDisplay.Rows.Count > 0)
                 dgvDisplay.Refresh();
             //Search By Owner Data
             if (rbtnOwner.Checked)
@@ -131,12 +132,15 @@ namespace LMS.Views
                 }
             }
             dgvDisplay.Columns["LicenseId"].Visible = false;
+            SetLoading(false);
         }
 
         private async void btnSearch_Click(object sender, EventArgs e)
         {
+            SetLoading(true);
             var result = await Task.Run(() => liceControl.SearchLicenseByOwnerNationalID(txtOwnerNationalId.Text));
             dgvDisplay.DataSource = result;
+            SetLoading(false);
         }
 
         private void btndetails_Click(object sender, EventArgs e)
@@ -148,6 +152,14 @@ namespace LMS.Views
                 frm.LoadForm(new FRMNewLicense(1, "Edit", Convert.ToInt32(id)));
             }
             else MessageBox.Show("اختر الرخصة المراد تعديلها");
+        }
+
+        private void SetLoading(bool displayLoader)
+        {
+            if (displayLoader)
+                picLoader.Visible = true;
+            else
+                picLoader.Visible = false;
         }
 
         private void btnFees_Click(object sender, EventArgs e)

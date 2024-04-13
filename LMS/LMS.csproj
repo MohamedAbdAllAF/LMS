@@ -308,6 +308,7 @@
     <None Include="Resources\icons8-open-40.png" />
     <None Include="Resources\icons8-maximize-40.png" />
     <None Include="Resources\icons8-restore-down-40.png" />
+    <None Include="Resources\752.gif" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />

@@ -743,6 +743,9 @@ namespace LMS.Controllers
                     ValidatySupplyDate = newlicense.VValidatySupplyDate,
                     ReceiveDate = newlicense.VReceiveDate
                 });
+
+                await _attachedFilesController.AddFiles(adminId, id, newlicense.fileList);
+
                 Log.AddLog(adminId, "Licenses", "N/A", oldlicence.Id,
                         "قام بتغيير بيانات بيان الصلاحية ");
 

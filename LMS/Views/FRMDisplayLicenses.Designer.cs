@@ -45,7 +45,6 @@
             this.plotNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new Bunifu.Framework.UI.BunifuTileButton();
             this.rbtnLocation = new System.Windows.Forms.RadioButton();
             this.rbtnAgent = new System.Windows.Forms.RadioButton();
             this.rbtnOwner = new System.Windows.Forms.RadioButton();
@@ -67,9 +66,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlOperations = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.picLoader = new System.Windows.Forms.PictureBox();
+            this.btnSearch = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnFees = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDetails = new Bunifu.Framework.UI.BunifuTileButton();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.searchVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pnlMain.SuspendLayout();
             this.pnlDataContainer.SuspendLayout();
@@ -80,6 +81,7 @@
             this.grpLocation.SuspendLayout();
             this.grpOwner.SuspendLayout();
             this.pnlOperations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,6 +228,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.picLoader);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.rbtnLocation);
             this.groupBox1.Controls.Add(this.rbtnAgent);
@@ -241,26 +244,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "طريقة البحث";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnSearch.color = System.Drawing.Color.CornflowerBlue;
-            this.btnSearch.colorActive = System.Drawing.Color.LightSkyBlue;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = global::LMS.Properties.Resources.icons8_search_40;
-            this.btnSearch.ImagePosition = 15;
-            this.btnSearch.ImageZoom = 20;
-            this.btnSearch.LabelPosition = 35;
-            this.btnSearch.LabelText = "بحث";
-            this.btnSearch.Location = new System.Drawing.Point(7, 40);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(152, 82);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // rbtnLocation
             // 
@@ -577,6 +560,47 @@
             this.pnlOperations.Size = new System.Drawing.Size(1025, 134);
             this.pnlOperations.TabIndex = 4;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Location = new System.Drawing.Point(0, 122);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1025, 5);
+            this.panel2.TabIndex = 3;
+            // 
+            // picLoader
+            // 
+            this.picLoader.Image = global::LMS.Properties.Resources._752;
+            this.picLoader.Location = new System.Drawing.Point(161, 40);
+            this.picLoader.Name = "picLoader";
+            this.picLoader.Size = new System.Drawing.Size(92, 80);
+            this.picLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picLoader.TabIndex = 7;
+            this.picLoader.TabStop = false;
+            this.picLoader.Visible = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSearch.color = System.Drawing.Color.CornflowerBlue;
+            this.btnSearch.colorActive = System.Drawing.Color.LightSkyBlue;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::LMS.Properties.Resources.icons8_search_40;
+            this.btnSearch.ImagePosition = 15;
+            this.btnSearch.ImageZoom = 20;
+            this.btnSearch.LabelPosition = 35;
+            this.btnSearch.LabelText = "بحث";
+            this.btnSearch.Location = new System.Drawing.Point(7, 40);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(152, 82);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // btnFees
             // 
             this.btnFees.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -619,16 +643,6 @@
             this.btnDetails.TabIndex = 7;
             this.btnDetails.Click += new System.EventHandler(this.btndetails_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Location = new System.Drawing.Point(0, 122);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1025, 5);
-            this.panel2.TabIndex = 3;
-            // 
             // searchVMBindingSource1
             // 
             this.searchVMBindingSource1.DataSource = typeof(LMS.ViewModel.SearchVM);
@@ -660,6 +674,7 @@
             this.grpOwner.ResumeLayout(false);
             this.grpOwner.PerformLayout();
             this.pnlOperations.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLoader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchVMBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -706,5 +721,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnFees;
         private Bunifu.Framework.UI.BunifuTileButton btnDetails;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox picLoader;
     }
 }
