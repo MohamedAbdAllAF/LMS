@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMNewLicense));
             this.pnlScrollerContainer = new System.Windows.Forms.Panel();
             this.pnlMainInfoContainer = new System.Windows.Forms.Panel();
+            this.picLoader = new System.Windows.Forms.PictureBox();
             this.lblLastUpdate = new System.Windows.Forms.Label();
             this.lblCreatedOn = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
@@ -143,9 +144,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDeleteLicense = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
-            this.picLoader = new System.Windows.Forms.PictureBox();
             this.pnlScrollerContainer.SuspendLayout();
             this.pnlMainInfoContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoader)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -181,7 +182,6 @@
             this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLoader)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlScrollerContainer
@@ -209,8 +209,20 @@
             this.pnlMainInfoContainer.Controls.Add(this.lblTitle);
             this.pnlMainInfoContainer.Location = new System.Drawing.Point(3, 3);
             this.pnlMainInfoContainer.Name = "pnlMainInfoContainer";
-            this.pnlMainInfoContainer.Size = new System.Drawing.Size(1010, 340);
+            this.pnlMainInfoContainer.Size = new System.Drawing.Size(1027, 340);
             this.pnlMainInfoContainer.TabIndex = 7;
+            // 
+            // picLoader
+            // 
+            this.picLoader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picLoader.Image = global::LMS.Properties.Resources._752;
+            this.picLoader.Location = new System.Drawing.Point(615, 0);
+            this.picLoader.Name = "picLoader";
+            this.picLoader.Size = new System.Drawing.Size(96, 68);
+            this.picLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picLoader.TabIndex = 8;
+            this.picLoader.TabStop = false;
+            this.picLoader.Visible = false;
             // 
             // lblLastUpdate
             // 
@@ -232,7 +244,7 @@
             this.lblCreatedOn.BackColor = System.Drawing.SystemColors.Control;
             this.lblCreatedOn.Enabled = false;
             this.lblCreatedOn.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblCreatedOn.Location = new System.Drawing.Point(725, 22);
+            this.lblCreatedOn.Location = new System.Drawing.Point(742, 22);
             this.lblCreatedOn.Name = "lblCreatedOn";
             this.lblCreatedOn.Size = new System.Drawing.Size(184, 24);
             this.lblCreatedOn.TabIndex = 5;
@@ -248,7 +260,7 @@
             this.bunifuSeparator1.Location = new System.Drawing.Point(0, 334);
             this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(1010, 6);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(1027, 6);
             this.bunifuSeparator1.TabIndex = 4;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -267,7 +279,7 @@
             this.groupBox1.Location = new System.Drawing.Point(10, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(989, 280);
+            this.groupBox1.Size = new System.Drawing.Size(1006, 280);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "البيانات الأساسية";
@@ -281,7 +293,7 @@
             this.groupBox4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox4.Location = new System.Drawing.Point(9, 145);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(475, 117);
+            this.groupBox4.Size = new System.Drawing.Size(492, 117);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "بيان الأعمال";
@@ -299,7 +311,7 @@
             this.txtWork.Location = new System.Drawing.Point(9, 25);
             this.txtWork.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtWork.Name = "txtWork";
-            this.txtWork.Size = new System.Drawing.Size(455, 78);
+            this.txtWork.Size = new System.Drawing.Size(472, 78);
             this.txtWork.TabIndex = 0;
             this.txtWork.Text = "";
             // 
@@ -315,7 +327,7 @@
             this.groupBox5.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox5.Location = new System.Drawing.Point(9, 28);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(475, 117);
+            this.groupBox5.Size = new System.Drawing.Size(492, 117);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "بيانات القطعة";
@@ -329,7 +341,7 @@
             this.txtLocation.BackColor = System.Drawing.SystemColors.Control;
             this.txtLocation.Location = new System.Drawing.Point(9, 27);
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(371, 29);
+            this.txtLocation.Size = new System.Drawing.Size(388, 29);
             this.txtLocation.TabIndex = 6;
             // 
             // txtPlotNumber
@@ -347,7 +359,7 @@
             this.txtPlotNumber.Location = new System.Drawing.Point(9, 68);
             this.txtPlotNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlotNumber.Name = "txtPlotNumber";
-            this.txtPlotNumber.Size = new System.Drawing.Size(371, 35);
+            this.txtPlotNumber.Size = new System.Drawing.Size(388, 35);
             this.txtPlotNumber.TabIndex = 3;
             this.txtPlotNumber.TabStop = false;
             this.txtPlotNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -357,7 +369,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(396, 73);
+            this.label7.Location = new System.Drawing.Point(413, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 24);
             this.label7.TabIndex = 2;
@@ -368,7 +380,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(422, 30);
+            this.label8.Location = new System.Drawing.Point(439, 30);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 24);
             this.label8.TabIndex = 0;
@@ -383,7 +395,7 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox3.Location = new System.Drawing.Point(490, 145);
+            this.groupBox3.Location = new System.Drawing.Point(507, 145);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(490, 117);
             this.groupBox3.TabIndex = 1;
@@ -455,7 +467,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox2.Location = new System.Drawing.Point(490, 28);
+            this.groupBox2.Location = new System.Drawing.Point(507, 28);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(490, 117);
             this.groupBox2.TabIndex = 0;
@@ -526,7 +538,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lblTitle.Location = new System.Drawing.Point(418, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(174, 36);
+            this.lblTitle.Size = new System.Drawing.Size(191, 36);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "إنشاء رخصة جديدة";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -539,7 +551,7 @@
             this.pnlValidityStatment.Controls.Add(this.groupBox6);
             this.pnlValidityStatment.Location = new System.Drawing.Point(3, 349);
             this.pnlValidityStatment.Name = "pnlValidityStatment";
-            this.pnlValidityStatment.Size = new System.Drawing.Size(1010, 295);
+            this.pnlValidityStatment.Size = new System.Drawing.Size(1027, 295);
             this.pnlValidityStatment.TabIndex = 8;
             // 
             // bunifuSeparator2
@@ -551,7 +563,7 @@
             this.bunifuSeparator2.Location = new System.Drawing.Point(0, 289);
             this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(11);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Size = new System.Drawing.Size(1010, 6);
+            this.bunifuSeparator2.Size = new System.Drawing.Size(1027, 6);
             this.bunifuSeparator2.TabIndex = 5;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
@@ -570,7 +582,7 @@
             this.groupBox6.Location = new System.Drawing.Point(10, 7);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox6.Size = new System.Drawing.Size(989, 280);
+            this.groupBox6.Size = new System.Drawing.Size(1006, 280);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "بيان الصلاحية";
@@ -588,7 +600,7 @@
             this.groupBox7.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox7.Location = new System.Drawing.Point(9, 145);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(475, 117);
+            this.groupBox7.Size = new System.Drawing.Size(492, 117);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "تاريخ الاستلام";
@@ -619,7 +631,7 @@
             this.picVReceiveDate.Location = new System.Drawing.Point(106, 24);
             this.picVReceiveDate.Margin = new System.Windows.Forms.Padding(2);
             this.picVReceiveDate.Name = "picVReceiveDate";
-            this.picVReceiveDate.Size = new System.Drawing.Size(260, 36);
+            this.picVReceiveDate.Size = new System.Drawing.Size(277, 36);
             this.picVReceiveDate.TabIndex = 4;
             this.picVReceiveDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
@@ -639,7 +651,7 @@
             this.txtVReceiveDate.Location = new System.Drawing.Point(106, 68);
             this.txtVReceiveDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtVReceiveDate.Name = "txtVReceiveDate";
-            this.txtVReceiveDate.Size = new System.Drawing.Size(260, 35);
+            this.txtVReceiveDate.Size = new System.Drawing.Size(277, 35);
             this.txtVReceiveDate.TabIndex = 3;
             this.txtVReceiveDate.TabStop = false;
             this.txtVReceiveDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -649,7 +661,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(373, 73);
+            this.label13.Location = new System.Drawing.Point(390, 73);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 24);
             this.label13.TabIndex = 2;
@@ -660,7 +672,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(376, 30);
+            this.label14.Location = new System.Drawing.Point(393, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(93, 24);
             this.label14.TabIndex = 0;
@@ -676,7 +688,7 @@
             this.groupBox9.Controls.Add(this.label10);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox9.Location = new System.Drawing.Point(490, 145);
+            this.groupBox9.Location = new System.Drawing.Point(507, 145);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(490, 117);
             this.groupBox9.TabIndex = 6;
@@ -763,7 +775,7 @@
             this.groupBox8.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox8.Location = new System.Drawing.Point(9, 28);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(475, 117);
+            this.groupBox8.Size = new System.Drawing.Size(492, 117);
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "تاريخ التوريد أولي";
@@ -794,7 +806,7 @@
             this.picVInitialSupplyDate.Location = new System.Drawing.Point(106, 24);
             this.picVInitialSupplyDate.Margin = new System.Windows.Forms.Padding(2);
             this.picVInitialSupplyDate.Name = "picVInitialSupplyDate";
-            this.picVInitialSupplyDate.Size = new System.Drawing.Size(260, 36);
+            this.picVInitialSupplyDate.Size = new System.Drawing.Size(277, 36);
             this.picVInitialSupplyDate.TabIndex = 4;
             this.picVInitialSupplyDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
@@ -814,7 +826,7 @@
             this.txtVInitialSupplyDate.Location = new System.Drawing.Point(106, 68);
             this.txtVInitialSupplyDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtVInitialSupplyDate.Name = "txtVInitialSupplyDate";
-            this.txtVInitialSupplyDate.Size = new System.Drawing.Size(260, 35);
+            this.txtVInitialSupplyDate.Size = new System.Drawing.Size(277, 35);
             this.txtVInitialSupplyDate.TabIndex = 3;
             this.txtVInitialSupplyDate.TabStop = false;
             this.txtVInitialSupplyDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -824,7 +836,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(373, 73);
+            this.label5.Location = new System.Drawing.Point(390, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 24);
             this.label5.TabIndex = 2;
@@ -835,7 +847,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(376, 30);
+            this.label6.Location = new System.Drawing.Point(393, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 24);
             this.label6.TabIndex = 0;
@@ -851,7 +863,7 @@
             this.groupBox10.Controls.Add(this.label12);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox10.Location = new System.Drawing.Point(490, 28);
+            this.groupBox10.Location = new System.Drawing.Point(507, 28);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(490, 117);
             this.groupBox10.TabIndex = 0;
@@ -933,7 +945,7 @@
             this.pnlLicense.Controls.Add(this.groupBox11);
             this.pnlLicense.Location = new System.Drawing.Point(3, 650);
             this.pnlLicense.Name = "pnlLicense";
-            this.pnlLicense.Size = new System.Drawing.Size(1010, 806);
+            this.pnlLicense.Size = new System.Drawing.Size(1027, 806);
             this.pnlLicense.TabIndex = 9;
             // 
             // bunifuSeparator3
@@ -945,7 +957,7 @@
             this.bunifuSeparator3.Location = new System.Drawing.Point(0, 800);
             this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(11);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Size = new System.Drawing.Size(1010, 6);
+            this.bunifuSeparator3.Size = new System.Drawing.Size(1027, 6);
             this.bunifuSeparator3.TabIndex = 5;
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = false;
@@ -970,7 +982,7 @@
             this.groupBox11.Location = new System.Drawing.Point(10, 3);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox11.Size = new System.Drawing.Size(989, 788);
+            this.groupBox11.Size = new System.Drawing.Size(1006, 788);
             this.groupBox11.TabIndex = 4;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "بيانات الرخصة";
@@ -989,7 +1001,7 @@
             this.groupBox21.Location = new System.Drawing.Point(9, 509);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox21.Size = new System.Drawing.Size(475, 273);
+            this.groupBox21.Size = new System.Drawing.Size(492, 273);
             this.groupBox21.TabIndex = 12;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "مستندات";
@@ -1100,7 +1112,7 @@
             this.lvFilesList.MouseState = MaterialSkin.MouseState.OUT;
             this.lvFilesList.Name = "lvFilesList";
             this.lvFilesList.OwnerDraw = true;
-            this.lvFilesList.Size = new System.Drawing.Size(455, 157);
+            this.lvFilesList.Size = new System.Drawing.Size(472, 157);
             this.lvFilesList.TabIndex = 0;
             this.lvFilesList.UseCompatibleStateImageBehavior = false;
             this.lvFilesList.View = System.Windows.Forms.View.Details;
@@ -1126,7 +1138,7 @@
             this.groupBox20.Controls.Add(this.label30);
             this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox20.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox20.Location = new System.Drawing.Point(490, 274);
+            this.groupBox20.Location = new System.Drawing.Point(507, 274);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Size = new System.Drawing.Size(490, 117);
             this.groupBox20.TabIndex = 11;
@@ -1213,7 +1225,7 @@
             this.groupBox19.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox19.Location = new System.Drawing.Point(9, 28);
             this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(475, 117);
+            this.groupBox19.Size = new System.Drawing.Size(492, 117);
             this.groupBox19.TabIndex = 10;
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "تاريخ التوريد أولي";
@@ -1244,7 +1256,7 @@
             this.picLInitialSupplyDate.Location = new System.Drawing.Point(106, 24);
             this.picLInitialSupplyDate.Margin = new System.Windows.Forms.Padding(2);
             this.picLInitialSupplyDate.Name = "picLInitialSupplyDate";
-            this.picLInitialSupplyDate.Size = new System.Drawing.Size(260, 36);
+            this.picLInitialSupplyDate.Size = new System.Drawing.Size(277, 36);
             this.picLInitialSupplyDate.TabIndex = 4;
             this.picLInitialSupplyDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
@@ -1264,7 +1276,7 @@
             this.txtLInitialSupplyDate.Location = new System.Drawing.Point(106, 68);
             this.txtLInitialSupplyDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtLInitialSupplyDate.Name = "txtLInitialSupplyDate";
-            this.txtLInitialSupplyDate.Size = new System.Drawing.Size(260, 35);
+            this.txtLInitialSupplyDate.Size = new System.Drawing.Size(277, 35);
             this.txtLInitialSupplyDate.TabIndex = 3;
             this.txtLInitialSupplyDate.TabStop = false;
             this.txtLInitialSupplyDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1274,7 +1286,7 @@
             this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(373, 73);
+            this.label27.Location = new System.Drawing.Point(390, 73);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(99, 24);
             this.label27.TabIndex = 2;
@@ -1285,7 +1297,7 @@
             this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(379, 30);
+            this.label28.Location = new System.Drawing.Point(396, 30);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(93, 24);
             this.label28.TabIndex = 0;
@@ -1297,7 +1309,7 @@
             this.groupBox18.Controls.Add(this.txtNotes);
             this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox18.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox18.Location = new System.Drawing.Point(490, 509);
+            this.groupBox18.Location = new System.Drawing.Point(507, 509);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox18.Size = new System.Drawing.Size(490, 273);
@@ -1334,7 +1346,7 @@
             this.groupBox17.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox17.Location = new System.Drawing.Point(9, 391);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(475, 117);
+            this.groupBox17.Size = new System.Drawing.Size(492, 117);
             this.groupBox17.TabIndex = 9;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "بيانات إضافية";
@@ -1354,7 +1366,7 @@
             this.txtFees.Location = new System.Drawing.Point(9, 68);
             this.txtFees.Margin = new System.Windows.Forms.Padding(4);
             this.txtFees.Name = "txtFees";
-            this.txtFees.Size = new System.Drawing.Size(357, 35);
+            this.txtFees.Size = new System.Drawing.Size(374, 35);
             this.txtFees.TabIndex = 3;
             this.txtFees.TabStop = false;
             this.txtFees.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1364,7 +1376,7 @@
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(418, 73);
+            this.label25.Location = new System.Drawing.Point(435, 73);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(54, 24);
             this.label25.TabIndex = 2;
@@ -1385,7 +1397,7 @@
             this.txtLicenseNumber.Location = new System.Drawing.Point(9, 25);
             this.txtLicenseNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtLicenseNumber.Name = "txtLicenseNumber";
-            this.txtLicenseNumber.Size = new System.Drawing.Size(357, 35);
+            this.txtLicenseNumber.Size = new System.Drawing.Size(374, 35);
             this.txtLicenseNumber.TabIndex = 1;
             this.txtLicenseNumber.TabStop = false;
             this.txtLicenseNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1395,7 +1407,7 @@
             this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(387, 30);
+            this.label26.Location = new System.Drawing.Point(404, 30);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(85, 24);
             this.label26.TabIndex = 0;
@@ -1411,7 +1423,7 @@
             this.groupBox16.Controls.Add(this.label24);
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox16.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox16.Location = new System.Drawing.Point(490, 391);
+            this.groupBox16.Location = new System.Drawing.Point(507, 391);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(490, 117);
             this.groupBox16.TabIndex = 8;
@@ -1498,7 +1510,7 @@
             this.groupBox12.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox12.Location = new System.Drawing.Point(9, 274);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(475, 117);
+            this.groupBox12.Size = new System.Drawing.Size(492, 117);
             this.groupBox12.TabIndex = 7;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "تاريخ التوقيع";
@@ -1529,7 +1541,7 @@
             this.picLSignatureDate.Location = new System.Drawing.Point(106, 24);
             this.picLSignatureDate.Margin = new System.Windows.Forms.Padding(2);
             this.picLSignatureDate.Name = "picLSignatureDate";
-            this.picLSignatureDate.Size = new System.Drawing.Size(260, 36);
+            this.picLSignatureDate.Size = new System.Drawing.Size(277, 36);
             this.picLSignatureDate.TabIndex = 4;
             this.picLSignatureDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
@@ -1549,7 +1561,7 @@
             this.txtLSignatureDate.Location = new System.Drawing.Point(106, 68);
             this.txtLSignatureDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtLSignatureDate.Name = "txtLSignatureDate";
-            this.txtLSignatureDate.Size = new System.Drawing.Size(260, 35);
+            this.txtLSignatureDate.Size = new System.Drawing.Size(277, 35);
             this.txtLSignatureDate.TabIndex = 3;
             this.txtLSignatureDate.TabStop = false;
             this.txtLSignatureDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1559,7 +1571,7 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(373, 73);
+            this.label15.Location = new System.Drawing.Point(390, 73);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(99, 24);
             this.label15.TabIndex = 2;
@@ -1570,7 +1582,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(379, 30);
+            this.label16.Location = new System.Drawing.Point(396, 30);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(93, 24);
             this.label16.TabIndex = 0;
@@ -1589,7 +1601,7 @@
             this.groupBox13.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox13.Location = new System.Drawing.Point(9, 151);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(475, 117);
+            this.groupBox13.Size = new System.Drawing.Size(492, 117);
             this.groupBox13.TabIndex = 6;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "تاريخ دفع الرسوم";
@@ -1620,7 +1632,7 @@
             this.picLFeesPaymentDate.Location = new System.Drawing.Point(106, 24);
             this.picLFeesPaymentDate.Margin = new System.Windows.Forms.Padding(2);
             this.picLFeesPaymentDate.Name = "picLFeesPaymentDate";
-            this.picLFeesPaymentDate.Size = new System.Drawing.Size(260, 36);
+            this.picLFeesPaymentDate.Size = new System.Drawing.Size(277, 36);
             this.picLFeesPaymentDate.TabIndex = 4;
             this.picLFeesPaymentDate.Value = new System.DateTime(2023, 9, 1, 1, 11, 57, 513);
             // 
@@ -1640,7 +1652,7 @@
             this.txtLFeesPaymentDate.Location = new System.Drawing.Point(106, 68);
             this.txtLFeesPaymentDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtLFeesPaymentDate.Name = "txtLFeesPaymentDate";
-            this.txtLFeesPaymentDate.Size = new System.Drawing.Size(260, 35);
+            this.txtLFeesPaymentDate.Size = new System.Drawing.Size(277, 35);
             this.txtLFeesPaymentDate.TabIndex = 3;
             this.txtLFeesPaymentDate.TabStop = false;
             this.txtLFeesPaymentDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1650,7 +1662,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(373, 73);
+            this.label17.Location = new System.Drawing.Point(390, 73);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(99, 24);
             this.label17.TabIndex = 2;
@@ -1661,7 +1673,7 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(379, 30);
+            this.label18.Location = new System.Drawing.Point(396, 30);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(93, 24);
             this.label18.TabIndex = 0;
@@ -1677,7 +1689,7 @@
             this.groupBox14.Controls.Add(this.label20);
             this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox14.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox14.Location = new System.Drawing.Point(490, 151);
+            this.groupBox14.Location = new System.Drawing.Point(507, 151);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(490, 117);
             this.groupBox14.TabIndex = 4;
@@ -1761,7 +1773,7 @@
             this.groupBox15.Controls.Add(this.label22);
             this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox15.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox15.Location = new System.Drawing.Point(490, 28);
+            this.groupBox15.Location = new System.Drawing.Point(507, 28);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(490, 117);
             this.groupBox15.TabIndex = 0;
@@ -1887,18 +1899,6 @@
             this.btnSave.TabIndex = 0;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // picLoader
-            // 
-            this.picLoader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLoader.Image = global::LMS.Properties.Resources._752;
-            this.picLoader.Location = new System.Drawing.Point(598, 0);
-            this.picLoader.Name = "picLoader";
-            this.picLoader.Size = new System.Drawing.Size(96, 68);
-            this.picLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picLoader.TabIndex = 8;
-            this.picLoader.TabStop = false;
-            this.picLoader.Visible = false;
-            // 
             // FRMNewLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -1914,6 +1914,7 @@
             this.pnlScrollerContainer.ResumeLayout(false);
             this.pnlMainInfoContainer.ResumeLayout(false);
             this.pnlMainInfoContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoader)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
@@ -1964,7 +1965,6 @@
             this.groupBox15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLEntryDate)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLoader)).EndInit();
             this.ResumeLayout(false);
 
         }
