@@ -28,7 +28,7 @@ namespace LMS.Views
             AdminId = adminId;
         }
 
-        public FRMNewLicense(int adminId,string _status,int _licenseId)
+        public FRMNewLicense(int adminId, string _status, int _licenseId)
         {
             InitializeComponent();
             AdminId = adminId;
@@ -177,30 +177,31 @@ namespace LMS.Views
         private async void btnSave_Click(object sender, EventArgs e)
         {
             List<string> errorMessages = new List<string>();
-            User Owner=null,Agent=null;
+            User Owner = null, Agent = null;
             ValidityStatment validityStat;
             license license;
 
             string location = txtLocation.Text;
 
-            if(txtOwnerName.Text != string.Empty)
+            if (txtOwnerName.Text != string.Empty)
             {
-                if(txtOwnerNationalId.Text.Length == 14 || txtOwnerNationalId.Text ==string.Empty)
+                if (txtOwnerNationalId.Text.Length == 14 || txtOwnerNationalId.Text == string.Empty)
                 {
-                    Owner = new User { NationalId = txtOwnerNationalId.Text,Name =txtOwnerName.Text };
+                    Owner = new User { NationalId = txtOwnerNationalId.Text, Name = txtOwnerName.Text };
                 }
                 else
                 {
                     errorMessages.Add("الرقم القومي للمالك غير صحيح");
                 }
-            }else
+            }
+            else
             {
                 errorMessages.Add("أدخل بيانات المالك");
             }
 
-            if (txtAgentName.Text != string.Empty )
+            if (txtAgentName.Text != string.Empty)
             {
-                if (txtAgentNationalId.Text.Length == 14 || txtAgentNationalId.Text ==string.Empty)
+                if (txtAgentNationalId.Text.Length == 14 || txtAgentNationalId.Text == string.Empty)
                 {
                     Agent = new User { NationalId = txtAgentNationalId.Text, Name = txtAgentName.Text };
                 }
@@ -219,12 +220,12 @@ namespace LMS.Views
                 }
             }
 
-            if(errorMessages.Count > 0)
+            if (errorMessages.Count > 0)
             {
                 string message = null;
                 foreach (var error in errorMessages)
                 {
-                    message += error+"\n";
+                    message += error + "\n";
                 }
                 MessageBox.Show(message);
                 errorMessages.Clear();
@@ -246,7 +247,7 @@ namespace LMS.Views
                     Fees = txtFees.Text != string.Empty ? Convert.ToDecimal(txtFees.Text) : (decimal?)null,
                     LicenseNumber = txtLicenseNumber.Text != string.Empty ? txtLicenseNumber.Text : null,
                     EntryDate = txtLEntryDate.Text != string.Empty ? picLEntryDate.Value : (DateTime?)null,
-                    InitialSupplyDate=txtVInitialSupplyDate.Text !=string.Empty ? picLInitialSupplyDate.Value : (DateTime?)null,
+                    InitialSupplyDate = txtVInitialSupplyDate.Text != string.Empty ? picLInitialSupplyDate.Value : (DateTime?)null,
                     ExaminationFeeDate = txtLExaminationFeeDate.Text != string.Empty ? picLExaminationFeeDate.Value : (DateTime?)null,
                     FeesPaymentDate = txtLFeesPaymentDate.Text != string.Empty ? picLFeesPaymentDate.Value : (DateTime?)null,
                     FinalPaymentDate = txtLFinalPaymentDate.Text != string.Empty ? picLFinalPaymentDate.Value : (DateTime?)null,
@@ -263,7 +264,7 @@ namespace LMS.Views
                             MessageBox.Show("تم الإضافة بنجاح");
                     }
                 }
-                if(status == "Edit")
+                if (status == "Edit")
                 {
                     if (MessageBox.Show("هل تريد الحفظ ؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
@@ -304,6 +305,7 @@ namespace LMS.Views
                 }
             }
         }
+
         #region Date picker Buttons Events
         private void btnVEntryDate_Click(object sender, EventArgs e)
         {
@@ -433,7 +435,7 @@ namespace LMS.Views
             {
                 if (lvFilesList.SelectedItems.Count > 0)
                 {
-                    List<(int id, string FileName, string Extension, byte[] Data)> deletedFiles = 
+                    List<(int id, string FileName, string Extension, byte[] Data)> deletedFiles =
                         new List<(int id, string FileName, string Extension, byte[] Data)>();
 
                     foreach (ListViewItem selectedItem in lvFilesList.SelectedItems)
