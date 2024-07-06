@@ -8,6 +8,7 @@ namespace LMS.Views
     public partial class FRMDisplayLicenses : Form
     {
         LicenseController liceControl = new LicenseController();
+        private bool _isFetching = false;
         public FRMDisplayLicenses()
         {
             InitializeComponent();
@@ -68,6 +69,9 @@ namespace LMS.Views
         private async void txtAgentNationalId_OnValueChanged(object sender, EventArgs e)
         {
             SetLoading(true);
+            if (_isFetching) return;
+
+            _isFetching = true;
             if (dgvDisplay.Rows.Count > 0)
                 dgvDisplay.Refresh();
             //Search By Owner Data
@@ -132,6 +136,7 @@ namespace LMS.Views
                 }
             }
             dgvDisplay.Columns["LicenseId"].Visible = false;
+            _isFetching = false;
             SetLoading(false);
         }
 
@@ -174,3 +179,4 @@ namespace LMS.Views
         }
     }
 }
+//Application.OpenForms["FRMMain"].Controls["pnlHeader"].Controls["picLoader"].Visible = true;
